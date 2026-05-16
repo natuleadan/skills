@@ -11,8 +11,8 @@
   },
   "plugins": [
     {
-      "name": "programming-skills",
-      "description": "Node.js package management, supply chain security, toolchain setup, and agent skill creation",
+      "name": "natuleadan",
+      "description": "Multi-domain agent skills for AI coding agents — programming, biology, cooking, and more",
       "version": "1.0.0",
       "source": "./",
       "author": {
