@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "abstract": "Guide for creating, testing, and packaging AI agent skills from scratch",
+  "references": [
+    "https://agentskills.io/specification"
+  ]
+}

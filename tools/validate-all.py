@@ -228,6 +228,26 @@ def validate_skill(path_str):
         for e in check_compatibility(compat):
             results.append({"type": "error", "msg": e})
 
+    meta_file = skill_dir / "metadata.json"
+    if not meta_file.exists():
+        results.append({"type": "error", "msg": f"Missing required file: metadata.json in {skill_dir}"})
+    else:
+        try:
+            meta_data = json.loads(meta_file.read_text())
+            if not isinstance(meta_data, dict):
+                results.append({"type": "error", "msg": f"metadata.json must contain a JSON object in {skill_dir}"})
+            else:
+                if "version" not in meta_data:
+                    results.append({"type": "error", "msg": f"metadata.json missing required field 'version' in {skill_dir}"})
+                if "abstract" not in meta_data:
+                    results.append({"type": "error", "msg": f"metadata.json missing required field 'abstract' in {skill_dir}"})
+                if "references" not in meta_data:
+                    results.append({"type": "error", "msg": f"metadata.json missing required field 'references' in {skill_dir}"})
+                elif not isinstance(meta_data["references"], list):
+                    results.append({"type": "error", "msg": f"metadata.json 'references' must be an array in {skill_dir}"})
+        except json.JSONDecodeError:
+            results.append({"type": "error", "msg": f"metadata.json is not valid JSON in {skill_dir}"})
+
     refs_dir = skill_dir / "references"
     if refs_dir.exists():
         for f in refs_dir.iterdir():

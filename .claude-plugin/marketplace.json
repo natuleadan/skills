@@ -4,13 +4,13 @@
     "name": "natuleadan"
   },
   "metadata": {
-    "description": "Universal agent skills: package management, security, toolchain setup, and skill creation",
+    "description": "Agent skills collection spanning multiple domains",
     "version": "1.0.0"
   },
   "plugins": [
     {
-      "name": "natuleadan",
-      "description": "Skills for Node.js package management, security, agent skill creation, and more domains coming soon",
+      "name": "programming-skills",
+      "description": "Node.js package management, supply chain security, toolchain setup, and agent skill creation",
       "source": "./",
       "strict": false,
       "skills": [
@@ -19,6 +19,20 @@
         "./skills/01-programming/0101-node/010103-package-ops",
         "./skills/01-programming/0102-agents/010201-skill-creator"
       ]
+    },
+    {
+      "name": "biology-skills",
+      "description": "Biology and life sciences skills (coming soon)",
+      "source": "./",
+      "strict": false,
+      "skills": []
+    },
+    {
+      "name": "cooking-skills",
+      "description": "Cooking and culinary skills (coming soon)",
+      "source": "./",
+      "strict": false,
+      "skills": []
     }
   ]
 }

@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "abstract": "Guide for installing and configuring JavaScript/TypeScript package managers from scratch",
+  "references": [
+    "https://nodejs.org/en/download/",
+    "https://pnpm.io/installation",
+    "https://bun.sh/docs/installation"
+  ]
+}

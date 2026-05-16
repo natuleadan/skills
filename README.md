@@ -6,18 +6,33 @@
 <p align="center"><strong>Agent skills for AI coding agents across multiple domains</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Skills-4-8B5CF6?style=for-the-badge" alt="4 skills" />
+  <img src="https://img.shields.io/badge/Count-4-8B5CF6?style=for-the-badge" alt="4 count" />
   <img src="https://img.shields.io/badge/Domains-3-blue?style=for-the-badge" alt="3 domains" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License" /></a>
+  <br />
+  <a href="https://skills.sh/natuleadan/skills"><img src="https://skills.sh/b/natuleadan/skills" alt="Skills" /></a>
 </p>
 
-## Project Description
+## 1. What is Natuleadan Skills?
 
 A collection of agent skills for AI coding agents spanning multiple domains. Skills are packaged instructions and scripts that extend agent capabilities. Currently focused on programming (Node.js), with biology and cooking domains planned.
 
 Skills follow the [Agent Skills](https://agentskills.io/) format and are installable via `npx skills add`.
 
-## Technology Stack
+## 2. Available Skills
+
+Every skill lives at `skills/<domain>/<category>/<skill-code>/` with a `SKILL.md` file. Domains and categories organize skills into a three-level hierarchy.
+
+| Domain | Category | Skill | Description |
+|---|---|---|---|
+| `01-programming` | `0101-node` | `010101-package-security` | Hardens npm, pnpm, and bun against supply chain attacks |
+| | | `010102-install-and-setup` | Installs and configures the JS/TS toolchain from scratch |
+| | | `010103-package-ops` | Day-to-day package management: install, update, audit, publish |
+| | `0102-agents` | `010201-skill-creator` | Guides creation of new Agent Skills |
+| `02-biology` | — | _(placeholder)_ | Coming soon |
+| `03-cooking` | — | _(placeholder)_ | Coming soon |
+
+## 3. Technology Stack
 
 - **[skills.sh](https://skills.sh)** — Agent skills registry and distribution
 - **Python 3** — Skill validation and automation scripts (`tools/validate-all.py`)
@@ -26,15 +41,15 @@ Skills follow the [Agent Skills](https://agentskills.io/) format and are install
 - **Commitlint 20** — Conventional commit enforcement
 - **Bun** — Package manager and runtime (local development only)
 
-## Project Architecture
+## 4. Project Status
 
-Skills are structured as a flat registry with a plugin manifest and domain-organized directories. The system has three layers:
+**Active domain:** `01-programming` — 4 production-ready skills for Node.js development: security auditing, toolchain setup, package operations, and agent skill creation.
 
-1. **Registry** — `.claude-plugin/marketplace.json` declares all available skills and their paths. This is the single source of truth for what the repo contains.
-2. **Skills** — Each skill is a directory under `skills/<domain>/` containing `SKILL.md` (instructions), `scripts/` (Python automation), and optionally `references/` (supporting documentation).
-3. **Validation** — `tools/validate-all.py` reads the marketplace manifest, resolves each skill path, and validates every SKILL.md against the Agent Skills format specification.
+**Placeholder domains:** `02-biology` and `03-cooking` — ready for future skills. Add a new domain by creating `skills/NN-name/` with a `.gitkeep` and registering a new plugin in `marketplace.json`.
 
-## Getting Started
+**CI/CD:** Every push and pull request is automatically validated via GitHub Actions (`tools/validate-all.py`) to ensure all skills remain compliant.
+
+## 5. Getting Started
 
 ### Prerequisites
 
@@ -64,55 +79,15 @@ bun install         # Install husky + commitlint
 python3 tools/validate-all.py  # Verify everything works
 ```
 
-## Project Structure
+## 6. Architecture
 
-```text
-skills/
-├── .claude-plugin/
-│   └── marketplace.json          ← skill registry
-├── .husky/
-│   ├── pre-commit                ← runs validate-all.py
-│   └── commit-msg                ← runs commitlint
-├── skills/                       ← domain folders
-├── 01-programming/           ← active domain
-│   ├── 0101-node/
-│   │   ├── 010101-package-security/
-│   │   ├── 010102-install-and-setup/
-│   │   └── 010103-package-ops/
-│   └── 0102-agents/
-│       └── 010201-skill-creator/
-├── 02-biology/               ← coming soon
-└── 03-cooking/               ← coming soon
-├── tools/
-│   └── validate-all.py           ← validation script
-├── .gitignore
-├── LICENSE
-├── README.md
-├── package.json
-├── commitlint.config.js
-└── bun.lock
-```
+Skills are structured as a flat registry with a plugin manifest and domain-organized directories. The system has three layers:
 
-Every skill lives at `skills/<domain>/<category>/<skill-code>/` and contains a `SKILL.md` file.
+1. **Registry** — `.claude-plugin/marketplace.json` declares all available skills and their paths. This is the single source of truth for what the repo contains.
+2. **Skills** — Each skill is a directory under `skills/<domain>/` containing `SKILL.md` (instructions), `scripts/` (Python automation), and optionally `references/` (supporting documentation).
+3. **Validation** — `tools/validate-all.py` reads the marketplace manifest, resolves each skill path, and validates every SKILL.md against the Agent Skills format specification.
 
-## Key Features
-
-- **4 production-ready skills** for Node.js development: security auditing, toolchain setup, package operations, and agent skill creation
-- **Multi-domain architecture** — extendable to any domain (biology, cooking, etc.) by adding a new directory under `skills/`
-- **Automatic validation** — Python-based validator checks every SKILL.md for correct frontmatter, naming conventions, and required fields
-- **Conventional commits** — Husky + Commitlint enforce standardized commit messages following the conventional commits specification
-- **Marketplace integration** — Skills are registered via `.claude-plugin/marketplace.json` and installable through the `npx skills` CLI
-
-## Development Workflow
-
-1. **Plan** — Define the skill domain, category, and functionality
-2. **Create** — Scaffold `skills/<domain>/<category>/<skill-code>/` with `SKILL.md`, `scripts/`, and `references/`
-3. **Register** — Add the skill path to `.claude-plugin/marketplace.json`
-4. **Validate** — Run `python3 tools/validate-all.py` to check format compliance
-5. **Commit** — Stage changes and commit with a conventional message (`feat(skills): add new-skill-name`). Husky automatically runs validation and commitlint
-6. **Push** — Push to GitHub; users update via `npx skills update natuleadan/skills`
-
-## Coding Standards
+## 7. Coding Standards
 
 ### Commit Messages
 
@@ -140,7 +115,7 @@ Rules: scope is required, max 100 characters, lowercase subject.
 
 Required fields: `name`, `description`. Allowed fields: `name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools`.
 
-## Testing / Validation
+## 8. Testing & Validation
 
 ```bash
 python3 tools/validate-all.py
@@ -151,24 +126,31 @@ The validation script performs the following checks:
 - **Registry integrity** — Every path in `marketplace.json` resolves to an existing skill directory
 - **Frontmatter validation** — Custom YAML parser checks required fields and naming rules
 - **Directory matching** — Skill name must match the containing directory name
-- **Script presence** — Each skill must have at least one Python script in its `scripts/` directory
+- **metadata.json** — Every skill must have a valid `metadata.json` with `version`, `abstract`, and `references`
 - **Empty files** — Warns on empty `.md` files in `references/`
 
-## Contributing
+## 9. Development Workflow
 
-Contributions are welcome. To add a new skill:
+1. **Plan** — Define the skill domain, category, and functionality
+2. **Create** — Scaffold `skills/<domain>/<category>/<skill-code>/` with `SKILL.md`, `scripts/`, and `references/`
+3. **Register** — Add the skill path to `.claude-plugin/marketplace.json`
+4. **Validate** — Run `python3 tools/validate-all.py` to check format compliance
+5. **Commit** — Stage changes and commit with a conventional message (`feat(skills): add new-skill-name`). Husky automatically runs validation and commitlint
+6. **Push** — Push to GitHub; users update via `npx skills update natuleadan/skills`
 
-1. Create `skills/<domain>/<category>/<skill-code>/SKILL.md`
-2. Add Python scripts in `skill-name/scripts/`
-3. Register the path in `.claude-plugin/marketplace.json`
-4. Run `python3 tools/validate-all.py` to verify
-5. Commit using conventional commit format
+## 10. Contributing
 
-All code must pass validation before merging. Husky hooks run automatically on commit.
+Our Contribution Guidelines document provides detailed conventions for skill creation, covering directory structure, SKILL.md frontmatter rules, naming, validation with `python3 tools/validate-all.py`, and commit format. All contributions must pass validation before merging. [Contribution Guidelines](CONTRIBUTING.md)
 
-## License
+## 11. Licensing
 
 MIT — Leonardo Jara
+
+## 12. Ownership & Copyright
+
+Maintained by Leonardo Jara ([@leojara95](https://github.com/leojara95)) under the natuleadan organization ([@natuleadan](https://github.com/natuleadan)).
+
+---
 
 ## Contributors
 
@@ -176,6 +158,8 @@ MIT — Leonardo Jara
   <a href="https://github.com/natuleadan"><img src="https://avatars.githubusercontent.com/u/210283438?v=4&s=48" width="48" height="48" alt="natuleadan" title="natuleadan"/></a>
   <a href="https://github.com/leojara95"><img src="https://avatars.githubusercontent.com/u/268038834?v=4&s=48" width="48" height="48" alt="leojara95" title="leojara95"/></a>
 </p>
+
+---
 
 ## Star History
 

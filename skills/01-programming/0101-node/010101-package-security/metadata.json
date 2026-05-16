@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "abstract": "Guide for securing npm, pnpm, and bun against supply chain attacks",
+  "references": [
+    "https://docs.npmjs.com/cli/v11/commands/npm-audit",
+    "https://pnpm.io/security",
+    "https://bun.sh/docs/install/trusted"
+  ]
+}

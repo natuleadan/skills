@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "abstract": "Day-to-day package management operations for npm, pnpm, and bun",
+  "references": [
+    "https://docs.npmjs.com/cli/v11/commands/npm",
+    "https://pnpm.io/cli/install",
+    "https://bun.sh/docs/cli/install"
+  ]
+}
