@@ -21,7 +21,7 @@ Skills follow the [Agent Skills](https://agentskills.io/) format and are install
 
 ## 2. Available Skills
 
-Every skill lives at `skills/<domain>/<category>/<skill-code>/` with a `SKILL.md` file. Domains and categories organize skills into a three-level hierarchy.
+Skills use numeric codes to encode a three-level hierarchy: domain, category, and skill. Each skill lives at `skills/<skill-code>-<name>/` with a `SKILL.md` file.
 
 | Domain | Category | Skill | Description |
 |---|---|---|---|
@@ -29,8 +29,6 @@ Every skill lives at `skills/<domain>/<category>/<skill-code>/` with a `SKILL.md
 | | | `010102-install-and-setup` | Installs and configures the JS/TS toolchain from scratch |
 | | | `010103-package-ops` | Day-to-day package management: install, update, audit, publish |
 | | `0102-agents` | `010201-skill-creator` | Guides creation of new Agent Skills |
-| `02-biology` | — | _(placeholder)_ | Coming soon |
-| `03-cooking` | — | _(placeholder)_ | Coming soon |
 
 ## 3. Technology Stack
 

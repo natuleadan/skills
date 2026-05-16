@@ -17,37 +17,28 @@ python3 tools/validate-all.py  # verify baseline
 
 ## Skill Structure
 
-Each skill lives in a **4-level numeric hierarchy**:
+Each skill lives in a flat directory under `skills/`:
 
 ```
 skills/
-  <domain>/
-    <category>/
-      <skill-code>-<skill-name>/
-        SKILL.md
-        metadata.json
-        scripts/       (optional — Python .py files)
-        references/    (optional — supporting .md files)
+  <NNNNNN>-<skill-name>/
+    SKILL.md
+    metadata.json
+    scripts/       (optional — Python .py files)
+    references/    (optional — supporting .md files)
 ```
 
-### Levels
+### Numeric Code Hierarchy
 
-| Level | Format | Example |
+The 6-digit code encodes three levels — domain, category, and skill:
+
+| Level | Digits | Example |
 |---|---|---|
-| Domain | `NN-name` | `01-programming` |
-| Category | `NNNN-name` | `0101-node` |
-| Skill | `NNNNNN-name` | `010101-package-security` |
+| Domain | `NN` | `01` = Programming |
+| Category | `NNNN` | `0101` = Node.js |
+| Skill | `NNNNNN` | `010101` = Package Security |
 
-- Codes auto-sort alphabetically in CLI output (npx skills add)
-- Domains and categories that don't exist yet should contain only a `.gitkeep`
-
-### Domain directory
-
-| Directory | Status |
-|---|---|
-| `01-programming/` | Active — 4 skills |
-| `02-biology/` | Placeholder (`.gitkeep`) |
-| `03-cooking/` | Placeholder (`.gitkeep`) |
+Codes auto-sort alphabetically in CLI output (`npx skills add`).
 
 ---
 
@@ -65,8 +56,7 @@ description: "<Explicit description with trigger phrases. If the description con
 **Rules:**
 - `name` — lowercase, hyphens only, max 64 chars, must match directory name exactly
 - `description` — max 1024 chars. If it contains `: ` (colon-space), wrap in **double quotes** (`"..."`). Single quotes are accepted but double quotes are preferred
-- Allowed fields: `name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools`
-- No other frontmatter fields are permitted
+- Allowed fields: `name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools`, `user-invocable`, `argument-hint`
 
 ### Description Trigger Phrases
 
@@ -109,7 +99,7 @@ Fields:
 
 - **Skill name**: max 64 chars, lowercase, hyphens only, no leading/trailing/consecutive hyphens
 - **Directory name**: must match `name` field in SKILL.md exactly (NFKC-normalized)
-- **Domain name**: numeric prefix (`01-`, `02-`)
+- **Numeric code**: 6-digit prefix encoding domain (NN), category (NNNN), and skill (NNNNNN)
 - All content in **English** for cross-agent compatibility
 
 ---
@@ -152,18 +142,9 @@ Rule: scope required, max 100 chars, lowercase.
 
 ## Adding a New Skill
 
-1. Pick the next numeric code in the hierarchy
-2. Create `skills/<domain>/<category>/<NNNNNN-name>/` with `SKILL.md` and `metadata.json`
+1. Pick the next numeric code in the sequence
+2. Create `skills/<NNNNNN-name>/` with `SKILL.md` and `metadata.json`
 3. Add optional `scripts/` (`.py` files) or `references/`
-4. Register the path in `.claude-plugin/marketplace.json` under the appropriate plugin
+4. Register the path in `.claude-plugin/marketplace.json`
 5. Run `python3 tools/validate-all.py`
 6. Commit — husky runs validation again automatically
-
----
-
-## Adding a New Domain
-
-1. Add numeric prefix (e.g., `04-robotics/`)
-2. Create `skills/04-robotics/.gitkeep`
-3. Add a new plugin entry in `.claude-plugin/marketplace.json` with the domain name
-4. Repeat the skill creation process for each skill in the domain

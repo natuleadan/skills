@@ -18,6 +18,8 @@ ALLOWED_FIELDS = {
     "compatibility",
     "metadata",
     "allowed-tools",
+    "user-invocable",
+    "argument-hint",
 }
 
 
