@@ -1,0 +1,10 @@
+{
+  "name": "fts-search",
+  "version": "1.0.0",
+  "abstract": "LanceDB full-text search with BM25: FTS index creation, query patterns, phrase search, fuzzy matching, field boosting, boolean search, and metadata filtering.",
+  "description": "Full-text search with LanceDB — BM25 indexing, FTS query patterns, fuzzy search, and advanced query techniques.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["lancedb", "fts", "full-text-search", "bm25", "search"],
+  "references": ["references/fts-index.md", "references/fts-querying.md", "references/fts-advanced.md"]
+}

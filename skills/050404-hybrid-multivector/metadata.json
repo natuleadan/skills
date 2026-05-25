@@ -1,0 +1,10 @@
+{
+  "name": "hybrid-multivector",
+  "version": "1.0.0",
+  "abstract": "LanceDB hybrid search (vector + FTS with RRF fusion), multivector search (ColBERT late interaction, MaxSim), and metadata filtering (pre-filter vs post-filter).",
+  "description": "Hybrid search combining vector and full-text, multivector late interaction models, and metadata filtering for LanceDB.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["lancedb", "hybrid-search", "multivector", "colbert", "filtering", "reranking"],
+  "references": ["references/hybrid-search.md", "references/multivector-search.md", "references/filtering.md"]
+}

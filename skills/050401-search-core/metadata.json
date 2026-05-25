@@ -1,0 +1,10 @@
+{
+  "name": "search-core",
+  "version": "1.0.0",
+  "abstract": "LanceDB vector search fundamentals: distance metrics (l2, cosine, dot, hamming), ANN vs exact search, embedding functions, and search pattern tuning.",
+  "description": "Core vector search concepts for LanceDB — distance metrics, embedding models, ANN indexing, and search pattern optimization.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["lancedb", "vector-search", "embeddings", "ann", "similarity-search"],
+  "references": ["references/vector-fundamentals.md", "references/vector-search-patterns.md", "references/embeddings.md"]
+}

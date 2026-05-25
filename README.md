@@ -6,7 +6,7 @@
 <p align="center"><strong>Agent skills for AI coding agents across multiple domains</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Count-20-8B5CF6?style=for-the-badge" alt="20 skills" />
+  <img src="https://img.shields.io/badge/Count-24-8B5CF6?style=for-the-badge" alt="24 skills" />
   <img src="https://img.shields.io/badge/Domains-5-blue?style=for-the-badge" alt="5 domains" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License" /></a>
   <br />
@@ -45,6 +45,10 @@ Skills use numeric codes to encode a three-level hierarchy: domain, category, an
 | | | `050108-zero-trust` | Zero Trust auth: single validation, role propagation, no client trust |
 | | `0502-auth` | `050201-better-auth` | Better Auth integration: setup, API endpoints, client SDK, session provider |
 | | `0503-database` | `050301-prisma-database` | Prisma 7 setup with PostgreSQL adapter and Better Auth schema models |
+| | `0504-vector-search` | `050401-search-core` | Vector search fundamentals: distance metrics, ANN, embeddings |
+| | | `050402-index-optimization` | Vector index types (IVF, HNSW, PQ), quantization, reindexing |
+| | | `050403-fts-search` | Full-text search with BM25: FTS indexing, fuzzy, boolean queries |
+| | | `050404-hybrid-multivector` | Hybrid search (vector+FTS), multivector (ColBERT), filtering |
 
 ## 3. Technology Stack
 
@@ -57,13 +61,13 @@ Skills use numeric codes to encode a three-level hierarchy: domain, category, an
 
 ## 4. Project Status
 
-**Active domains:** `01-programming` (9 skills), `04-business` (1 skill), and `05-architecture` (10 skills).
+**Active domains:** `01-programming` (9 skills), `04-business` (1 skill), and `05-architecture` (14 skills).
 
 | Domain | Skills |
 |---|---|
 | `01-programming` | 010101-package-security, 010102-install-and-setup, 010103-package-ops, 010201-skill-creator, 010301-frontend-coding, 010302-backend-arch, 010303-code-quality, 010401-git-commits, 010402-release-automation |
 | `04-business` | 040101-contact-crm — CSV-based CRM with Org→Contact→Product linking |
-| `05-architecture` | 050101-caching, 050102-clean-arch, 050103-docker-deploy, 050104-elysia-patterns, 050105-nextjs-compiler, 050106-security, 050107-server-actions, 050108-zero-trust, 050201-better-auth, 050301-prisma-database |
+| `05-architecture` | 050101-caching, 050102-clean-arch, 050103-docker-deploy, 050104-elysia-patterns, 050105-nextjs-compiler, 050106-security, 050107-server-actions, 050108-zero-trust, 050201-better-auth, 050301-prisma-database, 050401-search-core, 050402-index-optimization, 050403-fts-search, 050404-hybrid-multivector |
 
 **Placeholder domains:** `02-biology` and `03-cooking` — ready for future skills. Add a new domain by creating `skills/NN-name/` with a `.gitkeep` and registering a new plugin in `marketplace.json`.
 

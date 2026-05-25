@@ -1,0 +1,152 @@
+# Metadata Filtering
+
+Filter search results in LanceDB based on metadata fields.
+
+LanceDB supports filtering features of query results based on metadata fields. While joint vector and metadata search at scale presents a significant challenge, LanceDB achieves sub-100ms latency at thousands of QPS, enabling efficient vector search with filtering capabilities even on datasets containing billions of records.
+Pre-filtering means LanceDB applies the metadata where(...) condition before running vector search, so the search only considers rows that already match the filter. Post-filtering means LanceDB runs vector search first and only then filters the returned candidates. Pre-filtering is enabled by default. In practice, pre-filtering is better when the filter is part of the result contract; post-filtering can be lower-latency for expensive or non-indexable filters, but it can return fewer than limit rows, or even zero, if the nearest neighbors do not pass the filter.
+
+## Example: Metadata Filtering
+
+To illustrate filtering capabilities, let's try four data points with combinations of vectors and metadata:
+
+```typescript
+const data = [
+  { vector: [3.1, 4.1], item: "foo", price: 10.0 },
+  { vector: [5.9, 26.5], item: "bar", price: 20.0 },
+  { vector: [10.2, 100.8], item: "baz", price: 30.0 },
+  { vector: [1.4, 9.5], item: "fred", price: 40.0 },
+];
+
+const tableName = "metadata_filter_example";
+const table = await db.createTable(tableName, data, {
+  mode: "overwrite",
+});
+```
+
+## Filtering Without Vector Search
+
+You can always filter your data without search. This is useful when you need to query based on metadata:
+
+```typescript
+const filteredResult = await table
+  .query()
+  .where("(item IN ('foo', 'bar', 'baz')) AND (price > 15.0)")
+  .limit(3)
+  .toArray();
+```
+
+If your table is large, this could potentially return a very large amount of data. Please be sure to use a limit clause unless you're sure you want to return the whole result set.
+
+## Pre-Filtering with Vector Search
+
+```typescript
+const results = await table
+  .search([100, 102])
+  .where("(item IN ('foo', 'bar')) AND (price > 15.0)")
+  .toArray();
+```
+
+## Post-Filtering with Vector Search
+
+```typescript
+const postFilteredResult = await (table.search([100, 102]) as VectorQuery)
+  .where("(item IN ('foo', 'bar')) AND (price > 15.0)")
+  .postfilter()
+  .limit(3)
+  .toArray();
+```
+
+When querying large tables, omitting a limit clause may overwhelm resources and return excessive data. It's always recommended to be mindful of the potential impact on performance and costs when working with really large tables.
+
+## Filtering with SQL
+
+Because it's built on top of DataFusion, LanceDB embraces the utilization of standard SQL expressions as predicates for filtering operations. SQL can be used during vector search, update, and deletion operations.
+
+LanceDB supports a growing list of SQL expressions:
+
+| SQL Expression | Description |
+|---|---|
+| >, >=, <, <=, = | Comparison operators |
+| AND, OR, NOT | Logical operators |
+| IS NULL, IS NOT NULL | Null checks |
+| IS TRUE, IS NOT TRUE, IS FALSE, IS NOT FALSE | Boolean checks |
+| IN | Value matching from a set |
+| LIKE, NOT LIKE | Pattern matching |
+| CAST | Type conversion |
+| regexp_match(column, pattern) | Regular expression matching |
+| DataFusion Functions | Additional SQL functions |
+
+### Simple SQL Filters
+
+For example, the following filter string is acceptable:
+
+```typescript
+await table
+  .search([100, 102])
+  .where("(item IN ('foo', 'baz')) AND (price > 20.0)")
+  .toArray();
+```
+
+### Advanced SQL Filters
+
+If your column name contains special characters, upper-case characters, or is a SQL Keyword, you can use backtick (`) to escape it. For nested fields, each segment of the path must be wrapped in backticks.
+
+```
+`CUBE` = 10 AND `UpperCaseName` = '3' AND `column name with space` IS NOT NULL
+AND `nested with space`.`inner with space` < 2
+```
+
+Field names containing periods (.) are NOT supported.
+
+### Dates, Timestamps, Decimals
+
+Literals for dates, timestamps, and decimals can be written by writing the string value after the type name. For example:
+
+```sql
+date_col = date '2021-01-01'
+and timestamp_col = timestamp '2021-01-01 00:00:00'
+and decimal_col = decimal(8,3) '1.000'
+```
+
+For timestamp columns, the precision can be specified as a number in the type parameter. Microsecond precision (6) is the default.
+
+| SQL | Time unit |
+|---|---|
+| timestamp(0) | Seconds |
+| timestamp(3) | Milliseconds |
+| timestamp(6) | Microseconds |
+| timestamp(9) | Nanoseconds |
+
+### Apache Arrow Mapping
+
+LanceDB internally stores data in Apache Arrow format. The mapping from SQL types to Arrow types is:
+
+| SQL type | Arrow type |
+|---|---|
+| boolean | Boolean |
+| tinyint / tinyint unsigned | Int8 / UInt8 |
+| smallint / smallint unsigned | Int16 / UInt16 |
+| int or integer / int unsigned or integer unsigned | Int32 / UInt32 |
+| bigint / bigint unsigned | Int64 / UInt64 |
+| float | Float32 |
+| double | Float64 |
+| decimal(precision, scale) | Decimal128 |
+| date | Date32 |
+| timestamp | Timestamp |
+| string | Utf8 |
+| binary | Binary |
+
+## Best Practices
+
+- Scalar Indexes: We strongly recommend creating scalar indices on columns used for filtering, whether combined with a search operation or applied independently (e.g., for updates or deletions).
+- For best performance with large tables or high query volumes:
+  - Build a scalar index on frequently filtered columns
+  - Use exact column names in filters (e.g., user_id instead of USER_ID)
+  - Avoid complex transformations in filter expressions (keep them simple)
+  - When running concurrent queries, use connection pooling for better throughput
+- For a column of type LIST(T), you can use LABEL_LIST to create a scalar index. Then you should leverage DataFusion's array functions like array_has_any or array_has_all for optimized filtering.
+
+## Limitations
+
+Both pre-filtering and post-filtering can yield false positives. For pre-filtering, if the filter is too selective, it might eliminate relevant items that the vector search would have otherwise identified as a good match. In this case, increasing nprobes parameter will help reduce such false positives. It is recommended to call bypass_vector_index() if you know that the filter is highly selective.
+Similarly, a highly selective post-filter can lead to false positives. Increasing both nprobes and refine_factor can mitigate this issue. When deciding between pre-filtering and post-filtering, pre-filtering is generally the safer choice if you're uncertain.

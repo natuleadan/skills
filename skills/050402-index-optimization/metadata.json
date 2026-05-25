@@ -1,0 +1,10 @@
+{
+  "name": "index-optimization",
+  "version": "1.0.0",
+  "abstract": "LanceDB vector index types (IVF, HNSW, PQ, RQ, RaBitQ), quantization techniques, compression ratios, reindexing strategies, and performance optimization.",
+  "description": "Vector index types, quantization techniques, and reindexing for LanceDB performance optimization.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["lancedb", "vector-index", "quantization", "hnsw", "ivf", "performance"],
+  "references": ["references/vector-index.md", "references/indexing.md", "references/quantization.md", "references/reindex.md"]
+}

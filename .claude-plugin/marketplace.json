@@ -95,7 +95,11 @@
         "./skills/010303-code-quality",
         "./skills/050301-prisma-database",
         "./skills/010401-git-commits",
-        "./skills/010402-release-automation"
+        "./skills/010402-release-automation",
+        "./skills/050401-search-core",
+        "./skills/050402-index-optimization",
+        "./skills/050403-fts-search",
+        "./skills/050404-hybrid-multivector"
       ]
     }
   ]
