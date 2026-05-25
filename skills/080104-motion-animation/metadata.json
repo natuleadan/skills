@@ -1,0 +1,21 @@
+{
+  "name": "motion-animation",
+  "version": "1.0.0",
+  "description": "Motion design and animation principles for frontend interfaces: timing, easing curves, physics-based animation, micro-interactions, performance optimization, reduced motion accessibility, and product/brand UI motion patterns.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "abstract": "Animation principles: timing 150-300ms, easing curves, spring physics, micro-interactions, reduced motion, performance optimization.",
+  "tags": [
+    "motion",
+    "animation",
+    "micro-interactions",
+    "easing",
+    "css-animation",
+    "reduced-motion"
+  ],
+  "references": [
+    "references/timing-easing.md",
+    "references/motion-principles.md",
+    "references/micro-interactions.md"
+  ]
+}

@@ -100,10 +100,16 @@
         "./skills/040101-docker-deploy",
         "./skills/050101-elysia-framework",
         "./skills/050102-nextjs-framework",
+        "./skills/050103-tailwind-implement",
+        "./skills/050103-tailwind-implement",
         "./skills/060101-http-security",
         "./skills/060102-zero-trust",
         "./skills/060103-better-auth",
-        "./skills/070101-prisma-database"
+        "./skills/070101-prisma-database",
+        "./skills/080101-design-foundations",
+        "./skills/080102-design-typography",
+        "./skills/080103-ux-standards",
+        "./skills/080104-motion-animation"
       ]
     }
   ]

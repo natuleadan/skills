@@ -1,0 +1,22 @@
+{
+  "name": "design-typography",
+  "version": "1.0.0",
+  "description": "Principles for type selection, font pairing, spacing systems, grid theory, and layout hierarchy in frontend design. Covers modular type scales, 4/8pt spacing, responsive grids, and product vs brand UI distinctions.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "abstract": "Typography and layout design: font selection procedure, modular type scales, 4/8pt spacing systems, grid theory, visual hierarchy techniques.",
+  "tags": [
+    "typography",
+    "font-selection",
+    "type-scale",
+    "spacing-systems",
+    "grid-layout",
+    "visual-hierarchy"
+  ],
+  "references": [
+    "references/font-selection.md",
+    "references/type-scale.md",
+    "references/spacing-systems.md",
+    "references/grid-layout.md"
+  ]
+}

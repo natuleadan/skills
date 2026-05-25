@@ -1,0 +1,26 @@
+{
+  "name": "ux-standards",
+  "version": "1.0.0",
+  "description": "UX heuristics, accessibility (WCAG), touch interaction, form design, navigation, and UX writing standards for web and mobile applications.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "abstract": "Comprehensive UX standards covering WCAG accessibility, touch interaction patterns, form design, navigation architecture, UX writing, cognitive load reduction, and critique methodology.",
+  "tags": [
+    "ux",
+    "accessibility",
+    "wcag",
+    "touch-interaction",
+    "form-design",
+    "navigation",
+    "ux-writing",
+    "cognitive-load"
+  ],
+  "references": [
+    "references/accessibility.md",
+    "references/touch-interaction.md",
+    "references/form-ux.md",
+    "references/navigation-patterns.md",
+    "references/ux-writing.md",
+    "references/cognitive-load.md"
+  ]
+}

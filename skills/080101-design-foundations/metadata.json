@@ -1,0 +1,10 @@
+{
+  "name": "design-foundations",
+  "version": "1.0.0",
+  "description": "Design foundations: color theory, token hierarchy, brand vs product registers, theming decisions. OKLCH color space, color strategies, absolute bans, slop test.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "abstract": "Comprehensive guide to design foundations including color theory using OKLCH, four-level color strategy framework, design token hierarchy, brand versus product registers, scene sentence method for theming, absolute design bans, and the slop test for design distinctiveness.",
+  "tags": ["design", "color-theory", "design-tokens", "oklch", "brand-design", "product-design"],
+  "references": ["references/color-strategies.md", "references/token-hierarchy.md", "references/brand-product-register.md"]
+}

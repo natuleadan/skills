@@ -1,0 +1,10 @@
+{
+  "name": "tailwind-implement",
+  "version": "1.0.0",
+  "description": "Tailwind CSS v4 CSS-first configuration and shadcn/ui component composition patterns. Covers @theme tokens, @custom-variant dark mode, @utility helpers, @starting-style animations, container queries, color-mix() for alpha scales, CVA component factories, and the complete shadcn/ui component API including form patterns, composition rules, icon discipline, styling guidelines, and Base vs Radix API differences.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "abstract": "Implementation layer of frontend design: Tailwind CSS v4 CSS-first configuration and shadcn/ui component composition patterns.",
+  "tags": ["tailwind", "tailwind-v4", "shadcn", "component-composition", "css-variables", "design-tokens"],
+  "references": ["references/tailwind-v4.md", "references/shadcn-styling.md", "references/shadcn-forms.md", "references/shadcn-composition.md", "references/shadcn-icons.md", "references/shadcn-base-radix.md"]
+}
