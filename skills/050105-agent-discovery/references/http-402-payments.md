@@ -85,7 +85,29 @@ When payment is required, the wallet displays: request domain, payment amount, t
 
 ## MPP — Machine Payments Protocol
 
-MPP is an open standard proposed to the IETF, developed by Tempo Labs and Stripe. It generalizes HTTP 402 to support any payment method via an extensible challenge–credential–receipt flow.
+MPP is an open standard submitted to the IETF as [`draft-ryan-httpauth-payment`](https://datatracker.ietf.org/doc/draft-ryan-httpauth-payment/), developed by Tempo Labs and Stripe. The full specification suite is published at [paymentauth.org](https://paymentauth.org/). MPP generalizes HTTP 402 to support any payment method via an extensible challenge–credential–receipt flow.
+
+### Architecture
+
+MPP follows a modular architecture separating stable protocol mechanics from evolving payment ecosystems:
+
+```
+Core        → HTTP 402 semantics, "Payment" auth scheme, headers, IANA registries
+Intents     → Abstract payment patterns (charge, authorize, subscription)
+Methods     → Concrete implementations for specific networks (Tempo, Stripe, Lightning, etc.)
+Extensions  → Optional additions (discovery, identity, MCP transport)
+```
+
+### Design Principles
+
+1. **Extensible core**: Minimal protocol designed for safe extension.
+2. **Network agnostic and multi-rail**: Supports bank rails, credit cards, and stablecoins.
+3. **Currency agnostic**: No implicit advantages for any currency or asset.
+4. **Durable by design**: Follows web standards; security and replay protection are first-class concerns.
+
+### IETF Draft
+
+The core specification is [`draft-ryan-httpauth-payment`](https://datatracker.ietf.org/doc/draft-ryan-httpauth-payment/) — "The 'Payment' HTTP Authentication Scheme". It registers the `Payment` auth scheme with IANA and defines the 402 flow semantics.
 
 ### Payment Flow
 
@@ -95,24 +117,24 @@ GET /premium-data HTTP/1.1
 
 # Step 2: Server challenges with 402
 HTTP/1.1 402 Payment Required
-WWW-Authenticate: MPP challenge="eyJhbGciOiJIUzI1NiIs..."
+WWW-Authenticate: Payment challenge="eyJhbGciOiJIUzI1NiIs..."
 
 # Step 3: Client responds with payment credential
 GET /premium-data HTTP/1.1
-Authorization: MPP credential="eyJwYXltZW50SWQiOiJ..."
+Authorization: Payment credential="eyJwYXltZW50SWQiOiJ..."
 
 # Step 4: Server verifies and returns resource
 HTTP/1.1 200 OK
-Payment-Receipt: MPP receipt="eyJzdGF0dXMiOiJ..."
+Payment-Receipt: Payment receipt="eyJzdGF0dXMiOiJ..."
 ```
 
 ### Headers
 
 | Header | Direction | Description |
 |---|---|---|
-| `WWW-Authenticate: MPP challenge=...` | Server → Client | Payment requirements, supported methods, prices |
-| `Authorization: MPP credential=...` | Client → Server | Signed payment proof |
-| `Payment-Receipt: MPP receipt=...` | Server → Client | Proof of delivery / payment acceptance |
+| `WWW-Authenticate: Payment challenge=...` | Server → Client | Payment requirements, supported methods, prices |
+| `Authorization: Payment credential=...` | Client → Server | Signed payment proof |
+| `Payment-Receipt: Payment receipt=...` | Server → Client | Proof of delivery / payment acceptance |
 
 ### Challenge Structure
 
@@ -140,15 +162,19 @@ Payment-Receipt: MPP receipt="eyJzdGF0dXMiOiJ..."
 
 ### Payment Methods
 
-| Method | Type | Settlement | Use Case |
-|---|---|---|---|
-| Tempo (stablecoins) | On-chain | ~200ms | Agentic payments, micropayments |
-| Stripe (cards) | Card network | Instant auth | Human users, cards/wallets |
-| Lightning (Bitcoin) | L2 | Instant | Bitcoin micropayments |
-| Solana | L2 | ~400ms | SOL/SPL token payments |
-| Stellar | L1 | ~5s | SEP-41 token payments |
-| RedotPay | Hybrid | Instant | Balance/stablecoin rails |
+| Method | Type | Settlement | Draft |
+|---|---|---|---|---|
+| Tempo (stablecoins) | On-chain | ~200ms | [`draft-tempo-charge`](https://paymentauth.org/) |
+| Stripe (cards) | Card network | Instant auth | [`draft-stripe-charge`](https://paymentauth.org/) |
+| EVM (ERC-20) | L2 | ~200ms | [`draft-evm-charge`](https://paymentauth.org/) |
+| Lightning (Bitcoin) | L2 | Instant | [`draft-lightning-charge`](https://paymentauth.org/) |
+| Solana | L2 | ~400ms | [`draft-solana-charge`](https://paymentauth.org/) |
+| Stellar | L1 | ~5s | [`draft-stellar-charge`](https://paymentauth.org/) |
+| Hedera | L1 | ~5s | [`draft-hedera-charge`](https://paymentauth.org/) |
+| RedotPay | Hybrid | Instant | RedotPay |
 | Custom | Any | Varies | Extensible via method API |
+
+Each method spec defines the request schema, Credential format, and server verification logic for its specific network.
 
 ### Sessions (Pay-as-You-Go)
 
@@ -177,6 +203,10 @@ const sub = await client.subscription.create({
 ```
 
 ## Discovery Integration
+
+### Payment Discovery Draft
+
+The IETF [`draft-payment-discovery`](https://paymentauth.org/) defines a standard way for services to advertise their payment terms. Clients can discover costs and supported methods before making requests, enabling autonomous budgeting decisions.
 
 ### MCP Server Cards
 
@@ -246,14 +276,15 @@ const data = await fetch("https://api.example.com/premium-data")
 | Aspect | x402 | MPP |
 |---|---|---|
 | Developed by | Coinbase | Tempo Labs + Stripe |
-| Standardization | Whitepaper | IETF proposal |
-| Payment methods | USDC on Base (primary) | Stablecoins, cards, Lightning, Solana, Stellar, custom |
-| Sessions | No | Yes (payment channels) |
-| Subscriptions | No | Yes |
+| Standardization | Whitepaper | IETF draft (`draft-ryan-httpauth-payment`) |
+| Auth scheme | Custom JSON body | `WWW-Authenticate: Payment` (IANA registered) |
+| Payment methods | USDC on Base (primary) | 8 methods: Tempo, Stripe, EVM, Lightning, Solana, Stellar, Hedera, RedotPay |
+| Sessions | No | Yes (Lightning, Tempo) |
+| Subscriptions | No | Yes (Tempo) |
 | SDK languages | JS/TS | TypeScript, Python, Rust, Go, Ruby |
 | Framework support | Express | Express, Next.js, Elysia, Hono, FastAPI, Axum, Rack |
-| Discovery | Inline in 402 | OpenAPI + inline |
-| MCP integration | Payment field in Server Card | Full MCP transport + middleware |
+| Discovery | Inline in 402 | `draft-payment-discovery` + OpenAPI |
+| MCP integration | Payment field in Server Card | `draft-payment-transport-mcp` (JSON-RPC + MCP) |
 
 ## Relationship to MCP
 
@@ -264,4 +295,23 @@ MCP Server → registerTool() + payment middleware
 Client     → 402 → pay → retry with credential → tool result
 ```
 
-MPP provides an official MCP transport for payment-gated JSON-RPC tool calls. The MCP transport maps Challenges, Credentials, and Receipts to MCP protocol messages, enabling payment without leaving the MCP protocol.
+### MCP Transport (IETF Draft)
+
+The IETF [`draft-payment-transport-mcp`](https://paymentauth.org/) defines a JSON-RPC and MCP transport for MPP. It maps Challenges, Credentials, and Receipts to MCP protocol messages, enabling payment without leaving the MCP protocol:
+
+```
+MCP Request (tool call)
+  ↓
+MCP Response (402: Payment required)
+  → JSON-RPC error with Challenge embedded
+  ↓
+MCP Request (retry with Credential)
+  ↓
+MCP Response (tool result + Receipt)
+```
+
+This transport works with both MCP over HTTP and MCP over JSON-RPC. The MCP transport spec is maintained alongside the core MPP specs at [paymentauth.org](https://paymentauth.org/).
+
+## IANA Registration
+
+The core MPP spec registers the `Payment` HTTP Authentication Scheme with IANA. This means compliant HTTP clients and servers can use the standard `WWW-Authenticate` and `Authorization` header parsing logic rather than custom headers.
