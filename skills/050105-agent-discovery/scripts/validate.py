@@ -14,6 +14,7 @@ REQUIRED_REFERENCES = [
     "references/agent-skills-discovery.md",
     "references/mcp-server-cards.md",
     "references/progressive-disclosure.md",
+    "references/oauth-protected-resource.md",
 ]
 
 
