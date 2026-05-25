@@ -1,6 +1,8 @@
 ---
 name: 010114-stripe-integration
 description: Stripe payment integration — API selection (Checkout Sessions, PaymentIntents, Connect), billing/subscriptions, Treasury accounts, CLI tools, and migration from deprecated APIs.
+license: MIT
+compatibility: Requires Node.js 20+ or Bun 1.2+ and internet access
 ---
 
 # Stripe Integration

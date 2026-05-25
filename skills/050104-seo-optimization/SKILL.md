@@ -1,6 +1,7 @@
 ---
 name: 050104-seo-optimization
 description: "Technical SEO optimization: XML Sitemaps protocol, robots.txt, metadata, Open Graph, canonical URLs, structured data (JSON-LD), search engine submission, AI agent content negotiation."
+license: MIT
 ---
 
 # SEO Optimization

@@ -1,6 +1,8 @@
 ---
 name: 030103-lancedb-fulltext
 description: LanceDB full-text search — BM25 indexing, FTS querying, fuzzy search, phrase queries, field boosting, and boolean search.
+license: MIT
+compatibility: Requires Python 3.10+ with lancedb and tantivy
 ---
 
 # Full-Text Search

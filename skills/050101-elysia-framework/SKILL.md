@@ -1,6 +1,8 @@
 ---
 name: 050101-elysia-framework
 description: Elysia API framework patterns — plugin pipeline, controller conventions, auto-routing, auth macro, TypeBox models, and multi-tier API keys.
+license: MIT
+compatibility: Requires Bun 1.2+
 ---
 
 # Elysia API Patterns

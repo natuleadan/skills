@@ -1,6 +1,7 @@
 ---
 name: 010110-clean-architecture
 description: Clean Architecture layer ordering and strict inward dependency flow for web applications. Domain → Application → Infrastructure → Actions → UI.
+license: MIT
 ---
 
 # Clean Architecture

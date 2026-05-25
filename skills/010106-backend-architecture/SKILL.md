@@ -1,6 +1,7 @@
 ---
 name: 010106-backend-architecture
 description: Backend architecture standards — typed error hierarchies, structured API responses, domain module layout, service/repository layering, env sanitization.
+license: MIT
 ---
 
 # Backend Architecture Standards

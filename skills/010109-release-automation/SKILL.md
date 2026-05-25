@@ -1,6 +1,7 @@
 ---
 name: 010109-release-automation
 description: Semantic version mapping, semantic-release automation, post-release workflow, and release configuration for conventional commits.
+license: MIT
 ---
 
 # Release Automation

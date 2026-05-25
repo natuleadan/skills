@@ -1,6 +1,7 @@
 ---
 name: 050105-agent-discovery
 description: "Agent and service discovery via well-known URIs: Agent Skills Discovery, MCP Server Cards, progressive disclosure, integrity verification."
+license: MIT
 ---
 
 # Agent & Service Discovery

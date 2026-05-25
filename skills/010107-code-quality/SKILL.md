@@ -1,6 +1,7 @@
 ---
 name: 010107-code-quality
 description: Testing best practices (vitest, TDD, coverage) and security rules (secrets, validation, XSS, injection, CORS).
+license: MIT
 ---
 
 # Code Quality Standards

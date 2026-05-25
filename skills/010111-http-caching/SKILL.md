@@ -1,6 +1,7 @@
 ---
 name: 010111-http-caching
 description: Three-tier caching architecture — browser, runtime, and distributed cache. Pipeline batching, atomic transactions, invalidation patterns.
+license: MIT
 ---
 
 # Caching Strategies

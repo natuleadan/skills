@@ -1,6 +1,7 @@
 ---
 name: 080103-ux-standards
 description: "UX standards: WCAG accessibility, touch interaction, form UX, navigation, UX writing, cognitive load. Heuristic evaluation and critique methodology."
+license: MIT
 ---
 
 # UX Standards

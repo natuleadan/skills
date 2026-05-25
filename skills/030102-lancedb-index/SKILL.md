@@ -1,6 +1,8 @@
 ---
 name: 030102-lancedb-index
 description: LanceDB vector index types (IVF, HNSW, PQ, RQ), quantization techniques, reindexing strategies, and performance tuning.
+license: MIT
+compatibility: Requires Python 3.10+ with lancedb
 ---
 
 # Vector Indexing & Optimization

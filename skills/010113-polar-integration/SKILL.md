@@ -1,6 +1,8 @@
 ---
 name: 010113-polar-integration
 description: Polar.sh payment integration — product sync, checkout sessions, webhooks, schema design, multi-currency, MoR model, sandbox testing, and API reference.
+license: MIT
+compatibility: Requires Node.js 20+ or Bun 1.2+ and internet access
 ---
 
 # Polar.sh Payment Integration

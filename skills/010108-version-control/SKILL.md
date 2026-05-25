@@ -1,6 +1,7 @@
 ---
 name: 010108-version-control
 description: Conventional commit format, git staging safety, disaster recovery with git reflog, and commit message best practices.
+license: MIT
 ---
 
 # Git Commits

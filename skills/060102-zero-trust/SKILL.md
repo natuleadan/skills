@@ -1,6 +1,7 @@
 ---
 name: 060102-zero-trust
 description: Zero Trust authentication pattern — validate identity once at entry, propagate via userRole, never trust client-provided role data.
+license: MIT
 ---
 
 # Zero Trust Authentication

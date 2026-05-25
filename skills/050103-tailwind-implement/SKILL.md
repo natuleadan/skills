@@ -1,6 +1,7 @@
 ---
 name: 050103-tailwind-implement
 description: "Tailwind CSS v4 CSS-first configuration and shadcn/ui component composition patterns. CVA factories, styling rules, form patterns, icon discipline, Base vs Radix API."
+license: MIT
 ---
 
 # Tailwind CSS v4 & shadcn/ui Composition

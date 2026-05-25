@@ -1,6 +1,8 @@
 ---
 name: 070101-prisma-database
 description: Prisma 7 setup with PostgreSQL driver adapters and Better Auth schema models (User, Session, Account, Verification).
+license: MIT
+compatibility: Requires Node.js 20+ or Bun 1.2+
 ---
 
 # Prisma + Database Setup

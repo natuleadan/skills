@@ -1,6 +1,8 @@
 ---
 name: 030101-lancedb-search
 description: LanceDB vector search fundamentals — distance metrics, ANN indexing, embeddings, similarity search patterns, and performance tuning.
+license: MIT
+compatibility: Requires Python 3.10+ with lancedb and numpy
 ---
 
 # Vector Search Core

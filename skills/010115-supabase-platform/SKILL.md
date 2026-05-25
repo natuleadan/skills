@@ -1,6 +1,8 @@
 ---
 name: 010115-supabase-platform
 description: Supabase platform — Row Level Security, Edge Functions, Realtime patterns, Storage signed URLs, PostgreSQL schema design, and anti-patterns.
+license: MIT
+compatibility: Requires Node.js 20+ or Bun 1.2+ and internet access
 ---
 
 # Supabase Platform

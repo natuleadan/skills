@@ -1,6 +1,7 @@
 ---
 name: 080101-design-foundations
 description: "Design foundations: color theory, token hierarchy, brand vs product registers, theming decisions. OKLCH color space, color strategies, absolute bans, slop test."
+license: MIT
 ---
 
 # Design Foundations

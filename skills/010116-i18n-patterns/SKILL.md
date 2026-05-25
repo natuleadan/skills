@@ -1,6 +1,7 @@
 ---
 name: 010116-i18n-patterns
 description: Internationalization patterns — RTL support, safe translation access, language propagation, LangProvider, and database-driven language configuration.
+license: MIT
 ---
 
 # Internationalization (i18n)

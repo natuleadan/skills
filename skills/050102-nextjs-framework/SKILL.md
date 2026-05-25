@@ -1,6 +1,8 @@
 ---
 name: 050102-nextjs-framework
 description: Next.js 16 framework patterns — async APIs, server components, React Compiler, routing conventions, caching strategy, metadata SEO, performance optimization, and anti-patterns checklist.
+license: MIT
+compatibility: Requires Node.js 20+ or Bun 1.2+
 ---
 
 # Next.js 16 Framework

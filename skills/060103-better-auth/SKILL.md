@@ -1,6 +1,7 @@
 ---
 name: 060103-better-auth
 description: Better Auth integration for Next.js — setup, API endpoints, client SDK, and React Context provider for session management.
+license: MIT
 ---
 
 # Better Auth

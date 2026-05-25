@@ -1,6 +1,8 @@
 ---
 name: 040101-docker-deploy
 description: Docker deployment patterns for web applications — multi-stage builds, environment management, CI/CD integration, and self-hosting strategies.
+license: MIT
+compatibility: Requires Docker and docker-compose
 ---
 
 # Docker Deployment Patterns
