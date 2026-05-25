@@ -1,7 +1,7 @@
 ---
 name: 010104-skill-creator
 license: MIT
-description: Guide for creating AI agent skills from scratch. Covers SKILL.md frontmatter, directory structure, progressive disclosure, writing patterns, bundled resources, testing with evals, benchmarking, packaging, distribution, and repo-level architecture. Use this skill whenever the user asks about creating a new skill, writing a SKILL.md, structuring a skill directory, setting up eval tests for a skill, packaging a skill for distribution, or understanding the skill format. Also trigger when the user says "turn this into a skill", "make a skill for X", or "how do I create a skill". Do NOT trigger for using existing skills — only for creating new ones.
+description: Creates AI agent skills from scratch — SKILL.md frontmatter, directory structure, progressive disclosure, evals, and distribution.
 ---
 
 # Skill Creator Guide

@@ -1,7 +1,7 @@
 ---
 name: 010103-package-operations
 license: MIT
-description: "Day-to-day package management operations for npm, pnpm, and bun: install, update, audit, publish, outdated, doctor, and dependency troubleshooting. Use this skill whenever the user asks about managing dependencies, updating packages, running npm audit, pnpm audit, bun pm audit, publishing a package with npm publish/pnpm publish/bun publish, checking outdated packages with npm outdated/pnpm outdated/bun outdated, using npm doctor/pnpm doctor, running npm ci/pnpm install --frozen-lockfile/bun install --frozen-lockfile, using npm ls/pnpm ls/bun pm ls to inspect dependency trees, resolving version conflicts with overrides or packageExtensions, or using npm/pnpm/bun commands beyond initial setup. Do NOT trigger for initial toolchain installation (use 010102-install-and-setup) or supply chain security hardening (use 010101-package-security)."
+description: "Day-to-day package management for npm, pnpm, and bun — install, update, audit, publish, dependency inspection, and version conflict resolution."
 ---
 
 # Package Operations

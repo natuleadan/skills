@@ -2,7 +2,7 @@
 name: 020101-contact-crm
 license: MIT
 compatibility: Requires Python 3.8+ with pandas
-description: "Pattern for building a contact-product-organization database using CSV files with UUID-based relational linking. Use this skill whenever the user needs to manage business contacts, suppliers, organizations, and products with a lightweight relational pattern using only CSV files (no SQL database), implement phone validation (via phonenumbers), validate cross-CSV references (organization_id, product_ids), detect fuzzy duplicates, or auto-export to PDF and XLSX. Also trigger when the user asks for a CRM in Python, contact management system, product catalog linked to contacts, or organization hierarchy with multiple contacts per org. Do NOT trigger for general database design unrelated to CSV contact management."
+description: "Builds a contact-product-organization CRM using CSV files with UUID linking, phone validation, and auto-export to PDF and XLSX."
 ---
 
 # Contact CRM

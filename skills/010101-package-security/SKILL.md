@@ -1,7 +1,7 @@
 ---
 name: 010101-package-security
 license: MIT
-description: Guide for securing npm, pnpm, and bun against supply chain attacks. Use this skill whenever the user mentions package manager security, supply chain attacks, min-release-age, minimumReleaseAge, ignore-scripts, allowBuilds, trustPolicy, blockExoticSubdeps, lockfile enforcement, npm ci, frozen-lockfile, postinstall blocking, version pinning, provenance, dependency audit, cooldown periods, exotic scanning, overrides, dependency confusion, scoped registries, save-exact, engine-strict, engines, packageManager, Corepack, trustedDependencies, allowedVersions, neverBuiltDependencies, packageExtensions, npm sbom, SBOM, lockfile review, or automated security configuration — for any of npm, pnpm, or bun. Also trigger when the user asks about supply chain risk mitigation for JS/TS packages, even if they don't explicitly name a specific package manager. Do NOT trigger for general package management questions that don't involve security hardening.
+description: Secures npm, pnpm, and bun against supply chain attacks — lockfile enforcement, provenance, version pinning, dependency audit, and script blocking.
 ---
 
 # Package Manager Security

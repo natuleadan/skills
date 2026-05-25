@@ -2,7 +2,7 @@
 name: 010102-install-toolchain
 license: MIT
 compatibility: Requires Node.js 18+ and npm (ships with Node.js)
-description: "Guide for installing and configuring JavaScript/TypeScript package managers: npm (comes with Node.js), pnpm (via npm), and bun (via pnpm global). Use this skill whenever the user asks about setting up a Node.js development environment from scratch, installing npm/pnpm/bun, configuring PATH for globally installed packages, fixing command not found errors after installation, using nvm or fnm to manage Node.js versions, or verifying toolchain versions with node -v/npm -v/pnpm -v/bun -v. Also trigger when the user wants to know the recommended order to install these tools, or how to set up a new machine for JavaScript/TypeScript development. Do NOT trigger for package management tasks that don't involve initial setup or installation."
+description: "Installs and configures JavaScript toolchain — npm, pnpm, bun, Node.js version managers, and PATH setup for new development environments."
 ---
 
 # Package Manager Install & Setup
