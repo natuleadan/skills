@@ -34,6 +34,7 @@ Format: `DDCCSS-word-word` (6 digits, exactly 2 words after the code, each ≥4 
 | | | `050102-nextjs-framework` | Next.js 16 async APIs, Compiler, App Router, caching, SEO, anti-patterns |
 | | `0502-patterns` | `050103-tailwind-implement` | Tailwind v4 CSS-first config, shadcn component composition, CVA patterns, styling rules |
 | | `0503-seo` | `050104-seo-optimization` | XML Sitemaps protocol, robots.txt, metadata, Open Graph, canonical URLs, JSON-LD structured data |
+| | `0504-discovery` | `050105-agent-discovery` | Agent and service discovery via well-known URIs: Agent Skills Discovery, MCP Server Cards |
 | | | `060102-zero-trust` | Zero Trust auth: single validation, role propagation, no client trust |
 | | | `060103-better-auth` | Better Auth integration: setup, API endpoints, client SDK, session |
 | `07-data` | `0701-database` | `070101-prisma-database` | Prisma 7 setup with PostgreSQL adapter and Better Auth schema models |

@@ -6,7 +6,7 @@
 <p align="center"><strong>Agent skills for AI coding agents across 20 domains of human knowledge</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Count-34-8B5CF6?style=for-the-badge" alt="34 skills" />
+  <img src="https://img.shields.io/badge/Count-35-8B5CF6?style=for-the-badge" alt="35 skills" />
   <img src="https://img.shields.io/badge/Domains-20-blue?style=for-the-badge" alt="20 domains" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License" /></a>
   <br />
@@ -21,7 +21,7 @@ Our [Skills Index](SKILLS.md) lists the complete catalog with domain, category, 
 
 ## 2. Available Skills
 
-34 skills across 8 active domains: programming, business, artificial intelligence, devops, web, security, data, and design. 12 additional domains are reserved for future expansion.
+35 skills across 8 active domains: programming, business, artificial intelligence, devops, web, security, data, and design. 12 additional domains are reserved for future expansion.
 
 See the full catalog: [Skills Index](SKILLS.md)
 
@@ -31,7 +31,7 @@ See the full catalog: [Skills Index](SKILLS.md)
 
 ## 4. Project Status
 
-Eight domains are active: `01-programming` (16 skills), `02-business` (1), `03-artificial` (4), `04-devops` (1), `05-web` (4), `06-security` (3), `07-data` (1), and `08-design` (4). Domains `09` through `20` are reserved for future expansion.
+Eight domains are active: `01-programming` (16 skills), `02-business` (1), `03-artificial` (4), `04-devops` (1), `05-web` (5), `06-security` (3), `07-data` (1), and `08-design` (4). Domains `09` through `20` are reserved for future expansion.
 
 Every push and pull request is automatically validated via GitHub Actions to ensure all skills remain compliant.
 

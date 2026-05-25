@@ -1,0 +1,15 @@
+{
+  "name": "agent-discovery",
+  "version": "1.0.0",
+  "description": "Agent and service discovery via well-known URIs: Agent Skills Discovery, MCP Server Cards, progressive disclosure, integrity verification, archive distribution.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "abstract": "Agent and service discovery via well-known URIs: Agent Skills Discovery v0.2.0, MCP Server Cards SEP-2127, progressive disclosure pattern, integrity verification.",
+  "tags": ["well-known", "agent-discovery", "mcp", "server-cards", "skills-discovery", "progressive-disclosure", "rfc-8615"],
+  "references": [
+    "references/well-known-overview.md",
+    "references/agent-skills-discovery.md",
+    "references/mcp-server-cards.md",
+    "references/progressive-disclosure.md"
+  ]
+}
