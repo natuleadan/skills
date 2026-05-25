@@ -1,5 +1,5 @@
 ---
-name: 010504-server-actions
+name: 010504-web-server-actions
 description: Next.js Server Actions patterns — form handling, auth validation, typed returns, redirects, error handling, and client component usage.
 ---
 
