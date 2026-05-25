@@ -1,0 +1,17 @@
+{
+  "name": "stripe-integration",
+  "version": "1.0.0",
+  "abstract": "Stripe payment integration: API selection (Checkout Sessions, PaymentIntents, Connect), billing/subscriptions, Treasury accounts, CLI tools, and migration from deprecated APIs.",
+  "description": "Stripe integration guide covering payments, billing, connect platforms, treasury, and CLI tools.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["stripe", "payments", "checkout", "connect", "billing", "treasury", "integration"],
+  "references": [
+    "references/payments.md",
+    "references/billing.md",
+    "references/connect.md",
+    "references/treasury.md",
+    "references/install.md",
+    "references/projects-cli.md"
+  ]
+}

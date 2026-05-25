@@ -17,6 +17,7 @@ Format: `DDCCSS-word-word` (6 digits, exactly 2 words after the code, each ≥4 
 | | | `010107-code-quality` | Testing (vitest) and security rules (secrets, XSS, injection, CORS) |
 | | | `010108-typescript-rules` | TypeScript 5.7+ strict mode, generics, mapped types, Zod, migration |
 | | `010109-polar-integration` | Polar.sh payment integration: sync, checkout, webhooks, MoR |
+| | `010110-stripe-integration` | Stripe payments, billing, connect platforms, treasury, CLI tools |
 | | `0104-git` | `010108-version-control` | Conventional commits, safe staging, disaster recovery via git reflog |
 | | | `010109-release-automation` | Semantic-release, version bump mapping, post-release sync |
 | | `0105-architecture` | `010110-clean-architecture` | Clean Architecture layer ordering and strict inward dependency flow |
