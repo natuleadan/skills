@@ -26,6 +26,7 @@ The path after `/.well-known/` is registered with IANA or defined by a specifica
 | `/.well-known/agent-skills/index.json` | Agent Skills Discovery v0.2.0 | Skill directory for AI agents |
 | `/.well-known/mcp/server-card.json` | MCP Server Cards SEP-2127 (draft) | MCP server capability discovery |
 | `/.well-known/nodeinfo` | NodeInfo | Federated service metadata |
+| `/.well-known/ucp` | Universal Commerce Protocol | Commerce capability discovery |
 
 ## Design Principles
 

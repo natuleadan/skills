@@ -5,7 +5,7 @@
   "author": "natuleadan",
   "license": "MIT",
   "abstract": "Agent and service discovery via well-known URIs: Agent Skills Discovery v0.2.0, MCP Server Cards SEP-2127, progressive disclosure pattern, integrity verification.",
-  "tags": ["well-known", "agent-discovery", "mcp", "server-cards", "skills-discovery", "progressive-disclosure", "rfc-8615", "oauth", "openid", "webmcp", "payments"],
+  "tags": ["well-known", "agent-discovery", "mcp", "server-cards", "skills-discovery", "progressive-disclosure", "rfc-8615", "oauth", "openid", "webmcp", "payments", "commerce"],
   "references": [
     "references/well-known-overview.md",
     "references/agent-skills-discovery.md",
@@ -15,6 +15,7 @@
     "references/openid-connect-discovery.md",
     "references/webmcp-api.md",
     "references/http-402-payments.md",
-    "references/llm-documentation-pattern.md"
+    "references/llm-documentation-pattern.md",
+    "references/universal-commerce-protocol.md"
   ]
 }

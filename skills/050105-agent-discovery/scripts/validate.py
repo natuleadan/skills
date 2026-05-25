@@ -19,6 +19,7 @@ REQUIRED_REFERENCES = [
     "references/webmcp-api.md",
     "references/http-402-payments.md",
     "references/llm-documentation-pattern.md",
+    "references/universal-commerce-protocol.md",
 ]
 
 
