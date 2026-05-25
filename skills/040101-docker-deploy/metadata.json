@@ -6,5 +6,5 @@
   "license": "MIT",
   "abstract": "Docker deployment patterns: multi-stage builds, env management, CI/CD integration, and self-hosting fallback strategies.",
   "tags": ["docker", "deployment", "devops", "ci-cd", "self-host", "container"],
-  "references": ["references/docker-patterns.md"]
+  "references": ["references/docker-patterns.md", "references/use-cases.md", "references/dockerfile-reference.md"]
 }

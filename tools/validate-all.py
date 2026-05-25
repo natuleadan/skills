@@ -230,6 +230,11 @@ def validate_skill(path_str):
         for e in check_compatibility(compat):
             results.append({"type": "error", "msg": e})
 
+    if sk.exists():
+        line_count = len(content.split("\n"))
+        if line_count > 100:
+            results.append({"type": "error", "msg": f"SKILL.md exceeds 100-line limit ({line_count} lines) in {skill_dir} — split content into references/"})
+
     meta_file = skill_dir / "metadata.json"
     if not meta_file.exists():
         results.append({"type": "error", "msg": f"Missing required file: metadata.json in {skill_dir}"})

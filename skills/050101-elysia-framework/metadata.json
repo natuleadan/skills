@@ -6,5 +6,5 @@
   "license": "MIT",
   "abstract": "Elysia API patterns: plugin pipeline, controller conventions, auto-routing, auth macros, TypeBox models, and multi-tier API key configuration.",
   "tags": ["elysia", "api", "bun", "backend", "api-patterns", "auth"],
-  "references": ["references/elysia-plugins.md", "references/api-key-tiers.md"]
+  "references": ["references/elysia-plugins.md", "references/api-key-tiers.md", "references/auto-router.md", "references/response-format.md", "references/auth-macro.md", "references/typebox-models.md"]
 }

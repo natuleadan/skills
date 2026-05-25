@@ -9,6 +9,8 @@
   "references": [
     "references/zero-trust.md",
     "references/role-propagation.md",
-    "references/data-filtering.md"
+    "references/data-filtering.md",
+    "references/implementation-examples.md",
+    "references/quick-reference-good-bad.md"
   ]
 }

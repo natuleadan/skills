@@ -6,5 +6,5 @@
   "license": "MIT",
   "abstract": "Three-tier caching: CDN cache headers, runtime cache, distributed cache, ISR patterns, cache keys with revalidation.",
   "tags": ["caching", "cache-patterns", "ttl", "invalidation", "redis", "runtime-cache", "cdn", "isr"],
-  "references": ["references/caching-patterns.md", "references/cache-keys-revalidation.md", "references/cdn-cache-headers.md"]
+  "references": ["references/caching-patterns.md", "references/cache-keys-revalidation.md", "references/cdn-cache-headers.md", "references/runtime-cache-nextjs.md", "references/caching-principles.md"]
 }
