@@ -1,5 +1,5 @@
 ---
-name: 050106-security
+name: 010503-security
 description: Multi-layer web security patterns — rate limiting, Content Security Policy, security headers, CORS, IP deny lists, and graceful degradation.
 ---
 

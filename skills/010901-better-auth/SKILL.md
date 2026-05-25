@@ -1,5 +1,5 @@
 ---
-name: 050201-better-auth
+name: 010901-better-auth
 description: Better Auth integration for Next.js — setup, API endpoints, client SDK, and React Context provider for session management.
 ---
 

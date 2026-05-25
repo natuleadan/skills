@@ -1,5 +1,5 @@
 ---
-name: 050104-elysia-patterns
+name: 010701-elysia-patterns
 description: Elysia API framework patterns — plugin pipeline, controller conventions, auto-routing, auth macro, TypeBox models, and multi-tier API keys.
 ---
 

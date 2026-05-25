@@ -1,5 +1,5 @@
 ---
-name: 050404-hybrid-multivector
+name: 011104-lancedb-hybrid-multivector
 description: LanceDB hybrid search (vector + FTS with RRF), multivector search (ColBERT late interaction), and metadata filtering patterns.
 ---
 

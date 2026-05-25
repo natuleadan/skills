@@ -1,5 +1,5 @@
 ---
-name: 050102-clean-arch
+name: 010502-clean-arch
 description: Clean Architecture layer ordering and strict inward dependency flow for web applications. Domain → Application → Infrastructure → Actions → UI.
 ---
 

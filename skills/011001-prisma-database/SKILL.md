@@ -1,5 +1,5 @@
 ---
-name: 050301-prisma-database
+name: 011001-prisma-database
 description: Prisma 7 setup with PostgreSQL driver adapters and Better Auth schema models (User, Session, Account, Verification).
 ---
 

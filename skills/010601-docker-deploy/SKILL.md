@@ -1,5 +1,5 @@
 ---
-name: 050103-docker-deploy
+name: 010601-docker-deploy
 description: Docker deployment patterns for web applications — multi-stage builds, environment management, CI/CD integration, and self-hosting strategies.
 ---
 

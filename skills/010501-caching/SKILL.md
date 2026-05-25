@@ -1,5 +1,5 @@
 ---
-name: 050101-caching
+name: 010501-caching
 description: Three-tier caching architecture — browser, runtime, and distributed cache. Pipeline batching, atomic transactions, invalidation patterns.
 ---
 

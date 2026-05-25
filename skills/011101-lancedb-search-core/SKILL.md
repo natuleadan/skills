@@ -1,5 +1,5 @@
 ---
-name: 050401-search-core
+name: 011101-lancedb-search-core
 description: LanceDB vector search fundamentals — distance metrics, ANN indexing, embeddings, similarity search patterns, and performance tuning.
 ---
 

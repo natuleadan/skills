@@ -1,5 +1,5 @@
 ---
-name: 050403-fts-search
+name: 011103-lancedb-fts-search
 description: LanceDB full-text search — BM25 indexing, FTS querying, fuzzy search, phrase queries, field boosting, and boolean search.
 ---
 

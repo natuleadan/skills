@@ -1,5 +1,5 @@
 ---
-name: 050105-nextjs-compiler
+name: 010801-nextjs-compiler
 description: Next.js SWC compiler optimization options — removeConsole, optimizePackageImports, styled-components, relay, module transpilation, and build-time defines.
 ---
 

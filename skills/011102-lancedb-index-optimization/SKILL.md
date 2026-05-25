@@ -1,5 +1,5 @@
 ---
-name: 050402-index-optimization
+name: 011102-lancedb-index-optimization
 description: LanceDB vector index types (IVF, HNSW, PQ, RQ), quantization techniques, reindexing strategies, and performance tuning.
 ---
 

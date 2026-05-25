@@ -1,5 +1,5 @@
 ---
-name: 050108-zero-trust
+name: 010505-zero-trust
 description: Zero Trust authentication pattern — validate identity once at entry, propagate via userRole, never trust client-provided role data.
 ---
 
