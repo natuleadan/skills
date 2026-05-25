@@ -1,6 +1,6 @@
 ---
 name: 050104-seo-optimization
-description: "Technical SEO optimization: XML Sitemaps protocol, robots.txt, metadata, Open Graph, canonical URLs, structured data (JSON-LD), search engine submission."
+description: "Technical SEO optimization: XML Sitemaps protocol, robots.txt, metadata, Open Graph, canonical URLs, structured data (JSON-LD), search engine submission, AI agent content negotiation."
 ---
 
 # SEO Optimization
@@ -16,6 +16,7 @@ Technical SEO covers how search engines discover, crawl, and index content. This
 | HTML meta, Open Graph, Twitter Cards, canonical, hreflang | [references/metadata-og.md](references/metadata-og.md) |
 | JSON-LD structured data (Organization, WebSite, Article, Product, BreadcrumbList, FAQPage, etc.) | [references/structured-data.md](references/structured-data.md) |
 | Search engine submission, ping, monitoring, incremental strategy | [references/search-submission.md](references/search-submission.md) |
+| AI agent content negotiation, Markdown for Agents, Content Signals, llms.txt | [references/agent-content-negotiation.md](references/agent-content-negotiation.md) |
 
 ## Quick Start
 
