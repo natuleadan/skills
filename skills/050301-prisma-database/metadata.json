@@ -1,0 +1,10 @@
+{
+  "name": "prisma-database",
+  "version": "1.0.0",
+  "abstract": "Prisma 7 setup with PostgreSQL driver adapters, configuration, client instantiation, and Better Auth schema models (User, Session, Account, Verification).",
+  "description": "Prisma 7 database setup with PostgreSQL driver adapters and Better Auth Prisma schema models.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["prisma", "database", "postgresql", "orm", "schema", "better-auth"],
+  "references": ["references/setup.md", "references/schema-models.md"]
+}

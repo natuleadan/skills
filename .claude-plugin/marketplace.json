@@ -41,7 +41,8 @@
         "typescript",
         "testing",
         "accessibility",
-        "coding-standards"
+        "coding-standards",
+        "prisma"
       ],
       "category": "Programming",
       "tags": [
@@ -66,7 +67,8 @@
         "typescript",
         "testing",
         "a11y",
-        "coding-standards"
+        "coding-standards",
+        "prisma"
       ],
       "strict": false,
       "skills": [
@@ -86,7 +88,8 @@
         "./skills/050201-better-auth",
         "./skills/010301-frontend-coding",
         "./skills/010302-backend-arch",
-        "./skills/010303-code-quality"
+        "./skills/010303-code-quality",
+    "./skills/050301-prisma-database"
       ]
     }
   ]

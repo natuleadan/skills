@@ -6,7 +6,7 @@
 <p align="center"><strong>Agent skills for AI coding agents across multiple domains</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Count-17-8B5CF6?style=for-the-badge" alt="17 skills" />
+  <img src="https://img.shields.io/badge/Count-18-8B5CF6?style=for-the-badge" alt="18 skills" />
   <img src="https://img.shields.io/badge/Domains-5-blue?style=for-the-badge" alt="5 domains" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License" /></a>
   <br />
@@ -24,16 +24,16 @@ Skills follow the [Agent Skills](https://agentskills.io/) format and are install
 Skills use numeric codes to encode a three-level hierarchy: domain, category, and skill. Each skill lives at `skills/<skill-code>-<name>/` with a `SKILL.md` file.
 
 | Domain | Category | Skill | Description |
-|---|---|---|---|---|
+|---|---|---|---|
 | `01-programming` | `0101-node` | `010101-package-security` | Hardens npm, pnpm, and bun against supply chain attacks |
 | | | `010102-install-and-setup` | Installs and configures the JS/TS toolchain from scratch |
 | | | `010103-package-ops` | Day-to-day package management: install, update, audit, publish |
 | | `0102-agents` | `010201-skill-creator` | Guides creation of new Agent Skills |
-| `01-programming` | `0103-standards` | `010301-frontend-coding` | React, accessibility, and frontend performance best practices |
+| | `0103-standards` | `010301-frontend-coding` | React, accessibility, and frontend performance best practices |
 | | | `010302-backend-arch` | Error handling, module structure, env management, API patterns |
 | | | `010303-code-quality` | TypeScript strict patterns, testing (vitest), and security rules |
+| `04-business` | `0401-crm` | `040101-contact-crm` | Three-entity CSV contact management with UUID linking, phone validation, and auto-export |
 | `05-architecture` | `0501-web-arch` | `050101-caching` | Three-tier caching strategy: browser/CDN, runtime cache, distributed cache |
-| | `0502-auth` | `050201-better-auth` | Better Auth integration: setup, API endpoints, client SDK, session provider |
 | | | `050102-clean-arch` | Clean Architecture layer ordering and strict inward dependency flow |
 | | | `050103-docker-deploy` | Docker multi-stage builds, env mgmt, CI/CD integration |
 | | | `050104-elysia-patterns` | Elysia API framework: plugins, controllers, auto-routing, auth macros |
@@ -41,6 +41,8 @@ Skills use numeric codes to encode a three-level hierarchy: domain, category, an
 | | | `050106-security` | Multi-layer security: rate limiting, CSP, security headers, CORS |
 | | | `050107-server-actions` | Server Actions: form handling, auth, typed returns, error patterns |
 | | | `050108-zero-trust` | Zero Trust auth: single validation, role propagation, no client trust |
+| | `0502-auth` | `050201-better-auth` | Better Auth integration: setup, API endpoints, client SDK, session provider |
+| | `0503-database` | `050301-prisma-database` | Prisma 7 setup with PostgreSQL adapter and Better Auth schema models |
 
 ## 3. Technology Stack
 
@@ -53,13 +55,13 @@ Skills use numeric codes to encode a three-level hierarchy: domain, category, an
 
 ## 4. Project Status
 
-**Active domains:** `01-programming` (4 → 7 skills), `04-business` (1 skill), and `05-architecture` (9 skills).
+**Active domains:** `01-programming` (7 skills), `04-business` (1 skill), and `05-architecture` (10 skills).
 
 | Domain | Skills |
 |---|---|
 | `01-programming` | 010101-package-security, 010102-install-and-setup, 010103-package-ops, 010201-skill-creator, 010301-frontend-coding, 010302-backend-arch, 010303-code-quality |
 | `04-business` | 040101-contact-crm — CSV-based CRM with Org→Contact→Product linking |
-| `05-architecture` | 050101-caching, 050102-clean-arch, 050103-docker-deploy, 050104-elysia-patterns, 050105-nextjs-compiler, 050106-security, 050107-server-actions, 050108-zero-trust, 050201-better-auth |
+| `05-architecture` | 050101-caching, 050102-clean-arch, 050103-docker-deploy, 050104-elysia-patterns, 050105-nextjs-compiler, 050106-security, 050107-server-actions, 050108-zero-trust, 050201-better-auth, 050301-prisma-database |
 
 **Placeholder domains:** `02-biology` and `03-cooking` — ready for future skills. Add a new domain by creating `skills/NN-name/` with a `.gitkeep` and registering a new plugin in `marketplace.json`.
 
