@@ -1,0 +1,10 @@
+{
+  "name": "docker-deployment",
+  "version": "1.0.0",
+  "description": "Docker deployment patterns for web applications: multi-stage builds, environment management, CI/CD integration, and self-hosting fallback strategies.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "abstract": "Docker deployment patterns: multi-stage builds, env management, CI/CD integration, and self-hosting fallback strategies.",
+  "tags": ["docker", "deployment", "devops", "ci-cd", "self-host", "container"],
+  "references": ["references/docker-patterns.md"]
+}

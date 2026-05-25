@@ -6,8 +6,8 @@
 <p align="center"><strong>Agent skills for AI coding agents across multiple domains</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Count-5-8B5CF6?style=for-the-badge" alt="5 skills" />
-  <img src="https://img.shields.io/badge/Domains-4-blue?style=for-the-badge" alt="4 domains" />
+  <img src="https://img.shields.io/badge/Count-13-8B5CF6?style=for-the-badge" alt="13 skills" />
+  <img src="https://img.shields.io/badge/Domains-5-blue?style=for-the-badge" alt="5 domains" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License" /></a>
   <br />
   <a href="https://skills.sh/natuleadan/skills"><img src="https://skills.sh/b/natuleadan/skills" alt="Skills" /></a>
@@ -15,7 +15,7 @@
 
 ## 1. What is Natuleadan Skills?
 
-A collection of agent skills for AI coding agents spanning multiple domains. Skills are packaged instructions and scripts that extend agent capabilities. Currently focused on programming (Node.js) and business CRM, with biology and cooking domains planned.
+A collection of agent skills for AI coding agents spanning multiple domains. Skills are packaged instructions and scripts that extend agent capabilities. Currently focused on programming, software architecture, and business CRM, with biology and cooking domains planned.
 
 Skills follow the [Agent Skills](https://agentskills.io/) format and are installable via `npx skills add`.
 
@@ -30,6 +30,14 @@ Skills use numeric codes to encode a three-level hierarchy: domain, category, an
 | | | `010103-package-ops` | Day-to-day package management: install, update, audit, publish |
 | | `0102-agents` | `010201-skill-creator` | Guides creation of new Agent Skills |
 | `04-business` | `0401-crm` | `040101-contact-crm` | Three-entity CSV contact management with UUID linking, phone validation, and auto-export |
+| `05-architecture` | `0501-web-arch` | `050101-caching` | Three-tier caching strategy: browser/CDN, runtime cache, distributed cache |
+| | | `050102-clean-arch` | Clean Architecture layer ordering and strict inward dependency flow |
+| | | `050103-docker-deploy` | Docker multi-stage builds, env mgmt, CI/CD integration |
+| | | `050104-elysia-patterns` | Elysia API framework: plugins, controllers, auto-routing, auth macros |
+| | | `050105-nextjs-compiler` | SWC compiler optimization: removeConsole, tree-shaking, bundle size |
+| | | `050106-security` | Multi-layer security: rate limiting, CSP, security headers, CORS |
+| | | `050107-server-actions` | Server Actions: form handling, auth, typed returns, error patterns |
+| | | `050108-zero-trust` | Zero Trust auth: single validation, role propagation, no client trust |
 
 ## 3. Technology Stack
 
@@ -42,12 +50,13 @@ Skills use numeric codes to encode a three-level hierarchy: domain, category, an
 
 ## 4. Project Status
 
-**Active domains:** `01-programming` (4 skills) and `04-business` (1 skill).
+**Active domains:** `01-programming` (4 skills), `04-business` (1 skill), and `05-architecture` (8 skills).
 
 | Domain | Skills |
 |---|---|
 | `01-programming` | 010101-package-security, 010102-install-and-setup, 010103-package-ops, 010201-skill-creator |
 | `04-business` | 040101-contact-crm — CSV-based CRM with Org→Contact→Product linking |
+| `05-architecture` | 050101-caching, 050102-clean-arch, 050103-docker-deploy, 050104-elysia-patterns, 050105-nextjs-compiler, 050106-security, 050107-server-actions, 050108-zero-trust |
 
 **Placeholder domains:** `02-biology` and `03-cooking` — ready for future skills. Add a new domain by creating `skills/NN-name/` with a `.gitkeep` and registering a new plugin in `marketplace.json`.
 

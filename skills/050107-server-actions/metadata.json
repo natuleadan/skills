@@ -1,0 +1,10 @@
+{
+  "name": "server-actions",
+  "version": "1.0.0",
+  "description": "Next.js Server Actions patterns: definition, auth integration, form handling, error handling, typed returns, and best practices for client component usage.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["nextjs", "server-actions", "forms", "backend", "react"],
+  "abstract": "Next.js Server Actions patterns: form handling, auth validation, typed returns, redirects, error handling, and client component usage.",
+  "references": ["references/server-actions.md"]
+}

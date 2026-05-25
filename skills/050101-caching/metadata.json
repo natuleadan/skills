@@ -1,0 +1,10 @@
+{
+  "name": "caching",
+  "version": "1.0.0",
+  "description": "Three-tier caching strategy for web applications: browser/CDN, runtime cache, and distributed cache. Covers TTL strategies, pipeline batching, atomic transactions, and invalidation patterns.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "abstract": "Three-tier caching strategy for web applications: browser/CDN, runtime cache, and distributed cache.",
+  "tags": ["caching", "cache-patterns", "ttl", "invalidation", "redis", "runtime-cache"],
+  "references": ["references/caching-patterns.md"]
+}

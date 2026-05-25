@@ -27,7 +27,15 @@
         "supply-chain-security",
         "crm",
         "contacts",
-        "agent-skills"
+        "architecture",
+        "caching",
+        "docker",
+        "security",
+        "elysia",
+        "clean-architecture",
+        "zero-trust",
+        "server-actions",
+        "nextjs"
       ],
       "category": "Programming",
       "tags": [
@@ -38,7 +46,14 @@
         "security",
         "crm",
         "contacts",
-        "skills"
+        "skills",
+        "architecture",
+        "caching",
+        "docker",
+        "elysia",
+        "nextjs",
+        "zero-trust",
+        "clean-arch"
       ],
       "strict": false,
       "skills": [
@@ -46,7 +61,15 @@
         "./skills/010102-install-and-setup",
         "./skills/010103-package-ops",
         "./skills/010201-skill-creator",
-        "./skills/040101-contact-crm"
+        "./skills/040101-contact-crm",
+        "./skills/050101-caching",
+        "./skills/050102-clean-arch",
+        "./skills/050103-docker-deploy",
+        "./skills/050104-elysia-patterns",
+        "./skills/050105-nextjs-compiler",
+        "./skills/050106-security",
+        "./skills/050107-server-actions",
+        "./skills/050108-zero-trust"
       ]
     }
   ]

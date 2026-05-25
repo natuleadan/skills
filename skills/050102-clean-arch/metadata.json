@@ -1,0 +1,10 @@
+{
+  "name": "clean-architecture",
+  "version": "1.0.0",
+  "description": "Clean Architecture layer ordering and dependency rules for web applications. Defines domain, application, infrastructure, actions, and UI layers with strict inward dependency flow.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "abstract": "Clean Architecture layer ordering with strict inward dependency flow. Defines domain, application, infrastructure, actions, and UI layers.",
+  "tags": ["clean-architecture", "layered-architecture", "ddd", "domain-driven", "software-architecture"],
+  "references": ["references/layers.md"]
+}

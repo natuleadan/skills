@@ -1,0 +1,10 @@
+{
+  "name": "zero-trust-auth",
+  "version": "1.0.0",
+  "description": "Zero Trust authentication pattern for web applications: validate identity once at entry, propagate via userRole parameter, never trust client-provided role data.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["zero-trust", "authentication", "authorization", "security", "rbac"],
+  "abstract": "Zero Trust authentication: validate identity once at entry, propagate via userRole parameter, never accept role from client.",
+  "references": ["references/zero-trust.md"]
+}
