@@ -33,7 +33,7 @@ Format: `DDCCSS-word-word` (6 digits, exactly 2 words after the code, each ≥4 
 | `05-web` | `0501-frameworks` | `050101-elysia-framework` | Elysia API framework: plugins, controllers, auto-routing, auth macros |
 | | | `050102-nextjs-framework` | Next.js 16 async APIs, Compiler, App Router, caching, SEO, anti-patterns |
 | | `0502-patterns` | `050103-tailwind-implement` | Tailwind v4 CSS-first config, shadcn component composition, CVA patterns, styling rules |
-| `06-security` | `0601-auth` | `060101-http-security` | Multi-layer security: rate limiting, CSP, security headers, CORS |
+| | `0503-seo` | `050104-seo-optimization` | XML Sitemaps protocol, robots.txt, metadata, Open Graph, canonical URLs, JSON-LD structured data |
 | | | `060102-zero-trust` | Zero Trust auth: single validation, role propagation, no client trust |
 | | | `060103-better-auth` | Better Auth integration: setup, API endpoints, client SDK, session |
 | `07-data` | `0701-database` | `070101-prisma-database` | Prisma 7 setup with PostgreSQL adapter and Better Auth schema models |

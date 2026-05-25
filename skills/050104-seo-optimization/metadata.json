@@ -1,0 +1,16 @@
+{
+  "name": "seo-optimization",
+  "version": "1.0.0",
+  "description": "Technical SEO optimization: XML Sitemaps protocol, robots.txt, metadata, Open Graph, canonical URLs, structured data (JSON-LD), search engine submission.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "abstract": "Technical SEO: Sitemaps XML protocol, robots.txt, metadata, Open Graph, canonical URLs, JSON-LD structured data, search engine submission.",
+  "tags": ["seo", "itemap", "robots-txt", "open-graph", "canonical", "json-ld", "structured-data", "search-engine"],
+  "references": [
+    "references/sitemaps-protocol.md",
+    "references/robots-txt.md",
+    "references/metadata-og.md",
+    "references/structured-data.md",
+    "references/search-submission.md"
+  ]
+}
