@@ -2,11 +2,19 @@
 
 Defines a mechanism for discovering Agent Skills using the `/.well-known/agent-skills/` path prefix. Skills currently scattered across GitHub repos and docs sites get a predictable discovery endpoint.
 
+## Problem
+
+Agent Skills give AI agents domain-specific capabilities through structured instructions, scripts, and resources. Today, discovering skills requires searching GitHub repositories, reading vendor documentation, following social media links, or manual configuration. There is no standard way to answer: "What skills does example.com publish?"
+
 ## URI Structure
 
 ```
 https://example.com/.well-known/agent-skills/index.json
 ```
+
+Each skill in the index includes a `url` field pointing to its artifact. While publishers conventionally host skill files under `/.well-known/agent-skills/`, the `url` field allows skills at any location (CDN, versioned path, etc.).
+
+Skill names MUST conform to: 1-64 characters, lowercase alphanumeric and hyphens only (`a-z`, `0-9`, `-`), MUST NOT start or end with a hyphen, MUST NOT contain consecutive hyphens.
 
 ## Discovery Index
 
@@ -51,15 +59,34 @@ Publishers MUST provide an index at `/.well-known/agent-skills/index.json`:
 | `url` | Yes | URL to the skill artifact. Resolved per RFC 3986 using the index URL as base. |
 | `digest` | Yes | SHA-256 content digest: `sha256:{64-hex-chars}`. |
 
+> **Note**: In a future version, `url` may become optional for `type: "skill-md"` entries, defaulting to `/.well-known/agent-skills/{name}/SKILL.md`.
+
 ### URL Resolution
 
 - Path-absolute: `/.well-known/agent-skills/code-review/SKILL.md`
 - Absolute: `https://cdn.example.com/v2/skills/code-review/SKILL.md`
 - Relative: `code-review/SKILL.md`
 
+For `type: "archive"`, `url` points to the archive file. Clients SHOULD determine the archive format from the server's `Content-Type` header, falling back to the URL file extension if the header is absent or generic (e.g., `application/octet-stream`).
+
+Clients encountering an unrecognized `type` value SHOULD skip that skill entry and MAY warn the user.
+
 ### Versioning
 
-The `$schema` field identifies the index version. Clients encountering an unrecognized `$schema` SHOULD warn and NOT process the index. If `$schema` is absent, clients treat the index as v0.1.0 for backward compatibility.
+The `$schema` field identifies the index version. Clients encountering an unrecognized `$schema` SHOULD warn and NOT process the index. If `$schema` is absent, clients treat the index as v0.1.0 for backward compatibility. Clients MUST ignore unrecognized fields.
+
+### Backward Compatibility (v0.1.0 → v0.2.0)
+
+The v0.2.0 format is not backward-compatible with v0.1.0. Key differences:
+
+| Aspect | v0.1.0 | v0.2.0 |
+|---|---|---|
+| Version field | `"version": "1.0"` | `$schema` URI |
+| Files list | `files: ["SKILL.md", ...]` with no digests | Removed entirely |
+| Artifact model | Multiple paths per skill | Single artifact (`url` + `digest`) |
+| Entry fields | `files`, `package` | `type`, `url`, `digest` |
+
+Clients MUST check `$schema` to determine how to process the index.
 
 ## Distribution Types
 
@@ -74,10 +101,17 @@ skill-name/
 
 ### type: "archive"
 
-A `.tar.gz` or `.zip` containing the full skill directory:
+A `.tar.gz` or `.zip` containing the full skill directory. Archives SHOULD be in `.tar.gz` or `.zip` format. Clients MUST support at least both. Tradeoffs:
+
+| Format | Pros | Cons |
+|---|---|---|
+| `.tar.gz` | UNIX file permissions, symlinks | No partial download |
+| `.zip` | HTTP range requests for partial SKILL.md read | Limited perm/symlink support |
+
+Archive contents represent the skill directory — files are placed at the archive root, NOT nested inside a wrapper directory:
 
 ```
-archive.tar.gz
+wrangler.tar.gz
 ├── SKILL.md
 ├── scripts/
 │   └── extract.py
@@ -87,7 +121,11 @@ archive.tar.gz
     └── schema.json
 ```
 
-Archives MUST contain SKILL.md at the root. MUST NOT contain path traversal (`..`) or absolute paths.
+Archives MUST contain `SKILL.md` at the root. MUST NOT contain path traversal (`..`) or absolute paths.
+
+### Distribution Guidance
+
+Simple skills (SKILL.md only) SHOULD use `type: "skill-md"`. Archives are intended for skills with supporting files where a single download preserves directory structure, file permissions, and symlinks.
 
 ## Integrity Verification
 
@@ -116,9 +154,13 @@ Clients unpacking archives MUST:
 ## Security Considerations
 
 - **Trust**: Skills contain instructions and executable code. Use only from trusted origins.
-- **Prompt injection**: A malicious SKILL.md can inject instructions. Validate artifacts come from allowlisted domains.
+- **Prompt injection**: A malicious SKILL.md can inject instructions. Validate artifacts come from allowlisted domains before loading into context.
 - **Origin allowlisting**: Maintain a configurable allowlist. Reject unlisted origins unless user explicitly approves.
-- **Script execution**: Clients SHALL NOT execute `scripts/` files by default. Implement a permissions model.
+- **Access control**: Control write access to `/.well-known/agent-skills/` carefully, especially in shared hosting environments.
+- **Script execution**: Clients SHALL NOT execute `scripts/` files by default. Implement a permissions model that only executes bundled scripts when explicitly allowed. Consider sandboxing execution environments, restricting filesystem and network access. Never execute scripts from untrusted origins without user approval.
+- **Digest verification**: Clients MUST verify artifact digests after download. A mismatch indicates tampering or corruption; MUST NOT use unverified content.
+- **Archive safety**: Validate digests before unpacking. Reject path traversal, symlinks resolving outside the skill directory, and decompression bombs.
+- **External references**: Skills fetching external resources introduce additional trust boundaries.
 
 ## HTTP Considerations
 
@@ -131,11 +173,105 @@ Clients unpacking archives MUST:
 
 Servers SHOULD set Cache-Control and CORS headers. Clients MUST handle redirects and respect cache headers.
 
+## Relationship to Existing Specifications
+
+This specification builds on:
+
+- **RFC 2119 / RFC 8174** — Key words for requirement levels (MUST, SHOULD, MAY, etc.)
+- **RFC 3986** — URI resolution (Section 5 for relative URL resolution)
+- **RFC 8615** — Well-Known URIs (`.well-known/` path prefix)
+- **Agent Skills Specification** — Skill format, SKILL.md structure, frontmatter conventions
+
 ## Client Implementation
 
-1. Fetch `/.well-known/agent-skills/index.json`
-2. Check `$schema` against known versions
-3. Compare digests against cache — skip unchanged skills
-4. Download and verify changed/new skill artifacts
-5. Apply progressive disclosure: load metadata → full instructions → resources on demand
-6. Gate script execution behind permissions model
+1. **Fetch index.json** — Retrieve `/.well-known/agent-skills/index.json` to enumerate available skills.
+2. **Check schema version** — Match `$schema` against known URIs. If absent, treat as v0.1.0. SHOULD NOT process an unrecognized `$schema`. MUST ignore unrecognized fields.
+3. **Use digests for caching** — Compare each skill's digest against cached values. If it matches, skip re-downloading.
+4. **Fetch and verify artifacts** — For `type: "skill-md"`, download SKILL.md, compute SHA-256, verify against digest. For `type: "archive"`, download archive, verify digest, unpack and validate structure. For unrecognized `type`, skip and warn.
+5. **Apply progressive disclosure** — Load name + description at discovery. Load SKILL.md on activation. Load resources on demand.
+6. **Cache aggressively** — Respect Cache-Control. Use digests to invalidate cached content. Cache for session duration.
+7. **Gate script execution** — SHALL NOT execute scripts by default. Implement permissions model with sandboxing.
+
+## Examples
+
+### Simple Skill (SKILL.md Only)
+
+```markdown
+---
+name: git-workflow
+description: Follow team Git conventions for branching and commits.
+---
+
+# Git Workflow
+
+Create feature branches from `main`:
+
+```bash
+git checkout -b feature/my-feature main
+```
+
+Commit messages use conventional commits:
+
+```
+feat: add user authentication
+fix: resolve null pointer in login
+```
+```
+
+### Complex Skill (Archive with Resources)
+
+```
+wrangler.tar.gz
+├── SKILL.md
+├── scripts/
+│   └── deploy.sh
+├── references/
+│   ├── COMMANDS.md
+│   └── CONFIGURATION.md
+└── assets/
+    └── wrangler.toml.template
+```
+
+The SKILL.md uses relative links for progressive disclosure:
+
+```markdown
+---
+name: wrangler
+description: Deploy and manage Cloudflare Workers projects.
+---
+
+# Wrangler
+
+Run `scripts/deploy.sh` to deploy. For commands, see [references/COMMANDS.md](references/COMMANDS.md).
+```
+
+### Complete Discovery Index
+
+```json
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "code-review",
+      "type": "skill-md",
+      "description": "Review code for bugs and best practices.",
+      "url": "/.well-known/agent-skills/code-review/SKILL.md",
+      "digest": "sha256:c4d5e6f7..."
+    },
+    {
+      "name": "git-workflow",
+      "type": "skill-md",
+      "description": "Follow team Git conventions.",
+      "url": "/.well-known/agent-skills/git-workflow/SKILL.md",
+      "digest": "sha256:a7b8c9d0..."
+    },
+    {
+      "name": "wrangler",
+      "type": "archive",
+      "description": "Deploy and manage Cloudflare Workers.",
+      "url": "/.well-known/agent-skills/wrangler.tar.gz",
+      "digest": "sha256:f1e2d3c4..."
+    }
+  ]
+}
+```
