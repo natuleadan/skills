@@ -7,7 +7,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Count-24-8B5CF6?style=for-the-badge" alt="24 skills" />
-  <img src="https://img.shields.io/badge/Domains-2-blue?style=for-the-badge" alt="2 domains" />
+  <img src="https://img.shields.io/badge/Domains-20-blue?style=for-the-badge" alt="20 domains" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License" /></a>
   <br />
   <a href="https://skills.sh/natuleadan/skills"><img src="https://skills.sh/b/natuleadan/skills" alt="Skills" /></a>
@@ -15,7 +15,7 @@
 
 ## 1. What is Natuleadan Skills?
 
-A collection of agent skills for AI coding agents spanning multiple domains. Skills are packaged instructions and scripts that extend agent capabilities. Currently focused on programming (Node.js, architecture, vector search) and business CRM, with biology and cooking domains planned.
+A collection of agent skills for AI coding agents spanning 20 domains of human knowledge. Skills are packaged instructions and scripts that extend agent capabilities.
 
 Skills follow the [Agent Skills](https://agentskills.io/) format and are installable via `npx skills add`.
 
@@ -25,30 +25,43 @@ Skills use numeric codes to encode a three-level hierarchy: domain, category, an
 
 | Domain | Category | Skill | Description |
 |---|---|---|---|
-| `01-programming` | `0101-node` | `010101-package-security` | Hardens npm, pnpm, and bun against supply chain attacks |
-| | | `010102-install-and-setup` | Installs and configures the JS/TS toolchain from scratch |
-| | | `010103-package-ops` | Day-to-day package management: install, update, audit, publish |
-| | `0102-agents` | `010201-skill-creator` | Guides creation of new Agent Skills |
-| | `0103-standards` | `010301-frontend-coding` | React, accessibility, and frontend performance best practices |
-| | | `010302-backend-arch` | Error handling, module structure, env management, API patterns |
-| | | `010303-code-quality` | TypeScript strict patterns, testing (vitest), and security rules |
-| | `0104-git` | `010401-git-commits` | Conventional commits, safe staging, disaster recovery via git reflog |
-| | | `010402-release-automation` | Semantic-release, version bump mapping, post-release sync |
-| | `0105-architecture` | `010501-web-caching` | Three-tier caching strategy: browser/CDN, runtime cache, distributed cache |
-| | | `010502-web-clean-arch` | Clean Architecture layer ordering and strict inward dependency flow |
-| | | `010503-web-security` | Multi-layer security: rate limiting, CSP, security headers, CORS |
-| | | `010504-web-server-actions` | Server Actions: form handling, auth, typed returns, error patterns |
-| | | `010505-web-zero-trust` | Zero Trust auth: single validation, role propagation, no client trust |
-| | `0106-deploy` | `010601-docker-deploy` | Docker multi-stage builds, env mgmt, CI/CD integration |
-| | `0107-elysia` | `010701-elysia-patterns` | Elysia API framework: plugins, controllers, auto-routing, auth macros |
-| | `0108-nextjs` | `010801-nextjs-compiler` | SWC compiler optimization: removeConsole, tree-shaking, bundle size |
-| | `0109-auth` | `010901-better-auth` | Better Auth integration: setup, API endpoints, client SDK, session provider |
-| | `0110-database` | `011001-prisma-database` | Prisma 7 setup with PostgreSQL adapter and Better Auth schema models |
-| | `0111-vector` | `011101-lancedb-search-core` | Vector search fundamentals: distance metrics, ANN, embeddings |
-| | | `011102-lancedb-index-optimization` | Vector index types (IVF, HNSW, PQ), quantization, reindexing |
-| | | `011103-lancedb-fts-search` | Full-text search with BM25: FTS indexing, fuzzy, boolean queries |
-| | | `011104-lancedb-hybrid-multivector` | Hybrid search (vector+FTS), multivector (ColBERT), filtering |
-| `04-business` | `0401-crm` | `040101-contact-crm` | Three-entity CSV contact management with UUID linking, phone validation, and auto-export |
+| `01-programming` | `0101-tools` | `010101-package-security` | Hardens npm, pnpm, and bun against supply chain attacks |
+| | | `010102-install-toolchain` | Installs and configures the JS/TS toolchain from scratch |
+| | | `010103-package-operations` | Day-to-day package management: install, update, audit, publish |
+| | `0102-agents` | `010104-skill-creator` | Guides creation of new Agent Skills |
+| | `0103-standards` | `010105-frontend-coding` | React, accessibility, and frontend performance best practices |
+| | | `010106-backend-architecture` | Error handling, module structure, env management, API patterns |
+| | | `010107-code-quality` | TypeScript strict patterns, testing (vitest), and security rules |
+| | `0104-git` | `010108-version-control` | Conventional commits, safe staging, disaster recovery via git reflog |
+| | | `010109-release-automation` | Semantic-release, version bump mapping, post-release sync |
+| | `0105-architecture` | `010110-clean-architecture` | Clean Architecture layer ordering and strict inward dependency flow |
+| | | `010111-http-caching` | Three-tier caching strategy: browser/CDN, runtime cache, distributed cache |
+| `02-business` | `0201-crm` | `020101-contact-crm` | CSV contact management with UUID linking, phone validation, auto-export |
+| `03-artificial` | `0301-lancedb` | `030101-lancedb-search` | Vector search fundamentals: distance metrics, ANN, embeddings |
+| | | `030102-lancedb-index` | Vector index types (IVF, HNSW, PQ), quantization, reindexing |
+| | | `030103-lancedb-fulltext` | Full-text search with BM25: FTS indexing, fuzzy, boolean queries |
+| | | `030104-lancedb-hybrid` | Hybrid search (vector+FTS), multivector (ColBERT), filtering |
+| `04-devops` | `0401-docker` | `040101-docker-deploy` | Docker multi-stage builds, env mgmt, CI/CD integration |
+| `05-devices` | `0501-web` | `050101-elysia-patterns` | Elysia API framework: plugins, controllers, auto-routing, auth macros |
+| | | `050102-nextjs-compiler` | SWC compiler optimization: removeConsole, tree-shaking, bundle size |
+| | | `050103-server-actions` | Server Actions: form handling, auth, typed returns, error patterns |
+| `06-security` | `0601-auth` | `060101-http-security` | Multi-layer security: rate limiting, CSP, security headers, CORS |
+| | | `060102-zero-trust` | Zero Trust auth: single validation, role propagation, no client trust |
+| | | `060103-better-auth` | Better Auth integration: setup, API endpoints, client SDK, session |
+| `07-data` | `0701-database` | `070101-prisma-database` | Prisma 7 setup with PostgreSQL adapter and Better Auth schema models |
+| `08-design` | — | — | UX, UI, accessibility (future) |
+| `09-science` | — | — | Biology, chemistry, physics (future) |
+| `10-education` | — | — | Learning platforms, courses (future) |
+| `11-health` | — | — | Healthcare, medical apps (future) |
+| `12-finance` | — | — | Fintech, payments, banking (future) |
+| `13-legal` | — | — | Legal compliance, contracts (future) |
+| `14-media` | — | — | Audio, video, image processing (future) |
+| `15-gaming` | — | — | Game development (future) |
+| `16-automation` | — | — | Process automation, RPA (future) |
+| `17-networking` | — | — | Networks, protocols, APIs (future) |
+| `18-embedded` | — | — | IoT, hardware, firmware (future) |
+| `19-productivity` | — | — | Methodologies, documentation, project mgmt (future) |
+| `20-social` | — | — | Social media, communication platforms (future) |
 
 ## 3. Technology Stack
 
@@ -61,12 +74,17 @@ Skills use numeric codes to encode a three-level hierarchy: domain, category, an
 
 ## 4. Project Status
 
-**Active domains:** `01-programming` (23 skills) and `04-business` (1 skill).
+**Active domains:** 7 of 20 domains have skills (24 total).
 
 | Domain | Skills |
 |---|---|
-| `01-programming` | 010101-package-security, 010102-install-and-setup, 010103-package-ops, 010201-skill-creator, 010301-frontend-coding, 010302-backend-arch, 010303-code-quality, 010401-git-commits, 010402-release-automation, 010501-web-caching, 010502-web-clean-arch, 010503-web-security, 010504-web-server-actions, 010505-web-zero-trust, 010601-docker-deploy, 010701-elysia-patterns, 010801-nextjs-compiler, 010901-better-auth, 011001-prisma-database, 011101-lancedb-search-core, 011102-lancedb-index-optimization, 011103-lancedb-fts-search, 011104-lancedb-hybrid-multivector |
-| `04-business` | 040101-contact-crm — CSV-based CRM with Org→Contact→Product linking |
+| `01-programming` | 010101-package-security, 010102-install-toolchain, 010103-package-operations, 010104-skill-creator, 010105-frontend-coding, 010106-backend-architecture, 010107-code-quality, 010108-version-control, 010109-release-automation, 010110-clean-architecture, 010111-http-caching |
+| `02-business` | 020101-contact-crm |
+| `03-artificial` | 030101-lancedb-search, 030102-lancedb-index, 030103-lancedb-fulltext, 030104-lancedb-hybrid |
+| `04-devops` | 040101-docker-deploy |
+| `05-devices` | 050101-elysia-patterns, 050102-nextjs-compiler, 050103-server-actions |
+| `06-security` | 060101-http-security, 060102-zero-trust, 060103-better-auth |
+| `07-data` | 070101-prisma-database |
 | `05-architecture` | 050101-caching, 050102-clean-arch, 050103-docker-deploy, 050104-elysia-patterns, 050105-nextjs-compiler, 050106-security, 050107-server-actions, 050108-zero-trust, 050201-better-auth, 050301-prisma-database, 050401-search-core, 050402-index-optimization, 050403-fts-search, 050404-hybrid-multivector |
 
 **Placeholder domains:** `02-biology` and `03-cooking` — ready for future skills.
