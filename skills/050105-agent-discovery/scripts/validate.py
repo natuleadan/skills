@@ -16,6 +16,7 @@ REQUIRED_REFERENCES = [
     "references/progressive-disclosure.md",
     "references/oauth-protected-resource.md",
     "references/openid-connect-discovery.md",
+    "references/webmcp-api.md",
 ]
 
 
