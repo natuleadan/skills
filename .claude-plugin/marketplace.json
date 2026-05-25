@@ -35,7 +35,8 @@
         "clean-architecture",
         "zero-trust",
         "server-actions",
-        "nextjs"
+        "nextjs",
+        "authentication"
       ],
       "category": "Programming",
       "tags": [
@@ -53,7 +54,9 @@
         "elysia",
         "nextjs",
         "zero-trust",
-        "clean-arch"
+        "clean-arch",
+        "authentication",
+        "auth"
       ],
       "strict": false,
       "skills": [
@@ -69,7 +72,8 @@
         "./skills/050105-nextjs-compiler",
         "./skills/050106-security",
         "./skills/050107-server-actions",
-        "./skills/050108-zero-trust"
+        "./skills/050108-zero-trust",
+        "./skills/050201-better-auth"
       ]
     }
   ]
