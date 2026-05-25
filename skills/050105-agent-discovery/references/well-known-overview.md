@@ -17,6 +17,8 @@ The path after `/.well-known/` is registered with IANA or defined by a specifica
 | `/.well-known/robots.txt` | — | Historical (robots.txt at root, not well-known) |
 | `/.well-known/api-catalog` | RFC 9727 | API catalog for automated API discovery |
 | `/.well-known/oauth-protected-resource` | RFC 9728 | OAuth 2.0 protected resource metadata |
+| `/.well-known/openid-configuration` | OpenID Connect Discovery 1.0 | OpenID Provider configuration |
+| `/.well-known/webfinger` | RFC 7033 | WebFinger protocol for resource discovery |
 | `/.well-known/security.txt` | RFC 9116 | Security contact information |
 | `/.well-known/change-password` | RFC 8615 | Change password URL |
 | `/.well-known/acme-challenge/` | RFC 8555 | Automatic certificate management |

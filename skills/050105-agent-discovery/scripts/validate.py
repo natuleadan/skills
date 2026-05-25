@@ -15,6 +15,7 @@ REQUIRED_REFERENCES = [
     "references/mcp-server-cards.md",
     "references/progressive-disclosure.md",
     "references/oauth-protected-resource.md",
+    "references/openid-connect-discovery.md",
 ]
 
 
