@@ -90,6 +90,7 @@
         "./skills/010112-typescript-rules",
         "./skills/010113-polar-integration",
         "./skills/010114-stripe-integration",
+        "./skills/010115-supabase-platform",
         "./skills/020101-contact-crm",
         "./skills/030101-lancedb-search",
         "./skills/030102-lancedb-index",

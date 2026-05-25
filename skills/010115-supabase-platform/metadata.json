@@ -1,0 +1,20 @@
+{
+  "name": "supabase-platform",
+  "version": "1.0.0",
+  "abstract": "Supabase platform: Row Level Security, Edge Functions with Deno, Realtime patterns (Broadcast + Postgres Changes), Storage signed URLs, PostgreSQL schema design, and anti-patterns.",
+  "description": "Complete Supabase platform guide covering database, RLS, edge functions, realtime, storage, and schema design.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["supabase", "postgresql", "rls", "edge-functions", "realtime", "storage", "schema"],
+  "references": [
+    "references/rls-security.md",
+    "references/edge-functions.md",
+    "references/realtime-patterns.md",
+    "references/storage-implementation.md",
+    "references/schema-design.md",
+    "references/anti-patterns.md",
+    "references/code-examples-sql.md",
+    "references/code-examples-api.md",
+    "references/reference.md"
+  ]
+}
