@@ -17,6 +17,7 @@ REQUIRED_REFERENCES = [
     "references/oauth-protected-resource.md",
     "references/openid-connect-discovery.md",
     "references/webmcp-api.md",
+    "references/http-402-payments.md",
 ]
 
 
