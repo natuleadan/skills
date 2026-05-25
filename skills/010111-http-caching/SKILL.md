@@ -108,3 +108,4 @@ Cache-Control headers, `s-maxage`, `stale-while-revalidate` at the edge/CDN laye
 
 - [Caching Patterns](references/caching-patterns.md)
 - [Cache Keys & Revalidation](references/cache-keys-revalidation.md) — Hierarchical cache keys, domain-scoped tags, mutation-triggered invalidation
+- [CDN Cache Headers](references/cdn-cache-headers.md) — Cache-Control directives, stale-while-revalidate, content-type TTL recommendations

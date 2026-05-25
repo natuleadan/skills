@@ -86,3 +86,10 @@ curl -I https://example.com | grep -i "x-\|strict-\|referrer-\|permissions-"
 # Test rate limiting
 for i in $(seq 1 20); do curl -s -o /dev/null -w "%{http_code}\n" https://example.com/api/endpoint; done
 ```
+
+## References
+
+- [Security Patterns](references/security-patterns.md)
+- [Rate Limiting](references/rate-limiting.md)
+- [Request Headers](references/request-headers.md)
+- [Environment Variables](references/environment-variables.md) — Secret generation, rotation, .env hierarchy

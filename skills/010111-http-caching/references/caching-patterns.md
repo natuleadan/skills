@@ -69,3 +69,46 @@ await tx.exec()
 3. **No fallback**: Cache dead → app dead → always add fallback to source of truth
 4. **Over-caching**: Everything cached → stale everywhere → be selective
 5. **Missing Vary header**: User-specific data cached for wrong user → add `Vary: Cookie`
+
+## Incremental Static Regeneration (ISR)
+
+ISR regenerates static pages at runtime without full rebuilds.
+
+### Time-Based Revalidation
+
+Set a revalidation interval on a page:
+
+```typescript
+export const revalidate = 60; // seconds
+```
+
+The page is served from cache for up to 60 seconds, then regenerated on the next request.
+
+### On-Demand Revalidation
+
+Trigger regeneration programmatically via API or Server Actions:
+
+```typescript
+import { revalidateTag, revalidatePath } from "next/cache";
+
+// By tag
+revalidateTag("products");
+
+// By path
+revalidatePath("/products");
+```
+
+```bash
+# Or via HTTP endpoint
+curl -X POST https://example.com/api/revalidate \
+  -H "Content-Type: application/json" \
+  -d '{"tags": ["products"]}'
+```
+
+### ISR Principles
+
+- Prefer **tag-based** (`revalidateTag`) over path-based (`revalidatePath`) — more precise control
+- Use **time-based ISR** for predictable update cycles (e.g., hourly, daily)
+- Use **on-demand ISR** for CMS webhooks, admin updates, and external events
+- Pre-render popular pages at build time when possible
+- Protect on-demand revalidation endpoints with a secret token

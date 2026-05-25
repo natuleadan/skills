@@ -5,6 +5,6 @@
   "author": "natuleadan",
   "license": "MIT",
   "tags": ["security", "rate-limiting", "csp", "cors", "headers", "web-security"],
-  "abstract": "Web application security patterns: rate limiting, Content Security Policy, security headers, CORS, IP deny lists, and graceful degradation.",
-  "references": ["references/security-patterns.md", "references/rate-limiting.md", "references/request-headers.md"]
+  "abstract": "Web application security patterns: rate limiting, Content Security Policy, security headers, CORS, IP deny lists, graceful degradation, and environment variable management.",
+  "references": ["references/security-patterns.md", "references/rate-limiting.md", "references/request-headers.md", "references/environment-variables.md"]
 }
