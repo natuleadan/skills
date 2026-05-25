@@ -1,0 +1,15 @@
+{
+  "name": "polar-integration",
+  "version": "1.0.0",
+  "abstract": "Polar.sh payment integration: product synchronization, checkout sessions, webhook handling, database schema design, multi-currency support, MoR model, and sandbox testing.",
+  "description": "Complete Polar.sh integration guide covering payment flows, webhook handling, and API reference.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["polar", "payments", "merchant-of-record", "webhooks", "checkout", "integration"],
+  "references": [
+    "references/payment-flow.md",
+    "references/webhooks-schema.md",
+    "references/api-reference.md",
+    "references/sandbox-setup.md"
+  ]
+}

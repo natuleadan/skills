@@ -88,6 +88,7 @@
         "./skills/010110-clean-architecture",
         "./skills/010111-http-caching",
         "./skills/010112-typescript-rules",
+        "./skills/010113-polar-integration",
         "./skills/020101-contact-crm",
         "./skills/030101-lancedb-search",
         "./skills/030102-lancedb-index",
