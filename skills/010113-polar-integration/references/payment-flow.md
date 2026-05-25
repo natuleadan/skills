@@ -171,9 +171,19 @@ static async createCheckoutSession(
 
 Map your app's language codes to Polar locales, falling back to `en` for unsupported languages:
 
-```typescript
-const locale = lang === "es" ? "es" : lang === "fr" ? "fr" : "en";
-```
+| App language | Polar locale | Fallback |
+|-------------|-------------|----------|
+| `es` | `es` | — |
+| `fr` | `fr` | — |
+| `de` | `de` | — |
+| `it` | `it` | — |
+| `nl` | `nl` | — |
+| `sv` | `sv` | — |
+| `hu` | `hu` | — |
+| `pt` | `pt` | — |
+| `ar` | `en` | not supported |
+| `en` | `en` | — |
+| other | `en` | default |
 
 ### Override Methods (precedence order)
 
@@ -330,3 +340,17 @@ Polar is a Merchant of Record, NOT a Payment Service Provider (PSP):
 - Some accounting software doesn't recognize EU prefix — manual entry may be needed
 - In markets Polar isn't registered, they still take on liability
 - Polar may block payments from countries where compliance is impossible
+
+### Why MoR for Unsupported Countries
+
+If your country is **NOT supported by Stripe directly**, a Merchant of Record like Polar is often the only viable path:
+
+> **Stripe is not available in many countries globally.** If your business is based in an unsupported country, you cannot receive payments through Stripe directly. Alternatives like forming an LLC abroad, opening a foreign bank account, and registering for taxes are costly and complex.
+
+Polar solves this by:
+- Accepting payments from customers globally, regardless of the seller's location
+- Eliminating the need for a foreign LLC + bank account
+- Handling all international tax liability and compliance
+- Supporting digital goods sales without geographic restrictions
+
+> **Important:** You remain responsible for your own income tax in your country. Polar handles sales tax, not personal/business income tax.

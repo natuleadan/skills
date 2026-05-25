@@ -37,7 +37,8 @@ Polar supports 50+ countries including US, EU, UK, Canada, Australia, Brazil, Me
 
 ## References
 
-- [Payment Flow](references/payment-flow.md) — Product sync, checkout, multi-currency, error handling, MoR model
-- [Webhooks & Schema](references/webhooks-schema.md) — Webhook events, DB schema, signature verification
+- [Payment Flow](references/payment-flow.md) — Product sync, checkout, multi-currency, error handling, MoR model, localization
+- [Webhooks & Schema](references/webhooks-schema.md) — Webhook events, DB schema, repository patterns, signature verification
 - [API Reference](references/api-reference.md) — Polar REST API essentials (auth, products, checkout, orders)
 - [Sandbox & Setup](references/sandbox-setup.md) — Sandbox environment, API keys, webhook configuration
+- [Code Examples](references/code-examples.md) — Sync, checkout, webhook, cancel, raw API calls

@@ -177,6 +177,34 @@ Maps products/variants to Polar products for checkout reuse.
 - **Editors:** Full CRUD on both tables
 - **Service role:** Bypasses policies (used by sync + webhook)
 
+### Repository Query Patterns
+
+Common query patterns for working with the payment tables:
+
+```typescript
+// Find cached processor product (for sync check)
+const cached = await PaymentRepository.findProcessorProduct(
+  db, productId, variantId, currencyCode, "polar"
+);
+
+// Create payment record (during checkout initiation)
+const payment = await PaymentRepository.createPayment(db, {
+  order_id: orderId,
+  amount: 15000,           // cents
+  currency_code: "usd",
+  payment_url: checkoutUrl,
+  redirect_url: successUrl,
+});
+
+// Update payment status (from webhook)
+await PaymentRepository.updatePaymentStatus(db, orderId, {
+  status: "paid",
+  polar_order_id: "pol_order_xxx",
+  polar_checkout_id: "pol_chk_xxx",
+  paid_at: new Date().toISOString(),
+});
+```
+
 ---
 
 ## Architecture & Data Flow

@@ -198,6 +198,22 @@ PATCH /v1/checkouts/{id}
 Scope: checkouts:write
 ```
 
+### Client-Side Checkout Confirm
+
+```
+POST /v1/checkouts/client/{client_secret}/confirm
+```
+
+Used for **custom checkout UIs** (not Polar's hosted page). Confirms a checkout session created via the client-side flow.
+
+```typescript
+const confirmed = await polar.checkouts.client.confirm({
+  clientSecret: checkout.client_secret,
+});
+```
+
+> Note: If using Polar's hosted checkout (the standard flow), this endpoint is not needed. The hosted page handles confirmation automatically.
+
 ---
 
 ## Orders

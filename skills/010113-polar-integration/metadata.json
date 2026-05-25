@@ -10,6 +10,7 @@
     "references/payment-flow.md",
     "references/webhooks-schema.md",
     "references/api-reference.md",
-    "references/sandbox-setup.md"
+    "references/sandbox-setup.md",
+    "references/code-examples.md"
   ]
 }
