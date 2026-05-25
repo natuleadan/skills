@@ -1,0 +1,10 @@
+{
+  "name": "backend-arch",
+  "version": "1.0.0",
+  "abstract": "Backend architecture standards: typed error hierarchies, structured API responses, domain module layout, service/repository layering, environment validation, and log sanitization.",
+  "description": "Coding standards for backend module structure, error handling hierarchies, API response patterns, and environment variable management.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["backend", "architecture", "error-handling", "module-structure", "api-design", "coding-standards"],
+  "references": ["references/error-handling.md", "references/module-structure.md"]
+}

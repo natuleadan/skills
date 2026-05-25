@@ -36,7 +36,12 @@
         "zero-trust",
         "server-actions",
         "nextjs",
-        "authentication"
+        "authentication",
+        "react",
+        "typescript",
+        "testing",
+        "accessibility",
+        "coding-standards"
       ],
       "category": "Programming",
       "tags": [
@@ -56,7 +61,12 @@
         "zero-trust",
         "clean-arch",
         "authentication",
-        "auth"
+        "auth",
+        "react",
+        "typescript",
+        "testing",
+        "a11y",
+        "coding-standards"
       ],
       "strict": false,
       "skills": [
@@ -73,7 +83,10 @@
         "./skills/050106-security",
         "./skills/050107-server-actions",
         "./skills/050108-zero-trust",
-        "./skills/050201-better-auth"
+        "./skills/050201-better-auth",
+        "./skills/010301-frontend-coding",
+        "./skills/010302-backend-arch",
+        "./skills/010303-code-quality"
       ]
     }
   ]

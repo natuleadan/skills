@@ -1,0 +1,10 @@
+{
+  "name": "frontend-coding",
+  "version": "1.0.0",
+  "abstract": "React best practices (Server/Client Components, hooks, keys), web accessibility (ARIA, keyboard nav, semantic HTML), and frontend performance (N+1, lazy loading, memoization).",
+  "description": "Coding standards for React components, accessibility compliance, and frontend performance optimization in web applications.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["react", "accessibility", "a11y", "performance", "frontend", "coding-standards"],
+  "references": ["references/react-patterns.md", "references/accessibility.md", "references/performance.md"]
+}
