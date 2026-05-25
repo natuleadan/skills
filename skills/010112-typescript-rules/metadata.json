@@ -1,0 +1,17 @@
+{
+  "name": "typescript-rules",
+  "version": "1.0.0",
+  "abstract": "TypeScript 5.7+ language mastery: strict mode, type safety, discriminated unions, generics, mapped types, conditional types, migration strategy, Zod validation, and anti-patterns.",
+  "description": "TypeScript language patterns, type system mastery, and best practices for production code.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["typescript", "language", "type-system", "generics", "strict-mode", "zod"],
+  "references": [
+    "references/type-safety.md",
+    "references/advanced-types.md",
+    "references/rules-anti-patterns.md",
+    "references/migration-strategy.md",
+    "references/code-examples.md",
+    "references/quick-reference.md"
+  ]
+}

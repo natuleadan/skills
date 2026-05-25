@@ -1,10 +1,10 @@
 {
   "name": "code-quality",
   "version": "1.0.0",
-  "abstract": "Cross-cutting code quality standards: TypeScript strict patterns (no any/enum/!, union types), testing best practices (vitest, AAA, coverage), and security rules (secrets, validation, XSS, injection).",
-  "description": "Code quality standards for TypeScript patterns, testing with Vitest, and web application security best practices.",
+  "abstract": "Cross-cutting quality standards: testing best practices (vitest, AAA, coverage) and security rules (secrets, validation, XSS, injection, CORS). For TypeScript, see 010112-typescript-rules.",
+  "description": "Code quality standards for testing with Vitest and web application security best practices.",
   "author": "natuleadan",
   "license": "MIT",
-  "tags": ["typescript", "testing", "security", "code-quality", "vitest", "coding-standards"],
-  "references": ["references/typescript-rules.md", "references/testing.md", "references/security.md"]
+  "tags": ["testing", "security", "code-quality", "vitest", "coding-standards"],
+  "references": ["references/testing.md", "references/security.md"]
 }

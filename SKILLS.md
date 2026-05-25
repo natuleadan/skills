@@ -14,7 +14,8 @@ Format: `DDCCSS-word-word` (6 digits, exactly 2 words after the code, each ≥4 
 | | `0102-agents` | `010104-skill-creator` | Guides creation of new Agent Skills |
 | | `0103-standards` | `010105-frontend-coding` | React, accessibility, and frontend performance best practices |
 | | | `010106-backend-architecture` | Error handling, module structure, env management, API patterns |
-| | | `010107-code-quality` | TypeScript strict patterns, testing (vitest), and security rules |
+| | | `010107-code-quality` | Testing (vitest) and security rules (secrets, XSS, injection, CORS) |
+| | | `010108-typescript-rules` | TypeScript 5.7+ strict mode, generics, mapped types, Zod, migration |
 | | `0104-git` | `010108-version-control` | Conventional commits, safe staging, disaster recovery via git reflog |
 | | | `010109-release-automation` | Semantic-release, version bump mapping, post-release sync |
 | | `0105-architecture` | `010110-clean-architecture` | Clean Architecture layer ordering and strict inward dependency flow |

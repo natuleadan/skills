@@ -1,4 +1,4 @@
-# TypeScript Rules Lesson
+# TypeScript Rules & Anti-Patterns
 
 Strict TypeScript conventions to prevent bugs and ensure maintainability.
 
@@ -22,6 +22,11 @@ function process(data: unknown): string {
   }
   throw new Error('Invalid data shape');
 }
+
+// ✅ GOOD: Use Record<string, unknown> for dynamic objects
+function process(data: Record<string, unknown>): void {
+  // Explicit shape, keys checked at runtime
+}
 ```
 
 ## No Enums — Use Union Literals
@@ -43,6 +48,11 @@ const STATUS = {
 } as const;
 
 type Status = typeof STATUS[keyof typeof STATUS];
+
+// ✅ GOOD: Use in function params
+function updateStatus(status: Status) {
+  // TypeScript ensures only valid values
+}
 ```
 
 ## No Non-Null Assertion `!`
@@ -61,6 +71,31 @@ el.style.color = 'red';
 const color = el?.style?.color ?? 'default';
 ```
 
+## `import type` / `export type`
+
+```typescript
+// ❌ BAD: Runtime import of type-only value
+import { User } from './types'; // Included in bundle unnecessarily
+
+// ✅ GOOD: Type-only import (erased at compile time)
+import type { User } from './types';
+export type { User };
+
+// ✅ GOOD: Separate type and value imports
+import type { User, Role } from './types';
+import { getUserById } from './api';
+
+export type { User };
+export { createUser };
+
+// ✅ GOOD: Multiple type imports
+import type { User, Role, Permission } from './types';
+
+// ✅ GOOD: With values from same module
+import { API_URL } from './config';
+import type { Config } from './config';
+```
+
 ## No `@ts-ignore`
 
 ```typescript
@@ -76,20 +111,85 @@ const result = (badlyTypedLib as LibWithDoThing).doThing();
 expectError(null);
 ```
 
-## `import type` / `export type`
+## Zod Validation at Boundaries
+
+Validate external data (API, user input) using Zod:
 
 ```typescript
-// ❌ BAD: Runtime import of type-only value
-import { User } from './types'; // Included in bundle unnecessarily
+import { z } from 'zod';
 
-// ✅ GOOD: Type-only import (erased at compile time)
-import type { User } from './types';
-export type { User };
+const UserSchema = z.object({
+  id: z.string().uuid(),
+  name: z.string().min(1),
+  email: z.string().email(),
+});
+
+type User = z.infer<typeof UserSchema>;
+
+function parseUser(data: unknown): User {
+  return UserSchema.parse(data); // Throws ZodError if invalid
+}
+
+// Safe parsing without throwing
+const result = UserSchema.safeParse(data);
+if (result.success) {
+  console.log(result.data); // Typed as User
+} else {
+  console.error(result.error.issues);
+}
+```
+
+## Discriminated Unions / Result Pattern
+
+Use tagged unions for type-safe error handling:
+
+```typescript
+type Result<T, E = Error> =
+  | { ok: true; value: T }
+  | { ok: false; error: E }
+
+async function fetchUser(id: string): Promise<Result<User>> {
+  try {
+    const response = await fetch(`/api/users/${id}`);
+    const data = await response.json();
+    return { ok: true, value: data };
+  } catch (error) {
+    return { ok: false, error: error as Error };
+  }
+}
+
+// Usage — TypeScript narrows based on `ok` discriminant
+const result = await fetchUser('123');
+if (result.ok) {
+  console.log(result.value.name);  // User
+} else {
+  console.error(result.error.message); // Error
+}
+```
+
+## Avoid Redundant Type Annotations
+
+Let TypeScript infer types when obvious:
+
+```typescript
+// ❌ BAD: Redundant annotations
+const name: string = 'Alice';
+const age: number = 30;
+const active: boolean = true;
+
+// ✅ GOOD: Let TypeScript infer
+const name = 'Alice';      // string
+const age = 30;            // number
+const active = true;       // boolean
+
+// ✅ GOOD: Annotate when inference is insufficient
+const config: Record<string, unknown> = loadConfig();
+const callback: (e: Event) => void = handleClick;
 ```
 
 ## Code Complexity
 
-Keep functions focused and short:
+Keep functions focused and short — early returns reduce nesting:
 
 ```typescript
 // ❌ BAD: High complexity (many branches)
@@ -174,7 +274,7 @@ if (count == '0') {}    // matches number 0 and string '0'
 if (value === null || value === undefined) {}
 if (count === 0) {}
 
-// ✅ GOOD: Nullish check shorthand
+// ✅ GOOD: Nullish check shorthand (only acceptable for this)
 if (value == null) {} // Only acceptable for null + undefined check together
 ```
 
@@ -204,3 +304,5 @@ const items = [1, 2, 3]; // Array content can change, reference cannot
 | `'a' + b + 'c'` | `` `a${b}c` `` |
 | `==` | `===` |
 | Deep nesting | Early returns + extract functions |
+| Untrusted `unknown` data | Zod schema validation |
+| `throw` in catch blocks | `Result<T, E>` discriminated union |

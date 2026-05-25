@@ -1,24 +1,15 @@
 ---
 name: 010107-code-quality
-description: TypeScript strict patterns, testing best practices (vitest, TDD, coverage), and security rules (secrets, validation, XSS, injection, CORS).
+description: Testing best practices (vitest, TDD, coverage) and security rules (secrets, validation, XSS, injection, CORS).
 ---
 
 # Code Quality Standards
 
 ## Overview
 
-Cross-cutting quality standards for TypeScript, testing, and security that apply to both frontend and backend code.
+Cross-cutting quality standards for testing and security. For TypeScript language rules, see [TypeScript Rules](../010112-typescript-rules/).
 
 ## Quick Reference
-
-### TypeScript
-
-- No `any` — use generics `<T extends { name: string }>` or `unknown` + type guard
-- No `enum` — use union literals (`type Status = 'active' | 'inactive'`)
-- No `!` non-null assertion — use proper null checks
-- No `@ts-ignore` — use `@ts-expect-error` only for intentional tests
-- Use `import type` / `export type` for type-only imports
-- `const` by default, early returns to reduce complexity
 
 ### Testing
 
@@ -39,6 +30,5 @@ Cross-cutting quality standards for TypeScript, testing, and security that apply
 
 ## References
 
-- [TypeScript Rules](references/typescript-rules.md)
 - [Testing](references/testing.md)
 - [Security](references/security.md)
