@@ -6,8 +6,8 @@
 <p align="center"><strong>Agent skills for AI coding agents across multiple domains</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Count-4-8B5CF6?style=for-the-badge" alt="4 count" />
-  <img src="https://img.shields.io/badge/Domains-3-blue?style=for-the-badge" alt="3 domains" />
+  <img src="https://img.shields.io/badge/Count-5-8B5CF6?style=for-the-badge" alt="5 skills" />
+  <img src="https://img.shields.io/badge/Domains-4-blue?style=for-the-badge" alt="4 domains" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License" /></a>
   <br />
   <a href="https://skills.sh/natuleadan/skills"><img src="https://skills.sh/b/natuleadan/skills" alt="Skills" /></a>
@@ -15,7 +15,7 @@
 
 ## 1. What is Natuleadan Skills?
 
-A collection of agent skills for AI coding agents spanning multiple domains. Skills are packaged instructions and scripts that extend agent capabilities. Currently focused on programming (Node.js), with biology and cooking domains planned.
+A collection of agent skills for AI coding agents spanning multiple domains. Skills are packaged instructions and scripts that extend agent capabilities. Currently focused on programming (Node.js) and business CRM, with biology and cooking domains planned.
 
 Skills follow the [Agent Skills](https://agentskills.io/) format and are installable via `npx skills add`.
 
@@ -24,11 +24,12 @@ Skills follow the [Agent Skills](https://agentskills.io/) format and are install
 Skills use numeric codes to encode a three-level hierarchy: domain, category, and skill. Each skill lives at `skills/<skill-code>-<name>/` with a `SKILL.md` file.
 
 | Domain | Category | Skill | Description |
-|---|---|---|---|
+|---|---|---|---|---|
 | `01-programming` | `0101-node` | `010101-package-security` | Hardens npm, pnpm, and bun against supply chain attacks |
 | | | `010102-install-and-setup` | Installs and configures the JS/TS toolchain from scratch |
 | | | `010103-package-ops` | Day-to-day package management: install, update, audit, publish |
 | | `0102-agents` | `010201-skill-creator` | Guides creation of new Agent Skills |
+| `04-business` | `0401-crm` | `040101-contact-crm` | Three-entity CSV contact management with UUID linking, phone validation, and auto-export |
 
 ## 3. Technology Stack
 
@@ -41,7 +42,12 @@ Skills use numeric codes to encode a three-level hierarchy: domain, category, an
 
 ## 4. Project Status
 
-**Active domain:** `01-programming` — 4 production-ready skills for Node.js development: security auditing, toolchain setup, package operations, and agent skill creation.
+**Active domains:** `01-programming` (4 skills) and `04-business` (1 skill).
+
+| Domain | Skills |
+|---|---|
+| `01-programming` | 010101-package-security, 010102-install-and-setup, 010103-package-ops, 010201-skill-creator |
+| `04-business` | 040101-contact-crm — CSV-based CRM with Org→Contact→Product linking |
 
 **Placeholder domains:** `02-biology` and `03-cooking` — ready for future skills. Add a new domain by creating `skills/NN-name/` with a `.gitkeep` and registering a new plugin in `marketplace.json`.
 

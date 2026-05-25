@@ -25,6 +25,8 @@
         "nodejs",
         "package-management",
         "supply-chain-security",
+        "crm",
+        "contacts",
         "agent-skills"
       ],
       "category": "Programming",
@@ -34,6 +36,8 @@
         "pnpm",
         "bun",
         "security",
+        "crm",
+        "contacts",
         "skills"
       ],
       "strict": false,
@@ -41,7 +45,8 @@
         "./skills/010101-package-security",
         "./skills/010102-install-and-setup",
         "./skills/010103-package-ops",
-        "./skills/010201-skill-creator"
+        "./skills/010201-skill-creator",
+        "./skills/040101-contact-crm"
       ]
     }
   ]

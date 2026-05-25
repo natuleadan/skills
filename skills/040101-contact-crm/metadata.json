@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "abstract": "Three-entity CSV contact management with UUID linking, phone validation, fuzzy duplicate detection, and auto-export to PDF and XLSX.",
+  "references": [
+    "https://github.com/daviddrysdale/python-phonenumbers",
+    "https://www.reportlab.com/",
+    "https://openpyxl.readthedocs.io/"
+  ]
+}
