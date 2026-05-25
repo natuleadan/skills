@@ -48,7 +48,7 @@ def check_release_config(dir_path: Path) -> list[dict]:
 
 
 def main():
-    root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/nla-release")
+    root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/skill-release")
     if not root.exists():
         print(f"Directory not found: {root}")
         sys.exit(1)

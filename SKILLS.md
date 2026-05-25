@@ -15,15 +15,15 @@ Format: `DDCCSS-word-word` (6 digits, exactly 2 words after the code, each ≥4 
 | | `0103-standards` | `010105-frontend-coding` | React, accessibility, and frontend performance best practices |
 | | | `010106-backend-architecture` | Error handling, module structure, env management, API patterns |
 | | | `010107-code-quality` | Testing (vitest) and security rules (secrets, XSS, injection, CORS) |
-| | | `010108-typescript-rules` | TypeScript 5.7+ strict mode, generics, mapped types, Zod, migration |
-| | `010109-polar-integration` | Polar.sh payment integration: sync, checkout, webhooks, MoR |
-| | `010110-stripe-integration` | Stripe payments, billing, connect platforms, treasury, CLI tools |
-| | `010111-supabase-platform` | PostgreSQL RLS, Edge Functions, Realtime, Storage, schema design |
-| | `010112-i18n-patterns` | RTL support, safe translations, LangProvider, language tables |
+| | | `010112-typescript-rules` | TypeScript 5.7+ strict mode, generics, mapped types, Zod, migration |
 | | `0104-git` | `010108-version-control` | Conventional commits, safe staging, disaster recovery via git reflog |
 | | | `010109-release-automation` | Semantic-release, version bump mapping, post-release sync |
 | | `0105-architecture` | `010110-clean-architecture` | Clean Architecture layer ordering and strict inward dependency flow |
 | | | `010111-http-caching` | Three-tier caching strategy: browser/CDN, runtime cache, distributed cache |
+| | `0106-integrations` | `010113-polar-integration` | Polar.sh payment integration: sync, checkout, webhooks, MoR |
+| | | `010114-stripe-integration` | Stripe payments, billing, connect platforms, treasury, CLI tools |
+| | | `010115-supabase-platform` | PostgreSQL RLS, Edge Functions, Realtime, Storage, schema design |
+| | `0107-i18n` | `010116-i18n-patterns` | RTL support, safe translations, LangProvider, language tables |
 | `02-business` | `0201-crm` | `020101-contact-crm` | CSV contact management with UUID linking, phone validation, auto-export |
 | `03-artificial` | `0301-lancedb` | `030101-lancedb-search` | Vector search fundamentals: distance metrics, ANN, embeddings |
 | | | `030102-lancedb-index` | Vector index types (IVF, HNSW, PQ), quantization, reindexing |

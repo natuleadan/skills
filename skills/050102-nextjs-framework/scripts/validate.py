@@ -30,7 +30,7 @@ def check_nextjs(dir_path: Path) -> list[dict]:
     return findings
 
 def main():
-    root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/nla-nextjs")
+    root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/skill-nextjs")
     if not root.exists():
         print(f"Directory not found: {root}")
         sys.exit(1)

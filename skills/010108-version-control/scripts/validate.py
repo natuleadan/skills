@@ -43,7 +43,7 @@ def check_commit_config(dir_path: Path) -> list[dict]:
 
 
 def main():
-    root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/nla-git")
+    root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/skill-git")
     if not root.exists():
         print(f"Directory not found: {root}")
         sys.exit(1)

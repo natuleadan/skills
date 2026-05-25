@@ -25,7 +25,7 @@ def check_stripe(dir_path: Path) -> list[dict]:
     return findings
 
 def main():
-    root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/nla-stripe")
+    root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/skill-stripe")
     if not root.exists(): print(f"Not found: {root}"); sys.exit(1)
     print(f"Validating Stripe integration in: {root}")
     findings = check_stripe(root)

@@ -14,7 +14,7 @@ def check_i18n(dir_path: Path) -> list[dict]:
     return findings
 
 def main():
-    root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/nla-i18n")
+    root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/skill-i18n")
     if not root.exists(): print(f"Not found: {root}"); sys.exit(1)
     print(f"Validating i18n in: {root}")
     findings = check_i18n(root)

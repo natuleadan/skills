@@ -69,12 +69,12 @@ git commit -m "..."
 # 1. View history
 git reflog | head -20
 # Output:
-#   31fd558a commit: test(payment): update tests
-#   a94fb747 commit: refactor(payment): move processors
-#   383bee47 reset: moving to 383bee47  ← This is where everything was lost
+#   abc1234 commit: test(payment): update tests
+#   def5678 commit: refactor(payment): move processors
+#   ghi9012 reset: moving to ghi9012  ← This is where everything was lost
 
 # 2. Recover
-git reset --hard a94fb747  # The last commit BEFORE the reset
+git reset --hard def5678  # The last commit BEFORE the reset
 
 # 3. Verify
 git log --oneline -3
