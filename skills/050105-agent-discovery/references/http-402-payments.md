@@ -248,20 +248,10 @@ Agents can discover costs before making requests, enabling autonomous budgeting 
 | Go | net/http | `mppx.Client` |
 | Ruby | Rack | `mppx.Client` |
 
-```javascript
-// TypeScript server (Elysia)
-import { mppx } from "mppx/elysia"
+For framework-specific integration guides:
 
-app.use(mppx({
-  methods: [tempo({ secret: process.env.MPP_SECRET_KEY })],
-}))
-
-// TypeScript client
-import { mppx } from "mppx/client"
-
-const fetch = mppx.create({ wallet })
-const data = await fetch("https://api.example.com/premium-data")
-```
+- **Elysia**: See `050101-elysia-framework/references/elysia-payment-middleware.md`
+- **Next.js**: See `050102-nextjs-framework/references/mpp-payment-middleware.md`
 
 ## Security Considerations
 

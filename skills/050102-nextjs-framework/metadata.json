@@ -5,7 +5,7 @@
   "description": "Next.js 16 framework patterns, rendering strategies, and performance optimization guide.",
   "author": "natuleadan",
   "license": "MIT",
-  "tags": ["nextjs", "react", "framework", "app-router", "server-components", "caching", "compiler"],
+  "tags": ["nextjs", "react", "framework", "app-router", "server-components", "caching", "compiler", "payments"],
   "references": [
     "references/async-apis.md",
     "references/rendering-patterns.md",
@@ -17,6 +17,7 @@
     "references/compiler-options.md",
     "references/server-actions.md",
     "references/code-examples.md",
-    "references/quick-reference.md"
+    "references/quick-reference.md",
+    "references/mpp-payment-middleware.md"
   ]
 }

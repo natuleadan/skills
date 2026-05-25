@@ -18,6 +18,7 @@ REQUIRED_REFERENCES = [
     "references/openid-connect-discovery.md",
     "references/webmcp-api.md",
     "references/http-402-payments.md",
+    "references/llm-documentation-pattern.md",
 ]
 
 

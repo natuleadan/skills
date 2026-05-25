@@ -65,5 +65,6 @@ export async function updateAction(data) {
 - [Anti-Patterns](references/anti-patterns.md) — 6 common Next.js 16 mistakes
 - [Compiler Options](references/compiler-options.md) — SWC optimization, removeConsole, tree-shaking
 - [Server Actions](references/server-actions.md) — Server Actions patterns, auth, redirects
+- [MPP Payment Middleware](references/mpp-payment-middleware.md) — HTTP 402 payments for route handlers
 - [Code Examples](references/code-examples.md) — Full working examples
 - [Quick Reference](references/quick-reference.md) — Architecture overview card
