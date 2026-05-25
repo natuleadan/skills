@@ -31,27 +31,152 @@ Responses converted to markdown may include an `x-markdown-tokens` header estima
 
 ## Content Signals Framework
 
-Content Signals is a framework for expressing preferences about how content may be used after access. Servers can include a `Content-Signal` header:
+Content Signals is a framework for expressing preferences about how content may be used by automated systems. Signals can be expressed via a `Content-Signal` directive in `robots.txt`, a `Content-Signal` HTTP response header, or both.
 
-```
-Content-Signal: ai-train=yes, search=yes, ai-input=yes
-```
+### Categories
+
+Three usage categories:
 
 | Signal | Description |
 |---|---|
-| `ai-train` | Whether content may be used for AI/ML training |
-| `search` | Whether content may be used for search indexing |
-| `ai-input` | Whether content may be used as AI input (including agentic use) |
+| `ai-train` | Training or fine-tuning AI models |
+| `search` | Building a search index and providing search results (hyperlinks and short excerpts). Does not include AI-generated search summaries |
+| `ai-input` | Inputting content into AI models (retrieval augmented generation, grounding, real-time generative AI search answers) |
 
-Each signal is a key-value pair with values `yes` or `no`. Clients consuming content should check this header before using the content for any listed purpose.
+Each signal value is `yes` (allowed) or `no` (disallowed). Absence of a signal neither grants nor restricts permission for that use.
 
-### Relationship to robots.txt
+### robots.txt Syntax
 
-Content Signals operates at the HTTP response level (per-page), while robots.txt operates at the crawl level (directory-wide). Both should be used together:
+The `Content-Signal` directive goes inside a `User-agent` group alongside `Allow`/`Disallow`:
+
+```txt
+User-Agent: *
+Content-Signal: ai-train=no, search=yes, ai-input=no
+Allow: /
+```
+
+Multiple signals are comma-separated. The directive is case-insensitive.
+
+### Policy Presets
+
+| Policy | robots.txt | Effect |
+|---|---|---|
+| Disallow All | `Content-Signal: ai-train=no, search=no, ai-input=no` | Most restrictive. May cause search engines to exclude site from results |
+| Allow Search Only | `Content-Signal: ai-train=no, search=yes, ai-input=no` | Only search indexing, no AI training or input |
+| Allow Search & AI Input | `Content-Signal: ai-train=no, search=yes, ai-input=yes` | Search + AI input, no training |
+| Allow All | `Content-Signal: ai-train=yes, search=yes, ai-input=yes` | Full permission for all purposes |
+
+### Per-User-Agent Targeting
+
+Apply different signals to different crawlers:
+
+```txt
+User-Agent: googlebot
+Content-Signal: ai-train=no, search=yes, ai-input=no
+Allow: /
+
+User-Agent: bingbot
+Content-Signal: ai-train=no, search=yes, ai-input=no
+Allow: /
+
+User-Agent: OAI-Searchbot
+Content-Signal: ai-train=no, search=yes, ai-input=no
+Allow: /
+```
+
+### Per-Path Targeting
+
+Apply signals to specific paths:
+
+```txt
+# Allow unfettered access to /about
+User-Agent: *
+Content-Signal: /about ai-train=yes, search=yes, ai-input=yes
+Allow: /about
+
+# Search-only access to blog
+User-Agent: *
+Content-Signal: /blog/ ai-train=no, search=yes, ai-input=no
+Allow: /blog/
+
+# Disallow access to dashboard
+User-Agent: *
+Disallow: /dashboard/
+```
+
+### Legal Framework
+
+The EU Directive 2019/790 on Copyright in the Digital Single Market (Article 4) provides a legal basis for content reservations expressed via machine-readable means. The standard preamble for Content Signals invokes this directive:
+
+```txt
+# ANY RESTRICTIONS EXPRESSED VIA CONTENT SIGNALS ARE EXPRESS
+# RESERVATIONS OF RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN
+# UNION DIRECTIVE 2019/790 ON COPYRIGHT AND RELATED RIGHTS
+# IN THE DIGITAL SINGLE MARKET.
+```
+
+### HTTP Header Form
+
+The same signals can be sent as an HTTP response header for per-page control:
+
+```
+Content-Signal: ai-train=no, search=yes, ai-input=no
+```
+
+This operates at the HTTP response level (per-page), while robots.txt operates at the crawl level (directory-wide). Both should be used together:
 
 - `robots.txt`: Controls which paths crawlers may access
 - `Content-Signal`: Controls how accessed content may be used
 - `meta robots` tags: Controls indexing per page
+
+### Important Caveats
+
+- robots.txt is a voluntary protocol. Malicious crawlers may ignore it.
+- Content Signals express preferences, they do not technically prevent access.
+- Courts and regulators may conclude robots.txt does not impose enforceable legal obligations.
+- For legal questions about content rights, consult a lawyer.
+
+## Future: IETF Web Bot Authentication (webbotauth)
+
+The IETF Web Bot Authentication Working Group (webbotauth) was formed to standardize cryptographically authenticated bot identification. While Content Signals tells a crawler *what it may do*, webbotauth aims to tell a site *who the crawler is*.
+
+### Scope
+
+In-scope use cases:
+
+- Authenticating crawlers for search indices
+- Web archivers (e.g., Internet Archive)
+- Link checkers and validators
+- Crawlers for AI training
+- AI agents retrieving content on behalf of end users
+
+Out of scope:
+
+- Authenticating end users of automated clients
+- Non-HTTP protocols
+- Non-cryptographic authentication
+- Defining bot intent vocabulary
+- Bot reputation or tracking
+
+### Expected Deliverables
+
+| Milestone | Date | Document |
+|---|---|---|
+| Authentication technique specification | Apr 2026 | Standards track |
+| Bot operator information conveyance | Apr 2026 | Standards track |
+| Operational best practices | Aug 2026 | Best Current Practice |
+
+### Relationship to Content Signals
+
+Content Signals and webbotauth are complementary layers:
+
+```
+Layer 1: webbotauth — "I am ExampleBot, operated by Example Corp"
+Layer 2: robots.txt — "You may access /public/ but not /private/"
+Layer 3: Content Signals — "You may use for search, not for training"
+```
+
+Together they enable a complete bot governance model: identity → access → usage.
 
 ## LLMs.txt Pattern
 
