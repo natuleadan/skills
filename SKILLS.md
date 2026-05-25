@@ -19,6 +19,7 @@ Format: `DDCCSS-word-word` (6 digits, exactly 2 words after the code, each ≥4 
 | | `010109-polar-integration` | Polar.sh payment integration: sync, checkout, webhooks, MoR |
 | | `010110-stripe-integration` | Stripe payments, billing, connect platforms, treasury, CLI tools |
 | | `010111-supabase-platform` | PostgreSQL RLS, Edge Functions, Realtime, Storage, schema design |
+| | `010112-i18n-patterns` | RTL support, safe translations, LangProvider, language tables |
 | | `0104-git` | `010108-version-control` | Conventional commits, safe staging, disaster recovery via git reflog |
 | | | `010109-release-automation` | Semantic-release, version bump mapping, post-release sync |
 | | `0105-architecture` | `010110-clean-architecture` | Clean Architecture layer ordering and strict inward dependency flow |

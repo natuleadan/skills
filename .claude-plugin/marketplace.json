@@ -91,6 +91,7 @@
         "./skills/010113-polar-integration",
         "./skills/010114-stripe-integration",
         "./skills/010115-supabase-platform",
+        "./skills/010116-i18n-patterns",
         "./skills/020101-contact-crm",
         "./skills/030101-lancedb-search",
         "./skills/030102-lancedb-index",

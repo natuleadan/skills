@@ -97,3 +97,8 @@ const role = session?.user?.role ?? "public"
 // WRONG: never do this
 const role = request.body.role  // UNSAFE!
 ```
+
+## References
+
+- [Role Propagation](references/role-propagation.md) — Identity validated once, propagated via userRole through layers
+- [Data Filtering](references/data-filtering.md) — Visibility, soft-delete, and ownership column conventions

@@ -6,5 +6,5 @@
   "license": "MIT",
   "abstract": "Clean Architecture layer ordering with strict inward dependency flow. Defines domain, application, infrastructure, actions, and UI layers.",
   "tags": ["clean-architecture", "layered-architecture", "ddd", "domain-driven", "software-architecture"],
-  "references": ["references/layers.md"]
+  "references": ["references/layers.md", "references/service-layering.md"]
 }

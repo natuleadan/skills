@@ -1,0 +1,10 @@
+{
+  "name": "i18n-patterns",
+  "version": "1.0.0",
+  "abstract": "Internationalization patterns: RTL support, safe translation access, language propagation via LangProvider, and database-driven language configuration.",
+  "description": "Internationalization and localization patterns for multilingual applications.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["i18n", "internationalization", "rtl", "translation", "language"],
+  "references": ["references/i18n-patterns.md"]
+}

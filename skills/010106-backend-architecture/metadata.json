@@ -6,5 +6,5 @@
   "author": "natuleadan",
   "license": "MIT",
   "tags": ["backend", "architecture", "error-handling", "module-structure", "api-design", "coding-standards"],
-  "references": ["references/error-handling.md", "references/module-structure.md"]
+  "references": ["references/error-handling.md", "references/module-structure.md", "references/error-codes-format.md"]
 }

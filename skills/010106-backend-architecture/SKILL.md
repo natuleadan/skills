@@ -39,3 +39,4 @@ Standard module files:
 
 - [Error Handling](references/error-handling.md)
 - [Module Structure](references/module-structure.md)
+- [Error Codes Format](references/error-codes-format.md) — Structured error codes, prefix conventions, traceId

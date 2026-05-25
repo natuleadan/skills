@@ -6,5 +6,9 @@
   "license": "MIT",
   "tags": ["zero-trust", "authentication", "authorization", "security", "rbac"],
   "abstract": "Zero Trust authentication: validate identity once at entry, propagate via userRole parameter, never accept role from client.",
-  "references": ["references/zero-trust.md"]
+  "references": [
+    "references/zero-trust.md",
+    "references/role-propagation.md",
+    "references/data-filtering.md"
+  ]
 }

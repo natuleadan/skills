@@ -86,3 +86,8 @@ For legacy modules without clear layering:
 | Infrastructure | Domain | UI, Actions |
 | Actions | App, Infra, Domain | UI |
 | UI | Actions | Domain (directly), Infrastructure |
+
+## References
+
+- [Layers](references/layers.md)
+- [Service Layering](references/service-layering.md) — Repository → Service → Action layer pattern with userRole propagation

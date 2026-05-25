@@ -103,3 +103,8 @@ Cache-Control headers, `s-maxage`, `stale-while-revalidate` at the edge/CDN laye
 | Browser/CDN | Global | hours-days | `Cache-Control`, redeploy |
 | Runtime | Regional | seconds-hours | `revalidateTag`, `revalidatePath` |
 | Distributed | Global | minutes-hours | TTL, manual delete |
+
+## References
+
+- [Caching Patterns](references/caching-patterns.md)
+- [Cache Keys & Revalidation](references/cache-keys-revalidation.md) — Hierarchical cache keys, domain-scoped tags, mutation-triggered invalidation
