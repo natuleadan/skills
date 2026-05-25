@@ -1,0 +1,10 @@
+{
+  "name": "release-automation",
+  "version": "1.0.0",
+  "abstract": "Semantic version mapping from commit types, semantic-release automation, post-push dev synchronization, and release configuration files.",
+  "description": "Automated versioning with semantic-release, version bump rules, post-release dev sync workflow, and release configuration.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["release", "semantic-release", "versioning", "ci-cd", "automation", "git"],
+  "references": ["references/versioning.md", "references/semantic-release.md", "references/post-release.md", "references/config.md"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "git-commits",
+  "version": "1.0.0",
+  "abstract": "Conventional commit format rules, safe git staging practices, disaster recovery via git reflog, and commit message examples by type.",
+  "description": "Conventional commit format, git staging safety, disaster recovery with git reflog, and commit message best practices.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["git", "commits", "conventional-commits", "version-control", "coding-standards"],
+  "references": ["references/commit-format.md", "references/commit-rules.md", "references/commit-examples.md", "references/quick-reference.md"]
+}

@@ -42,7 +42,11 @@
         "testing",
         "accessibility",
         "coding-standards",
-        "prisma"
+        "prisma",
+        "git",
+        "commits",
+        "semantic-release",
+        "ci-cd"
       ],
       "category": "Programming",
       "tags": [
@@ -89,7 +93,9 @@
         "./skills/010301-frontend-coding",
         "./skills/010302-backend-arch",
         "./skills/010303-code-quality",
-    "./skills/050301-prisma-database"
+        "./skills/050301-prisma-database",
+        "./skills/010401-git-commits",
+        "./skills/010402-release-automation"
       ]
     }
   ]

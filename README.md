@@ -6,7 +6,7 @@
 <p align="center"><strong>Agent skills for AI coding agents across multiple domains</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Count-18-8B5CF6?style=for-the-badge" alt="18 skills" />
+  <img src="https://img.shields.io/badge/Count-20-8B5CF6?style=for-the-badge" alt="20 skills" />
   <img src="https://img.shields.io/badge/Domains-5-blue?style=for-the-badge" alt="5 domains" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License" /></a>
   <br />
@@ -32,6 +32,8 @@ Skills use numeric codes to encode a three-level hierarchy: domain, category, an
 | | `0103-standards` | `010301-frontend-coding` | React, accessibility, and frontend performance best practices |
 | | | `010302-backend-arch` | Error handling, module structure, env management, API patterns |
 | | | `010303-code-quality` | TypeScript strict patterns, testing (vitest), and security rules |
+| | `0104-git` | `010401-git-commits` | Conventional commits, safe staging, disaster recovery via git reflog |
+| | | `010402-release-automation` | Semantic-release, version bump mapping, post-release sync |
 | `04-business` | `0401-crm` | `040101-contact-crm` | Three-entity CSV contact management with UUID linking, phone validation, and auto-export |
 | `05-architecture` | `0501-web-arch` | `050101-caching` | Three-tier caching strategy: browser/CDN, runtime cache, distributed cache |
 | | | `050102-clean-arch` | Clean Architecture layer ordering and strict inward dependency flow |
@@ -55,11 +57,11 @@ Skills use numeric codes to encode a three-level hierarchy: domain, category, an
 
 ## 4. Project Status
 
-**Active domains:** `01-programming` (7 skills), `04-business` (1 skill), and `05-architecture` (10 skills).
+**Active domains:** `01-programming` (9 skills), `04-business` (1 skill), and `05-architecture` (10 skills).
 
 | Domain | Skills |
 |---|---|
-| `01-programming` | 010101-package-security, 010102-install-and-setup, 010103-package-ops, 010201-skill-creator, 010301-frontend-coding, 010302-backend-arch, 010303-code-quality |
+| `01-programming` | 010101-package-security, 010102-install-and-setup, 010103-package-ops, 010201-skill-creator, 010301-frontend-coding, 010302-backend-arch, 010303-code-quality, 010401-git-commits, 010402-release-automation |
 | `04-business` | 040101-contact-crm — CSV-based CRM with Org→Contact→Product linking |
 | `05-architecture` | 050101-caching, 050102-clean-arch, 050103-docker-deploy, 050104-elysia-patterns, 050105-nextjs-compiler, 050106-security, 050107-server-actions, 050108-zero-trust, 050201-better-auth, 050301-prisma-database |
 
