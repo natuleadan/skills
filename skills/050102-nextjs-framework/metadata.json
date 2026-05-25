@@ -1,0 +1,22 @@
+{
+  "name": "nextjs-framework",
+  "version": "1.0.0",
+  "abstract": "Next.js 16 framework patterns: async APIs, Server/Client Components, React Compiler, App Router routing, caching strategy, metadata SEO, SWC optimization, Server Actions, and anti-patterns.",
+  "description": "Next.js 16 framework patterns, rendering strategies, and performance optimization guide.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["nextjs", "react", "framework", "app-router", "server-components", "caching", "compiler"],
+  "references": [
+    "references/async-apis.md",
+    "references/rendering-patterns.md",
+    "references/caching-strategy.md",
+    "references/routing-conventions.md",
+    "references/performance-compiler.md",
+    "references/metadata-seo.md",
+    "references/anti-patterns.md",
+    "references/compiler-options.md",
+    "references/server-actions.md",
+    "references/code-examples.md",
+    "references/quick-reference.md"
+  ]
+}

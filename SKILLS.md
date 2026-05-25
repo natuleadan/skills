@@ -25,9 +25,8 @@ Format: `DDCCSS-word-word` (6 digits, exactly 2 words after the code, each ≥4 
 | | | `030103-lancedb-fulltext` | Full-text search with BM25: FTS indexing, fuzzy, boolean queries |
 | | | `030104-lancedb-hybrid` | Hybrid search (vector+FTS), multivector (ColBERT), filtering |
 | `04-devops` | `0401-docker` | `040101-docker-deploy` | Docker multi-stage builds, env mgmt, CI/CD integration |
-| `05-devices` | `0501-web` | `050101-elysia-patterns` | Elysia API framework: plugins, controllers, auto-routing, auth macros |
-| | | `050102-nextjs-compiler` | SWC compiler optimization: removeConsole, tree-shaking, bundle size |
-| | | `050103-server-actions` | Server Actions: form handling, auth, typed returns, error patterns |
+| `05-web` | `0501-frameworks` | `050101-elysia-framework` | Elysia API framework: plugins, controllers, auto-routing, auth macros |
+| | | `050102-nextjs-framework` | Next.js 16 async APIs, Compiler, App Router, caching, SEO, anti-patterns |
 | `06-security` | `0601-auth` | `060101-http-security` | Multi-layer security: rate limiting, CSP, security headers, CORS |
 | | | `060102-zero-trust` | Zero Trust auth: single validation, role propagation, no client trust |
 | | | `060103-better-auth` | Better Auth integration: setup, API endpoints, client SDK, session |

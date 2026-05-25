@@ -1,4 +1,4 @@
-# Next.js Compiler Options Reference
+# Next.js Compiler Options
 
 ## Standard Options
 

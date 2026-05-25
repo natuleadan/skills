@@ -1,4 +1,4 @@
-# Server Actions Reference
+# Server Actions
 
 ## Common Patterns
 
