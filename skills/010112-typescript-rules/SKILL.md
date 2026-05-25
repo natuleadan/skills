@@ -1,6 +1,6 @@
 ---
 name: 010112-typescript-rules
-description: TypeScript language mastery — strict mode, type safety, discriminated unions, generics, mapped types, conditional types, migration strategy, Zod validation, and anti-patterns.
+description: TypeScript strict mode, generics, mapped types, conditional types, Zod validation, migration strategy, and anti-patterns.
 license: MIT
 ---
 

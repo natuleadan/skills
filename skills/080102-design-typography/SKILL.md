@@ -1,6 +1,6 @@
 ---
 name: 080102-design-typography
-description: "Typography and layout design: font selection methodology, modular type scales, 4/8pt spacing systems, grid theory, visual hierarchy for brand and product UI."
+description: "Typography and layout: font selection, modular type scales, spacing systems, grid theory, and visual hierarchy for brand and product UI."
 license: MIT
 ---
 

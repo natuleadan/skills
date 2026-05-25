@@ -154,6 +154,8 @@ def check_description(value, raw_line=None):
         return errs
     if len(value) > 1024:
         errs.append(f"Description exceeds 1024 character limit ({len(value)} chars)")
+    if len(value) > 150:
+        errs.append(f"Description exceeds 150 character limit ({len(value)} chars)")
     if raw_line and ": " in raw_line:
         val_part = raw_line.split(":", 1)[1].strip()
         is_quoted = val_part.startswith('"') or val_part.startswith("'")

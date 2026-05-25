@@ -1,6 +1,6 @@
 ---
 name: 080104-motion-animation
-description: "Motion design and animation principles: timing, easing curves, spring physics, micro-interactions, reduced motion, performance optimization for frontend interfaces."
+description: "Motion design and animation: timing, easing, spring physics, micro-interactions, reduced motion, and performance for frontend interfaces."
 license: MIT
 ---
 
