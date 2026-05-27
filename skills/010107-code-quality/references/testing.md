@@ -158,13 +158,56 @@ it('should load user on mount', async () => {
 
 Check with: `vitest run --coverage`
 
-## Quick Testing Checklist
+## Integration Tests for HTTP Endpoints
+
+Test authenticated HTTP endpoints against a running server:
+
+```typescript
+import { beforeAll, describe, expect, test } from "bun:test"
+
+const HOST = "http://localhost:3400"
+let cookie = ""
+
+// Helper: reusable request function
+async function api(method: string, path: string, body?: unknown) {
+  const opts: RequestInit = { method, headers: { "content-type": "application/json", cookie } }
+  if (body) opts.body = JSON.stringify(body)
+  const res = await fetch(`${HOST}${path}`, opts)
+  return { status: res.status, data: await res.json() }
+}
+
+describe("Organizations", () => {
+  beforeAll(async () => {
+    // Create test user + get session cookie
+    const { cookie: c } = await getAuthHeaders("admin")
+    cookie = c
+  })
+
+  test("create org returns valid response", async () => {
+    const { status, data } = await api("POST", "/v1/organizations", {
+      name: "test-org",
+      slug: "test-org",
+    })
+    expect(status).toBe(200)
+    expect(data.code).toBe(1)
+    expect(data.data.name).toBe("test-org")
+  })
+})
+```
+
+**Pattern:**
+- Use `describeIf(!IS_PROD)` to skip tests in CI production
+- Clean test data in `setup.ts` (DELETE with `test-` prefix)
+- `getAuthHeaders(role)` creates user + returns cookie
+- `toBeOneOf([200, 403])` for multiple valid status codes
+
+## Testing Checklist
 
 - ✅ Unit tests for utilities/services
-- ✅ Integration tests for components
+- ✅ Integration tests for HTTP endpoints (against real server)
 - ✅ E2E tests for critical flows
 - ✅ Mock external APIs
 - ✅ Use AAA pattern (Arrange, Act, Assert)
 - ✅ Clear test names
-- ✅ No hardcoded test data
+- ✅ Clean test data before each suite
 - ✅ 80%+ coverage

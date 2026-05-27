@@ -1,6 +1,6 @@
 ---
 name: 060103-better-auth
-description: Better Auth integration for Next.js — setup, API endpoints, client SDK, and React Context provider for session management.
+description: Better Auth integration for Next.js — setup, API endpoints, client SDK, React Context provider, and Organization plugin for multi-tenant auth.
 license: MIT
 ---
 
@@ -8,20 +8,16 @@ license: MIT
 
 ## Overview
 
-Better Auth is an authentication library for Next.js. It provides a complete auth system with email/password, session management, and React hooks.
+Better Auth is an authentication library for Next.js. It provides a complete auth system with email/password, session management, React hooks, and an Organization plugin for multi-tenant access control.
 
 ## Quick Start
 
 ```bash
-# Install
 npm add better-auth
 npx auth@latest secret
-
-# Set env vars (in .env)
-BETTER_AUTH_SECRET="your-generated-secret"
-BETTER_AUTH_URL="http://localhost:3000"
-NEXT_PUBLIC_APP_URL="http://localhost:3000"
 ```
+
+Set `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, `NEXT_PUBLIC_APP_URL` in `.env`.
 
 ## Architecture
 
@@ -36,13 +32,39 @@ Next.js App
 ├── Auth Config: src/lib/auth.ts   ← betterAuth({ ... })
 │
 ├── Auth Client: src/lib/auth-client.ts  ← createAuthClient()
-│   ├── signIn.email()
-│   ├── signUp.email()
-│   ├── signOut()
-│   └── useSession()
+│   └── organizationClient()       ← org plugin (optional)
 │
 └── Auth Provider (optional)       ← React Context wrapper
     └── useAuth() hook
+```
+
+## Quick Reference
+
+```typescript
+import { auth } from "@/lib/auth"
+import { authClient } from "@/lib/auth-client"
+const { signIn, signUp, signOut, useSession } = authClient
+
+// Sign in
+const result = await signIn.email({ email, password })
+if (result.error) { /* handle */ }
+
+// Session
+const { data: session, isPending } = useSession()
+```
+
+## Organization Plugin
+
+See [references/organization-plugin.md](references/organization-plugin.md) for full setup.
+
+```typescript
+// Client hooks
+const { data: orgs } = authClient.useListOrganizations()
+const { data: activeOrg } = authClient.useActiveOrganization()
+
+// Mutations
+await authClient.organization.setActive({ organizationId: orgId })
+await authClient.organization.inviteMember({ email, role: "member", organizationId: orgId })
 ```
 
 ## Key Files
@@ -53,29 +75,4 @@ Next.js App
 | `src/app/api/auth/[...all]/route.ts` | Catch-all API route |
 | `src/lib/auth-client.ts` | Browser client |
 | `src/components/auth/auth-provider.tsx` | React Context provider (optional) |
-
-## Quick Reference
-
-```typescript
-// Server
-import { auth } from "@/lib/auth"
-
-// Client
-import { authClient } from "@/lib/auth-client"
-const { signIn, signUp, signOut, useSession } = authClient
-
-// Sign in
-const result = await signIn.email({ email, password })
-if (result.error) { /* handle */ }
-
-// Sign up
-const result = await signUp.email({ name, email, password })
-
-// Session
-const { data: session, isPending } = useSession()
-
-// Sign out
-await signOut()
-```
-
-See reference docs for full setup and provider patterns.
+| `references/organization-plugin.md` | Org plugin config, teams, dynamic AC |

@@ -28,6 +28,42 @@ const value: unknown = getUserData()
 if (typeof value === 'object' && value !== null) {
   // Narrowed type
 }
+
+## Controlled `any` Escapes
+
+In rare cases, `any` is acceptable — document why:
+
+```typescript
+// ACCEPTABLE: Third-party client plugin missing types for specific methods
+const res = await (authClient.organization as any).createTeam({
+  name: "Engineering",
+  organizationId: orgId,
+}) as { error?: { message: string } }
+if (res.error) throw new Error(res.error.message)
+```
+
+**Rules for controlled escapes:**
+- Use inline `as any` — never declare a variable as `any`
+- Cast the result immediately to a known type `as { error?: ... }`
+- Add a comment explaining why `any` is needed
+- Prefer `as unknown as T` over `as T` for cross-type conversions
+
+## API Response Type Assertion
+
+For unknown API responses, use `Record<string, unknown>` with gradual narrowing:
+
+```typescript
+// Instead of `as any`:
+const data = (await res.json()) as Record<string, unknown>
+const name = data.name as string | undefined
+const items = data.items as Array<Record<string, unknown>> | undefined
+
+// For deeper nesting:
+const user = data.user as Record<string, unknown> | undefined
+const email = user?.email as string | undefined
+```
+
+This preserves type safety at each access point rather than losing it all at once.
 ```
 
 ## No Non-Null Assertions (`!`)

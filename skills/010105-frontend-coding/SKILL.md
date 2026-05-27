@@ -1,6 +1,6 @@
 ---
 name: 010105-frontend-coding
-description: React best practices, web accessibility (ARIA, keyboard nav, semantic HTML), and frontend performance (N+1, lazy loading, memoization, caching).
+description: React best practices, hydration pattern, web accessibility (ARIA, keyboard nav), and frontend performance (N+1 queries, lazy loading).
 license: MIT
 ---
 

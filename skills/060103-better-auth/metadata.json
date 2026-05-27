@@ -1,10 +1,10 @@
 {
   "name": "better-auth",
-  "version": "1.0.0",
-  "abstract": "Better Auth integration for Next.js: server config, API endpoints, client SDK, session management, and optional React Context provider.",
-  "description": "Better Auth setup guide, API endpoints, createAuthClient configuration, and React Context AuthProvider for Next.js applications.",
+  "version": "1.1.0",
+  "abstract": "Better Auth integration for Next.js: server config, API endpoints, client SDK, session management, and Organization plugin for multi-tenant auth with teams and dynamic access control.",
+  "description": "Better Auth setup guide, API endpoints, createAuthClient configuration, React Context AuthProvider, and Organization plugin patterns for multi-tenant applications.",
   "author": "natuleadan",
   "license": "MIT",
-  "tags": ["authentication", "better-auth", "nextjs", "session", "auth"],
-  "references": ["references/endpoints.md", "references/setup.md", "references/auth-client.md", "references/provider.md"]
+  "tags": ["authentication", "better-auth", "nextjs", "session", "auth", "organizations", "multi-tenant", "rbac"],
+  "references": ["references/endpoints.md", "references/setup.md", "references/auth-client.md", "references/provider.md", "references/organization-plugin.md"]
 }
