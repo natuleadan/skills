@@ -1,0 +1,5 @@
+[
+  { "prompt": "Design a multi-currency price table with FK chain to currencies, countries, and taxes", "topics": ["fk-chain", "price-table"] },
+  { "prompt": "Implement geo-based currency detection using edge headers and database lookup", "topics": ["geo-detection"] },
+  { "prompt": "Build a CurrencyProvider in React with optional user preference cookie", "topics": ["currency-provider"] }
+]

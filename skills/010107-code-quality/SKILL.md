@@ -1,6 +1,6 @@
 ---
 name: 010107-code-quality
-description: Testing best practices (vitest, TDD, coverage) and security rules (secrets, validation, XSS, injection, CORS).
+description: Testing practices (vitest, TDD, coverage), security rules (secrets, XSS, injection, CORS), and seed data patterns (anonymization, multi-language).
 license: MIT
 ---
 
@@ -33,3 +33,4 @@ Cross-cutting quality standards for testing and security. For TypeScript languag
 
 - [Testing](references/testing.md)
 - [Security](references/security.md)
+- [Seed Data Patterns](references/seed-data-patterns.md) — Anonymization, multi-language, multi-currency seed data conventions

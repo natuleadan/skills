@@ -1,0 +1,6 @@
+[
+  { "prompt": "Design per-entity translation tables for products, categories, and variants", "topics": ["translation-tables"] },
+  { "prompt": "Implement the assembler pattern: fetch all translations and filter in-memory by language", "topics": ["assembler-pattern"] },
+  { "prompt": "Design a cache invalidation strategy for multi-language content", "topics": ["cache-invalidation", "slug-resolution"] },
+  { "prompt": "Implement language-to-direction mapping from the languages table", "topics": ["language-direction"] }
+]

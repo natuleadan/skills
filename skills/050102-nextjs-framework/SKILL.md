@@ -68,5 +68,6 @@ export async function updateAction(data) {
 - [Compiler Options](references/compiler-options.md) — SWC optimization, removeConsole, tree-shaking
 - [Server Actions](references/server-actions.md) — Server Actions patterns, auth, redirects
 - [MPP Payment Middleware](references/mpp-payment-middleware.md) — HTTP 402 payments for route handlers
+- [Proxy Locale Detection](references/proxy-locale-detection.md) — Locale detection in proxy.ts, redirect, [lang] routes
 - [Code Examples](references/code-examples.md) — Full working examples
 - [Quick Reference](references/quick-reference.md) — Architecture overview card

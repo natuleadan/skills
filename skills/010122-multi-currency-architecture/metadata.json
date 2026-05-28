@@ -1,0 +1,15 @@
+{
+  "name": "multi-currency-architecture",
+  "version": "1.0.0",
+  "abstract": "Multi-currency architecture with geo detection, FK chains to countries and taxes, per-currency pricing, and admin CRUD with FK protection.",
+  "description": "Standards for multi-currency implementations: price-per-currency tables, foreign key chains, geo-based detection, and admin CRUD with referential integrity.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["multi-currency", "e-commerce", "pricing", "geo-detection", "database", "postgresql"],
+  "references": [
+    "references/fk-chain.md",
+    "references/price-table.md",
+    "references/geo-detection.md",
+    "references/currency-provider.md"
+  ]
+}

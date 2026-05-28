@@ -1,6 +1,6 @@
 ---
 name: 010106-backend-architecture
-description: Backend architecture — typed error hierarchies, structured API responses, domain modules, service/repository layering, env sanitization.
+description: Backend architecture — typed errors, structured API responses, domain modules, service/repository layering, env sanitization, and FK protection.
 license: MIT
 ---
 
@@ -41,3 +41,4 @@ Standard module files:
 - [Error Handling](references/error-handling.md)
 - [Module Structure](references/module-structure.md)
 - [Error Codes Format](references/error-codes-format.md) — Structured error codes, prefix conventions, traceId
+- [Foreign Key Chains](references/foreign-key-chains.md) — Multi-currency FK chain, translation FK chain, FK protection for admin DELETE

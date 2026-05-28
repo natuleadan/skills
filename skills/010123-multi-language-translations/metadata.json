@@ -1,0 +1,16 @@
+{
+  "name": "multi-language-translations",
+  "version": "1.0.0",
+  "abstract": "Multi-language translation architecture with per-entity tables, assembler pattern, cache invalidation across languages, per-locale slug resolution, and direction from database.",
+  "description": "Standards for multi-language content: per-entity translation tables, assembler pattern, cache invalidation, per-locale slug resolution, and language direction mapping.",
+  "author": "natuleadan",
+  "license": "MIT",
+  "tags": ["i18n", "multi-language", "translations", "localization", "database", "postgresql"],
+  "references": [
+    "references/translation-tables.md",
+    "references/assembler-pattern.md",
+    "references/cache-invalidation.md",
+    "references/slug-resolution.md",
+    "references/language-direction.md"
+  ]
+}
