@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "abstract": "Vector search with pgvector — embedding generation (OpenAI or deterministic hash), HNSW indexing, cosine similarity search, and hybrid semantic+keyword patterns.",
+  "references": [
+    "skills/030201-pgvector-embeddings/references/embedding-generation.md",
+    "skills/030201-pgvector-embeddings/references/hnsw-index.md",
+    "skills/030201-pgvector-embeddings/references/similarity-search.md",
+    "skills/030201-pgvector-embeddings/references/hybrid-search.md"
+  ]
+}

@@ -31,4 +31,7 @@ return <h1>{getT('page.title')}</h1>;
 
 ## References
 
-- [I18n Patterns](references/i18n-patterns.md) — RTL, safe translations, LangProvider, language tables
+| Topic | File |
+|---|---|
+| RTL support, safe translations, LangProvider, language tables | [references/i18n-patterns.md](references/i18n-patterns.md) |
+| CSS logical properties, DirectionProvider, icon rotation, RTL pitfalls | [references/rtl-css-patterns.md](references/rtl-css-patterns.md) |

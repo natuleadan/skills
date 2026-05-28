@@ -1,0 +1,5 @@
+[
+  { "prompt": "Define permission statements for a products domain with create, read, update, delete, publish actions", "topics": ["permission-statements", "role-definitions"] },
+  { "prompt": "Implement requireApiKeyOrSession that checks both API keys and session cookies", "topics": ["dual-auth"] },
+  { "prompt": "Sync backend roles with frontend permission checks", "topics": ["frontend-sync"] }
+]

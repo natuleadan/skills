@@ -1,0 +1,14 @@
+[
+  {
+    "prompt": "Create a Drizzle schema for a products table with UUID PK, slug, name, price (decimal), timestamps, and a FK to categories",
+    "topics": ["table-conventions", "foreign-keys"]
+  },
+  {
+    "prompt": "Create a domain factory function for a CRUD repository that accepts a Drizzle table as parameter",
+    "topics": ["domain-factories"]
+  },
+  {
+    "prompt": "Add a vector column with HNSW index to an existing Drizzle schema",
+    "topics": ["vector-columns"]
+  }
+]

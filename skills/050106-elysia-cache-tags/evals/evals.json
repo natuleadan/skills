@@ -1,0 +1,5 @@
+[
+  { "prompt": "Implement a 3-level cache tag system with Redis Sets in TypeScript", "topics": ["tag-levels", "remember-with-tags"] },
+  { "prompt": "Design an invalidation chain for when a product variant is created", "topics": ["invalidation-chains"] },
+  { "prompt": "Cache signed URLs for media files with automatic renewal before expiry", "topics": ["signed-url-cache"] }
+]

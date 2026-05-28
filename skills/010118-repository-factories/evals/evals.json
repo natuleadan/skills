@@ -1,0 +1,4 @@
+[
+  { "prompt": "Create a domain factory for a products-like domain. Show how to instantiate it for both test and production tables.", "topics": ["factory-pattern", "service-dual-mode"] },
+  { "prompt": "Create a generic admin factory that accepts any table with FK checks.", "topics": ["admin-sys-factory"] }
+]

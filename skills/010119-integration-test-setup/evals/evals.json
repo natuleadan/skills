@@ -1,0 +1,5 @@
+[
+  { "prompt": "Write a test setup with getAuthHeaders and cleanup for a products CRUD test suite", "topics": ["test-setup", "data-cleanup"] },
+  { "prompt": "Write a sub-resource test for product variants including auth checks", "topics": ["sub-resource-tests"] },
+  { "prompt": "Write a permissions matrix test that checks 5 roles against 8 operations", "topics": ["permissions-matrix"] }
+]

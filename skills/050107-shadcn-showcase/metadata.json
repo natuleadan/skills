@@ -1,0 +1,5 @@
+{
+  "version": "1.0.0",
+  "abstract": "Patterns for building component showcase pages with shadcn/ui variant cards, TanStack data tables, and Recharts.",
+  "references": []
+}

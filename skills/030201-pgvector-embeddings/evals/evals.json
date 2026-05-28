@@ -1,0 +1,5 @@
+[
+  { "prompt": "Create a pgvector table with HNSW index for 384-dimension embeddings", "topics": ["hnsw-index"] },
+  { "prompt": "Generate an embedding using OpenAI and search for similar items in PostgreSQL", "topics": ["embedding-generation", "similarity-search"] },
+  { "prompt": "Implement a deterministic hash-based embedding fallback for development", "topics": ["embedding-generation"] }
+]

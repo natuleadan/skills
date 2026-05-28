@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "abstract": "Tag-based cache invalidation for Elysia with Redis Sets — 3-level tags (entity/domain/cross-domain), cache-aside with tags, invalidation chains, and signed URL caching.",
+  "references": [
+    "skills/050106-elysia-cache-tags/references/tag-levels.md",
+    "skills/050106-elysia-cache-tags/references/remember-with-tags.md",
+    "skills/050106-elysia-cache-tags/references/invalidation-chains.md",
+    "skills/050106-elysia-cache-tags/references/signed-url-cache.md"
+  ]
+}

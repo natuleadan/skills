@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "abstract": "Integration test patterns for backend APIs — describeIf guards, getAuthHeaders, req() helper, test-% cleanup, sub-resource tests, and permissions matrix testing.",
+  "references": [
+    "skills/010119-integration-test-setup/references/test-setup.md",
+    "skills/010119-integration-test-setup/references/data-cleanup.md",
+    "skills/010119-integration-test-setup/references/sub-resource-tests.md",
+    "skills/010119-integration-test-setup/references/permissions-matrix.md"
+  ]
+}

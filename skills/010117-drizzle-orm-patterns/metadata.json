@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "abstract": "Drizzle ORM schema conventions for PostgreSQL — prefix rules, FK constraints, vector/HNSW, JSONB/GIN, timestamps mixin, raw SQL, and domain factory patterns.",
+  "references": [
+    "skills/010117-drizzle-orm-patterns/references/table-conventions.md",
+    "skills/010117-drizzle-orm-patterns/references/foreign-keys.md",
+    "skills/010117-drizzle-orm-patterns/references/vector-columns.md",
+    "skills/010117-drizzle-orm-patterns/references/jsonb-gin.md",
+    "skills/010117-drizzle-orm-patterns/references/raw-sql.md",
+    "skills/010117-drizzle-orm-patterns/references/domain-factories.md"
+  ]
+}

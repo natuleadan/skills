@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "abstract": "Domain repository factory pattern — factory functions accepting Drizzle tables to create reusable CRUD instances for test (tst_) and production (prd_/sys_) tables.",
+  "references": [
+    "skills/010118-repository-factories/references/factory-pattern.md",
+    "skills/010118-repository-factories/references/service-dual-mode.md",
+    "skills/010118-repository-factories/references/admin-sys-factory.md"
+  ]
+}

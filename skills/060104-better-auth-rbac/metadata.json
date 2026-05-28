@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "abstract": "Role-based access control with Better Auth — permission statements, role definitions via createAccessControl, authorize() checks, dual auth, and frontend permission sync.",
+  "references": [
+    "skills/060104-better-auth-rbac/references/permission-statements.md",
+    "skills/060104-better-auth-rbac/references/role-definitions.md",
+    "skills/060104-better-auth-rbac/references/dual-auth.md",
+    "skills/060104-better-auth-rbac/references/frontend-sync.md"
+  ]
+}
