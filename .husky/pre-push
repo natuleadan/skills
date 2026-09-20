@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+# pre-push: valida los skills antes de pushear.
+# Instalar: npm run prepare  (husky)  |  git config core.hooksPath .husky/_
+# Bypass:   git push --no-verify   |   HOOK_SKIP=1 git push
+[ "${HOOK_SKIP:-0}" = "1" ] && { echo "pre-push: skipped (HOOK_SKIP=1)"; exit 0; }
+command -v python3 >/dev/null 2>&1 || { echo "pre-push: python3 ausente, skip"; exit 0; }
+echo "pre-push: tools/validate-all.py"
+python3 tools/validate-all.py

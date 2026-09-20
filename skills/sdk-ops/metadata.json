@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "abstract": "A CLI for provisioning and operating servers and clusters **from YAML**: bring up",
+  "references": [
+    "provisioning.md",
+    "clusters.md",
+    "datastores.md",
+    "backups.md",
+    "firewall.md"
+  ]
+}

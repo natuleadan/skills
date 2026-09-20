@@ -1,0 +1,83 @@
+{
+  "name": "natuleadan-skills",
+  "owner": {
+    "name": "natuleadan",
+    "url": "https://github.com/natuleadan"
+  },
+  "metadata": {
+    "description": "Agent skills for AI coding agents — platform SDKs and industry AI tools.",
+    "version": "1.0.0",
+    "pluginRoot": "./"
+  },
+  "plugins": [
+    {
+      "name": "natuleadan",
+      "description": "Platform SDKs and industry AI tools for Natuleadan agents — healthcare, biology, agriculture, and more.",
+      "version": "1.0.0",
+      "source": "./",
+      "author": {
+        "name": "natuleadan"
+      },
+      "homepage": "https://github.com/natuleadan/skills",
+      "repository": "https://github.com/natuleadan/skills",
+      "license": "MIT",
+      "keywords": [
+        "ai-tools",
+        "agent-skills",
+        "healthcare",
+        "biology",
+        "agriculture",
+        "technology",
+        "security",
+        "sdk",
+        "platform"
+      ],
+      "category": "AI Tools",
+      "tags": [
+        "ai",
+        "agents",
+        "healthcare",
+        "biology",
+        "agriculture",
+        "food-beverage",
+        "energy",
+        "manufacturing",
+        "logistics",
+        "environment",
+        "education",
+        "commerce",
+        "entertainment",
+        "technology",
+        "construction",
+        "security",
+        "space",
+        "government",
+        "sdk",
+        "platform"
+      ],
+      "strict": false,
+      "skills": [
+        "./skills/natuleadan-app",
+        "./skills/sdk-api",
+        "./skills/sdk-ops",
+        "./skills/sdk-neural",
+        "./skills/healthcare-ai-tools",
+        "./skills/biology-ai-tools",
+        "./skills/agriculture-ai-tools",
+        "./skills/food-and-beverage-ai-tools",
+        "./skills/energy-ai-tools",
+        "./skills/manufacturing-ai-tools",
+        "./skills/logistics-ai-tools",
+        "./skills/environment-ai-tools",
+        "./skills/education-ai-tools",
+        "./skills/commerce-ai-tools",
+        "./skills/entertainment-ai-tools",
+        "./skills/technology-ai-tools",
+        "./skills/construction-ai-tools",
+        "./skills/security-ai-tools",
+        "./skills/space-ai-tools",
+        "./skills/government-ai-tools"
+      ]
+    }
+  ]
+}

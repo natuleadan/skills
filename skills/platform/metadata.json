@@ -1,0 +1,10 @@
+{
+  "version": "0.1.0",
+  "abstract": "How to work with the platform APIs: agent, robot and toolset categories, request flow, scheduling, and human-in-the-loop.",
+  "references": [
+    "agent-types.md",
+    "api-usage.md",
+    "scheduling.md",
+    "hil.md"
+  ]
+}

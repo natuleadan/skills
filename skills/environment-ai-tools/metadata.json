@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "abstract": "General-purpose AI tooling for environment workflows.",
+  "references": [
+    "sanitation.md",
+    "waste.md",
+    "water.md",
+    "air.md",
+    "soil.md"
+  ]
+}

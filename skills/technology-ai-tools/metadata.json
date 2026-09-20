@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "abstract": "General-purpose AI tooling for technology workflows.",
+  "references": [
+    "software.md",
+    "networks.md",
+    "cloud.md",
+    "support.md",
+    "materials.md",
+    "hardware.md"
+  ]
+}

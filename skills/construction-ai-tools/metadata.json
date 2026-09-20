@@ -1,0 +1,10 @@
+{
+  "version": "0.1.0",
+  "abstract": "General-purpose AI tooling for construction workflows.",
+  "references": [
+    "construction.md",
+    "building.md",
+    "renovations.md",
+    "roads.md"
+  ]
+}

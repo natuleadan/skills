@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "abstract": "General-purpose AI tooling for entertainment workflows.",
+  "references": [
+    "tourism.md",
+    "banquets.md",
+    "events.md",
+    "venues.md",
+    "videogames.md",
+    "performers.md",
+    "filmmakers.md"
+  ]
+}

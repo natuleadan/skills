@@ -1,0 +1,45 @@
+{
+  "name": "natuleadan-skills",
+  "version": "1.0.0",
+  "description": "Platform SDKs and industry AI tools for Natuleadan agents.",
+  "author": {
+    "name": "natuleadan",
+    "url": "https://github.com/natuleadan"
+  },
+  "homepage": "https://github.com/natuleadan/skills",
+  "repository": "https://github.com/natuleadan/skills",
+  "license": "MIT",
+  "keywords": [
+    "ai-tools",
+    "agent-skills",
+    "healthcare",
+    "biology",
+    "agriculture",
+    "technology",
+    "security",
+    "sdk",
+    "platform"
+  ],
+  "skills": [
+    "./skills/natuleadan-app",
+    "./skills/sdk-api",
+    "./skills/sdk-ops",
+    "./skills/sdk-neural",
+    "./skills/healthcare-ai-tools",
+    "./skills/biology-ai-tools",
+    "./skills/agriculture-ai-tools",
+    "./skills/food-and-beverage-ai-tools",
+    "./skills/energy-ai-tools",
+    "./skills/manufacturing-ai-tools",
+    "./skills/logistics-ai-tools",
+    "./skills/environment-ai-tools",
+    "./skills/education-ai-tools",
+    "./skills/commerce-ai-tools",
+    "./skills/entertainment-ai-tools",
+    "./skills/technology-ai-tools",
+    "./skills/construction-ai-tools",
+    "./skills/security-ai-tools",
+    "./skills/space-ai-tools",
+    "./skills/government-ai-tools"
+  ]
+}

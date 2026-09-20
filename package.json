@@ -1,0 +1,27 @@
+{
+  "name": "natuleadan-skills",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Agent skills for AI coding agents — platform SDKs and industry AI tools.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/natuleadan/skills"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "validate": "python3 tools/validate-all.py",
+    "prepare": "husky",
+    "changeset": "changeset",
+    "version": "changeset version && node scripts/sync-plugin-version.mjs",
+    "check-plugin-version": "node scripts/sync-plugin-version.mjs --check"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.7.0",
+    "@changesets/cli": "^2.30.0",
+    "@commitlint/cli": "^20.5.3",
+    "@commitlint/config-conventional": "^20.5.3",
+    "husky": "^9.1.7"
+  },
+  "packageManager": "pnpm@12.3.4"
+}

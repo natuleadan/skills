@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "abstract": "General-purpose AI tooling for energy workflows.",
+  "references": [
+    "oil.md",
+    "gas.md",
+    "electricity.md",
+    "renewables.md",
+    "nuclear.md",
+    "mining.md"
+  ]
+}

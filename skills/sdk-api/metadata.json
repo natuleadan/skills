@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "abstract": "A Go SDK for building services from **YAML**: entries, REST/CRUD, auth modes,",
+  "references": [
+    "entries.md",
+    "auth.md",
+    "database.md",
+    "events.md",
+    "openapi.md",
+    "deployment.md"
+  ]
+}

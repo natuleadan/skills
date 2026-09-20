@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "abstract": "General-purpose AI tooling for logistics workflows.",
+  "references": [
+    "fleets.md",
+    "ports.md",
+    "airlines.md",
+    "railroads.md",
+    "warehouses.md"
+  ]
+}

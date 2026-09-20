@@ -1,0 +1,9 @@
+{
+  "version": "0.1.0",
+  "abstract": "An enhanced SQL database engine with **native vector search**, distributed as a",
+  "references": [
+    "overview.md",
+    "vector-search.md",
+    "deployment.md"
+  ]
+}

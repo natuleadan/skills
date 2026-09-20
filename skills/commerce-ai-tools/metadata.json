@@ -1,0 +1,10 @@
+{
+  "version": "0.1.0",
+  "abstract": "General-purpose AI tooling for commerce workflows.",
+  "references": [
+    "retail.md",
+    "marketing.md",
+    "finance.md",
+    "talent.md"
+  ]
+}
