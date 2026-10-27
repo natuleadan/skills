@@ -1,0 +1,16 @@
+Third Party Notices
+
+This project uses the following development dependencies. The skills
+contain no third-party code; these packages are build and validation
+tooling and are not distributed with the skill content.
+
+Package                          Version  License  Repository
+-------------------------------  -------  -------  ----------------------------------------
+@changesets/changelog-github     0.7.0    MIT      https://github.com/changesets/changesets/tree/main/packages/changelog-github
+@changesets/cli                  2.31.1   MIT      https://github.com/changesets/changesets/tree/main/packages/cli
+@commitlint/cli                  20.5.3   MIT      https://github.com/conventional-changelog/commitlint
+@commitlint/config-conventional  20.5.3   MIT      https://github.com/conventional-changelog/commitlint
+husky                            9.1.7    MIT      https://github.com/typicode/husky
+
+The full license text of each package is distributed with the package and
+available at the repository listed above.

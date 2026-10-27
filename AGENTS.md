@@ -44,6 +44,7 @@ Rules:
 
 - `pnpm validate` - validate skills and audit industry neutrality.
 - `pnpm industry` - audit only the industry skills.
+- `pnpm notices` - regenerate `ThirdPartyNotices.txt`.
 - `pnpm skill <name>` - run a skill script with Node.
 - `pnpm changeset` - record a change for the next release.
 
