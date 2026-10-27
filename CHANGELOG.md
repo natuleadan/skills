@@ -1,5 +1,11 @@
 # natuleadan-skills
 
+## 0.0.3
+
+### Patch Changes
+
+- 5f4f523: Make skill scripts self-contained for installed copies.
+
 ## 0.0.2
 
 ### Patch Changes
