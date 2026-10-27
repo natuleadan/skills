@@ -1,1 +1,2 @@
 node_modules/.bin/commitlint --edit "$1"
+python3 tools/check-commit.py "$1"
