@@ -1,58 +1,98 @@
 # Natuleadan Skills - Agent Guide
 
-Installable agent skills for AI coding agents.
+Technical guide for working in this repository. The README is the product
+overview.
 
-## Links
+## Requirements
 
-- [README.md](README.md) - installation and development
-- [SKILLS.md](SKILLS.md) - complete catalog
-- [CONTRIBUTING.md](CONTRIBUTING.md) - format, validation and commits
-
-## Skills
-
-17 skills: one platform skill and sixteen industry skills.
-
-- `natuleadan-skills` - groups the platform open-source programs as references.
-  The references are stubs until each program is defined.
-- `agriculture-ai-tools`, `biology-ai-tools`, `commerce-ai-tools`,
-  `construction-ai-tools`, `education-ai-tools`, `energy-ai-tools`,
-  `entertainment-ai-tools`, `environment-ai-tools`,
-  `food-and-beverage-ai-tools`, `government-ai-tools`, `healthcare-ai-tools`,
-  `logistics-ai-tools`, `manufacturing-ai-tools`, `security-ai-tools`,
-  `space-ai-tools`, `technology-ai-tools`.
-
-Industry skills are provider-agnostic: no platform concepts, vendor names or
-pricing.
-
-## Format
-
-Every skill lives in `skills/<name>/` with:
-
-- `SKILL.md` - frontmatter (`name`, `description`) and instructions.
-- `metadata.json` - `version`, `abstract`, `references`.
-- `references/*.md` - notes, each with a mermaid `sequenceDiagram`.
-- `scripts/main.ts` - optional explicit entry point.
-
-Rules:
-
-- No code blocks in markdown except mermaid.
-- No `code/` directory, no executables, no Python.
-- `SKILL.md` has no mermaid; references have at least one.
-- Files stay under 300 lines.
-
-## Commits
-
-`type(scope): description` with a scope from `skills`, `tools`, `docs`, `ci`,
-`workflow`, `hooks`, `release`, `license`, `deps`. The title has 3 to 7 words,
-then a blank line and at least 3 bullets shaped `- **Label**: body`.
+- Node.js 24 or newer, which runs TypeScript entry points directly.
+- pnpm 12.
+- No Python: validation, hooks and CI run on Node.
 
 ## Commands
 
-- `pnpm validate` - validate skills and audit industry neutrality.
-- `pnpm industry` - audit only the industry skills.
-- `pnpm notices` - regenerate `ThirdPartyNotices.txt`.
-- `pnpm skill <name>` - run a skill script with Node.
-- `pnpm changeset` - record a change for the next release.
+| Command | What it does |
+|---|---|
+| `pnpm validate` | full validation: skills, industry audit and notices |
+| `pnpm validate:skills` | skills and industry audit only |
+| `pnpm industry` | audit the sixteen industry skills |
+| `pnpm notices` | regenerate `ThirdPartyNotices.txt` |
+| `pnpm skill <name>` | run `skills/<name>/scripts/main.ts` |
+| `pnpm changeset` | record a change for the next release |
+| `pnpm run version` | apply changesets locally; CI does this in the release PR |
+| `pnpm check-plugin-version` | verify plugin manifests match `package.json` |
 
-Husky runs skill validation on commit and full validation on push. The
-repository is Apache-2.0.
+## Project structure
+
+| Path | Purpose |
+|---|---|
+| `skills/<name>/SKILL.md` | frontmatter and instructions |
+| `skills/<name>/metadata.json` | version, abstract, references |
+| `skills/<name>/references/` | prose notes with mermaid diagrams |
+| `skills/<name>/scripts/main.ts` | optional entry point |
+| `tools/` | validator, industry audit, notices and skill runner |
+| `.claude-plugin/` | marketplace and plugin manifests |
+| `.changeset/` | changeset configuration |
+
+## Development
+
+Clone the repository and run `pnpm install`; the `prepare` script installs the
+Husky hooks. Use `pnpm validate` as the single gate before pushing.
+
+## Validation
+
+`pnpm validate` enforces:
+
+- Frontmatter and directory names match.
+- Every declared reference exists and has a mermaid sequence diagram.
+- No fenced code blocks in markdown except mermaid.
+- No `code/`, no executables and no Python.
+- `scripts/` starts at `main.ts` and holds only TypeScript or ESM.
+- Every skill is registered in both plugin manifests.
+- License and version match across manifests.
+- `ThirdPartyNotices.txt` matches the installed dependencies.
+- Industry skills stay neutral: no platform concepts, vendor names or pricing.
+
+The `pre-commit` hook runs `pnpm validate:skills`; the `pre-push` hook and CI run
+`pnpm validate`.
+
+## Commits
+
+Format: `type(scope): description`, scope in English and lower case.
+
+- Title has 3 to 7 words, counting `type(scope):`.
+- Maximum 100 characters, no trailing period.
+- Blank line after the title.
+- At least 3 bullets shaped `- **Label**: body`, each body with 3 to 7 words.
+- Types: feat, fix, upgrade, docs, style, refactor, perf, test, chore, ci,
+  revert.
+- Scopes: `skills`, `tools`, `docs`, `ci`, `workflow`, `hooks`, `release`,
+  `license`, `deps`. CI rejects any other scope.
+
+Release commits (`chore(release): ...`) are exempt because the release pipeline
+creates them.
+
+## Releases
+
+Changesets drive versions. A feature pull request includes a changeset; on push
+to `main`, the Version Packages workflow opens or updates a release pull request.
+
+That release PR runs `pnpm run version`, which executes `changeset version` and
+`sync-plugin-version`, so `package.json`, the changelog and both plugin manifests
+are generated, never edited by hand.
+
+Merge the release PR to cut the version. The tag job tags `main` with
+`v<version>` and publishes `skills_v<version>.zip`. Version `0.0.0` means
+unreleased and is skipped.
+
+## Generated files
+
+- `ThirdPartyNotices.txt` is generated by `pnpm notices`; never edit it by hand.
+- `CHANGELOG.md` and the versions are generated by changesets.
+- The plugin manifests are generated by `scripts/sync-plugin-version.mjs`.
+
+## Links
+
+- [README.md](README.md) - product overview.
+- [SKILLS.md](SKILLS.md) - complete catalog.
+- [CONTRIBUTING.md](CONTRIBUTING.md) - skill format and contribution rules.
