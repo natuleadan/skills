@@ -141,6 +141,24 @@ Format: `type(scope): description`
 
 Rule: scope required, max 100 chars, lowercase.
 
+### Title and body
+
+- **Title:** 3 to 7 words, counting `type(scope):`.
+- **Body:** blank line after the title, then at least 3 bullets in the form
+  `- **Label**: body`, where the body has 3 to 7 words.
+- **Language:** English, like the rest of the repository.
+
+```
+docs(skills): new technology workflow, runtime and sandbox
+
+- **Workstation**: environment, path and reload
+- **Runtime**: install, auth and loop
+- **Sandbox**: isolation, limits and durability
+```
+
+Enforced in two places by `tools/check-commit.py`: the `commit-msg` hook
+locally and the `commit-lint` job in CI.
+
 ---
 
 ## Adding a New Skill
