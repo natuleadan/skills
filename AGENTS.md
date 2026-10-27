@@ -104,3 +104,4 @@ unreleased and is skipped.
 - [README.md](README.md): product overview.
 - [SKILLS.md](SKILLS.md): complete catalog.
 - [CONTRIBUTING.md](CONTRIBUTING.md): skill format and contribution rules.
+- [SECURITY.md](SECURITY.md): vulnerability reporting policy.

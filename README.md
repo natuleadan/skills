@@ -91,6 +91,7 @@ reference only when the task needs it.
 - [Skills Index](SKILLS.md): the full catalog with descriptions.
 - [Contributing](CONTRIBUTING.md): format, validation and commit rules.
 - [Agent Guide](AGENTS.md): commands, structure and release flow.
+- [Security](SECURITY.md): how to report a vulnerability.
 
 ## 9. Ecosystem
 
