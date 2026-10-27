@@ -100,20 +100,43 @@ hello-world per toolchain and mark `PASS` only when the command exits zero.
 
 ## Containers
 
-Choose **Colima** over Docker Desktop or OrbStack when the machine is modest
-and the goal is a Linux kernel you control. Colima runs a lightweight Linux
-VM through Lima and exposes the daemon socket; it needs no GUI, no license
-and no privileged daemon. Docker Desktop is heavier and bundles a GUI an
-agent cannot use; OrbStack is fast but ties the setup to one vendor.
+Colima runs one Linux VM per profile. Inside that VM you choose one of two
+container runtimes; the VM itself is the same either way.
 
-Notes before choosing Colima: it requires its own VM manager (`limactl`)
-alongside the CLI; macOS needs the quarantine attribute cleared after
-downloading binaries; it looks for `limactl` on the path even in
-non-interactive sessions; and switching the container runtime of an existing
-profile requires deleting the instance data first.
+- **docker** — the VM runs `dockerd`; the host talks to it with the Docker
+  CLI through `DOCKER_HOST=unix://$HOME/.colima/<profile>/docker.sock`.
+  There is a Docker daemon, but it lives inside the Linux VM, never on
+  macOS. This is what `docker run` and, with the plugin, `docker compose`
+  use.
+- **containerd** — the VM runs containerd and nothing else. Use `nerdctl`,
+  bundled with Colima: `colima nerdctl -- run --rm hello-world` (the `--`
+  matters). No Docker daemon anywhere, and no Docker CLI needed on the host.
 
-Kubernetes is optional. A single-node cluster proves manifest work but costs
-memory and disk. Treat it as a per-project choice, not a default.
+| Runtime | Daemon | Host CLI | Saves | Loses |
+|---|---|---|---|---|
+| docker | dockerd in the VM | `docker` | familiar commands, compose | tens of MB and the dockerd package inside the VM |
+| containerd | containerd only | `nerdctl` | the dockerd process and its disk | `docker` and `docker compose` |
+
+The savings are **inside the VM**, not on macOS: the VM is the real cost.
+Switch runtime to avoid the daemon, not to save RAM.
+
+**Kubernetes is a Colima option, not a Lima feature.** `colima start
+--kubernetes` installs a single-node k3s inside the VM and costs memory and
+disk; drop it by recreating the profile without it. Treat it as a
+per-project choice, not a default.
+
+Lima only provides the VM and its templates. The `*.lima` shims in the user
+bin directory (`docker.lima`, `nerdctl.lima`, `podman.lima`,
+`kubectl.lima`, `apptainer.lima`) execute a tool inside a Lima instance;
+they are not Colima profiles and they are not daemons. Podman is a
+daemonless engine, but it is a separate choice, not what the docker runtime
+uses.
+
+Notes before choosing Colima: it requires `limactl` alongside the CLI;
+macOS needs the quarantine attribute cleared after downloading binaries; it
+looks for `limactl` on the path even in non-interactive sessions; and
+switching the runtime of an existing profile requires `colima delete
+--data`, which destroys the guest tools installed inside.
 
 On Windows, the native shell does not run these scripts. Use WSL2 with Ubuntu
 and follow the Linux path.
