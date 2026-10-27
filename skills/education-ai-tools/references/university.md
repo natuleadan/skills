@@ -1,6 +1,6 @@
 # University
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Higher education workflows.
 

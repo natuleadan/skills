@@ -1,6 +1,6 @@
 # Endocrinology
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Hormonal and metabolic data.
 

@@ -1,6 +1,6 @@
 # Networks
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Network design and operations.
 

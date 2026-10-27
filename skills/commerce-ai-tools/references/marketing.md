@@ -1,6 +1,6 @@
 # Marketing
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Campaigns and audience work.
 

@@ -1,4 +1,4 @@
-# Natuleadan Skills - Agent Guide
+# Natuleadan Skills: Agent Guide
 
 Technical guide for working in this repository. The README is the product
 overview.
@@ -19,6 +19,7 @@ overview.
 | `pnpm notices` | regenerate `ThirdPartyNotices.txt` |
 | `pnpm scripts:generate` | regenerate every skill script stub |
 | `pnpm scripts:check` | verify stubs and run their smoke tests |
+| `pnpm md:check` | reject spaced hyphens in Markdown prose |
 | `pnpm skill <name>` | run `skills/<name>/scripts/main.ts` |
 | `pnpm changeset` | record a change for the next release |
 | `pnpm run version` | apply changesets locally; CI does this in the release PR |
@@ -48,6 +49,8 @@ Husky hooks. Use `pnpm validate` as the single gate before pushing.
 - Frontmatter and directory names match.
 - Every declared reference exists and has a mermaid sequence diagram.
 - No fenced code blocks in markdown except mermaid.
+- No spaced hyphen ` - ` in Markdown prose; the only exception is the
+  copyright line `2023 - Present.`.
 - No `code/`, no executables and no Python.
 - `scripts/` starts at `main.ts` and holds only TypeScript or ESM.
 - Every skill is registered in both plugin manifests.
@@ -98,6 +101,6 @@ unreleased and is skipped.
 
 ## Links
 
-- [README.md](README.md) - product overview.
-- [SKILLS.md](SKILLS.md) - complete catalog.
-- [CONTRIBUTING.md](CONTRIBUTING.md) - skill format and contribution rules.
+- [README.md](README.md): product overview.
+- [SKILLS.md](SKILLS.md): complete catalog.
+- [CONTRIBUTING.md](CONTRIBUTING.md): skill format and contribution rules.

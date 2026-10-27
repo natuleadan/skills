@@ -1,6 +1,6 @@
 # Airlines
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Flight and ground operations.
 

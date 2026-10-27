@@ -1,6 +1,6 @@
 # Cybersecurity
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Threat detection and response.
 

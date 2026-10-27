@@ -1,6 +1,6 @@
 # School
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 K-12 operations and support.
 

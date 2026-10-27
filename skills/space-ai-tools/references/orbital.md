@@ -1,6 +1,6 @@
 # Orbital
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Mission and orbit work.
 

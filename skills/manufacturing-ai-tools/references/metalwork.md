@@ -1,6 +1,6 @@
 # Metalwork
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Machining and metal processes.
 

@@ -1,6 +1,6 @@
 # Confectionery
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Candy and sweets production.
 

@@ -1,6 +1,6 @@
 # Performers
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Singers and dancers.
 

@@ -1,6 +1,6 @@
 # Finance
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Finance and accounting support.
 

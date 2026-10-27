@@ -1,6 +1,6 @@
 ---
 name: construction-ai-tools
-description: "Use this skill when applying AI tools to construction - Building, renovations, and civil works"
+description: "Use this skill when applying AI tools to construction: Building, renovations, and civil works"
 ---
 
 # Construction AI Tools
@@ -9,10 +9,10 @@ General-purpose AI tooling for construction workflows.
 
 ## Areas
 
-- **Construction** - Site and works management.
-- **Building** - Building construction.
-- **Renovations** - Remodeling and fit-out.
-- **Roads** - Roads and civil infrastructure.
+- **Construction**: Site and works management.
+- **Building**: Building construction.
+- **Renovations**: Remodeling and fit-out.
+- **Roads**: Roads and civil infrastructure.
 
 ## Notes
 
@@ -22,7 +22,7 @@ General-purpose AI tooling for construction workflows.
 
 ## References
 
-- `references/construction.md` - site and works management
-- `references/building.md` - building construction
-- `references/renovations.md` - remodeling and fit-out
-- `references/roads.md` - roads and civil infrastructure
+- `references/construction.md`: site and works management
+- `references/building.md`: building construction
+- `references/renovations.md`: remodeling and fit-out
+- `references/roads.md`: roads and civil infrastructure

@@ -1,6 +1,6 @@
 # Renewables
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Solar, wind and storage.
 

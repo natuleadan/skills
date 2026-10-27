@@ -88,9 +88,9 @@ reference only when the task needs it.
 
 ## 8. Documentation
 
-- [Skills Index](SKILLS.md) - the full catalog with descriptions.
-- [Contributing](CONTRIBUTING.md) - format, validation and commit rules.
-- [Agent Guide](AGENTS.md) - commands, structure and release flow.
+- [Skills Index](SKILLS.md): the full catalog with descriptions.
+- [Contributing](CONTRIBUTING.md): format, validation and commit rules.
+- [Agent Guide](AGENTS.md): commands, structure and release flow.
 
 ## 9. Ecosystem
 

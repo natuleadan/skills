@@ -1,6 +1,6 @@
 # Training
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Corporate and skills training.
 

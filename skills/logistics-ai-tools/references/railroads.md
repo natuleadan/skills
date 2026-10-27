@@ -1,6 +1,6 @@
 # Railroads
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Rail operations and freight.
 

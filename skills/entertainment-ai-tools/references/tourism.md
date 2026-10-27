@@ -1,6 +1,6 @@
 # Tourism
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Travel and hospitality.
 

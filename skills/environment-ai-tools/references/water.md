@@ -1,6 +1,6 @@
 # Water
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Quality and treatment.
 
