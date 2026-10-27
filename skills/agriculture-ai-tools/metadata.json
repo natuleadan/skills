@@ -1,0 +1,10 @@
+{
+  "version": "0.1.0",
+  "abstract": "General-purpose AI tooling for agriculture workflows.",
+  "references": [
+    "crops.md",
+    "livestock.md",
+    "aquaculture.md",
+    "general.md"
+  ]
+}

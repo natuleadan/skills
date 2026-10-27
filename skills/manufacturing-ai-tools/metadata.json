@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "abstract": "General-purpose AI tooling for manufacturing workflows.",
+  "references": [
+    "metalwork.md",
+    "plastics.md",
+    "chemicals.md",
+    "assembly.md",
+    "garment.md"
+  ]
+}

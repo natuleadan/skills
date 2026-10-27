@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "abstract": "General-purpose AI tooling for food and beverage workflows.",
+  "references": [
+    "meat.md",
+    "dairy.md",
+    "bakery.md",
+    "beverages.md",
+    "preserves.md",
+    "confectionery.md"
+  ]
+}

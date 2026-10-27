@@ -1,0 +1,78 @@
+{
+  "name": "natuleadan-skills",
+  "owner": {
+    "name": "NATULEADAN SAS BIC",
+    "url": "https://github.com/natuleadan"
+  },
+  "metadata": {
+    "description": "Agent skills for AI coding agents: one platform skill and sixteen industry AI tool skills.",
+    "version": "0.0.0",
+    "pluginRoot": "./"
+  },
+  "plugins": [
+    {
+      "name": "natuleadan",
+      "description": "One platform skill and sixteen industry AI tool skills for Natuleadan agents.",
+      "version": "0.0.0",
+      "source": "./",
+      "author": {
+        "name": "NATULEADAN SAS BIC"
+      },
+      "homepage": "https://github.com/natuleadan/skills",
+      "repository": "https://github.com/natuleadan/skills",
+      "license": "Apache-2.0",
+      "keywords": [
+        "agent-skills",
+        "ai-tools",
+        "platform",
+        "healthcare",
+        "biology",
+        "agriculture",
+        "technology",
+        "security"
+      ],
+      "category": "AI Tools",
+      "tags": [
+        "agents",
+        "skills",
+        "healthcare",
+        "biology",
+        "agriculture",
+        "food-beverage",
+        "energy",
+        "manufacturing",
+        "logistics",
+        "environment",
+        "education",
+        "commerce",
+        "entertainment",
+        "technology",
+        "construction",
+        "security",
+        "space",
+        "government",
+        "platform"
+      ],
+      "strict": false,
+      "skills": [
+        "./skills/natuleadan-skills",
+        "./skills/agriculture-ai-tools",
+        "./skills/biology-ai-tools",
+        "./skills/commerce-ai-tools",
+        "./skills/construction-ai-tools",
+        "./skills/education-ai-tools",
+        "./skills/energy-ai-tools",
+        "./skills/entertainment-ai-tools",
+        "./skills/environment-ai-tools",
+        "./skills/food-and-beverage-ai-tools",
+        "./skills/government-ai-tools",
+        "./skills/healthcare-ai-tools",
+        "./skills/logistics-ai-tools",
+        "./skills/manufacturing-ai-tools",
+        "./skills/security-ai-tools",
+        "./skills/space-ai-tools",
+        "./skills/technology-ai-tools"
+      ]
+    }
+  ]
+}
