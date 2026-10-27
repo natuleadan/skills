@@ -40,6 +40,9 @@ jobs:
           for sha in $(git rev-list "origin/${{ github.base_ref }}..HEAD"); do
             subject=$(git log -1 --format='%s' "$sha")
             echo "$subject" | grep -qE '^Merge ' && continue
+            case "$subject" in
+              "chore(release):"*) echo "SKIP release commit $sha"; continue ;;
+            esac
             author=$(git log -1 --format='%an' "$sha")
             case "$author" in
               *"[bot]"*) echo "SKIP bot commit $sha ($author)"; continue ;;
