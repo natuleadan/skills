@@ -90,6 +90,10 @@ creates them.
 Changesets drive versions. A feature pull request includes a changeset; on push
 to `main`, the Version Packages workflow opens or updates a release pull request.
 
+`.changeset/` is required: `config.json` and the pending changeset files feed
+the Version Packages PR. Without them there is no automatic version or
+changelog.
+
 That release PR runs `pnpm run version`, which executes `changeset version` and
 `sync-plugin-version`, so `package.json`, the changelog and both plugin manifests
 are generated, never edited by hand.
