@@ -1,0 +1,10 @@
+{
+  "version": "0.1.0",
+  "abstract": "General-purpose AI tooling for government workflows.",
+  "references": [
+    "governance.md",
+    "municipal.md",
+    "foundations.md",
+    "standardization.md"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "natuleadan-skills",
+  "version": "0.0.1",
+  "description": "One platform skill and sixteen industry AI tool skills for Natuleadan agents.",
+  "author": {
+    "name": "NATULEADAN SAS BIC",
+    "url": "https://github.com/natuleadan"
+  },
+  "homepage": "https://github.com/natuleadan/skills",
+  "repository": "https://github.com/natuleadan/skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "agent-skills",
+    "ai-tools",
+    "platform",
+    "healthcare",
+    "biology",
+    "agriculture",
+    "technology",
+    "security"
+  ],
+  "skills": [
+    "./skills/natuleadan-skills",
+    "./skills/agriculture-ai-tools",
+    "./skills/biology-ai-tools",
+    "./skills/commerce-ai-tools",
+    "./skills/construction-ai-tools",
+    "./skills/education-ai-tools",
+    "./skills/energy-ai-tools",
+    "./skills/entertainment-ai-tools",
+    "./skills/environment-ai-tools",
+    "./skills/food-and-beverage-ai-tools",
+    "./skills/government-ai-tools",
+    "./skills/healthcare-ai-tools",
+    "./skills/logistics-ai-tools",
+    "./skills/manufacturing-ai-tools",
+    "./skills/security-ai-tools",
+    "./skills/space-ai-tools",
+    "./skills/technology-ai-tools"
+  ]
+}
