@@ -57,10 +57,10 @@
       ],
       "strict": false,
       "skills": [
-        "./skills/natuleadan-app",
+        "./skills/platform",
         "./skills/sdk-api",
         "./skills/sdk-ops",
-        "./skills/sdk-neural",
+        "./skills/neural-db",
         "./skills/healthcare-ai-tools",
         "./skills/biology-ai-tools",
         "./skills/agriculture-ai-tools",
