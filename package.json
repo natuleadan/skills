@@ -14,6 +14,7 @@
   },
   "scripts": {
     "validate": "node tools/validate-all.ts && node tools/audit-temp.ts && node tools/third-party-notices.ts --check",
+    "validate:skills": "node tools/validate-all.ts && node tools/audit-temp.ts",
     "industry": "node tools/audit-temp.ts",
     "notices": "node tools/third-party-notices.ts",
     "skill": "node tools/run-skill.ts",

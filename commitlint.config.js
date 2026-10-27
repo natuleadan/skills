@@ -47,6 +47,21 @@ const config = {
   rules: {
     "scope-empty": [2, "never"],
     "scope-case": [2, "always", "lower-case"],
+    "scope-enum": [
+      2,
+      "always",
+      [
+        "skills", // skill content and catalog
+        "tools", // validators, audits, generators
+        "docs", // README, CONTRIBUTING, AGENTS, SKILLS
+        "ci", // continuous integration
+        "workflow", // GitHub Actions files
+        "hooks", // husky hooks
+        "release", // changesets and versions
+        "license", // license and notices
+        "deps", // dependencies
+      ],
+    ],
     "type-enum": [
       2,
       "always",

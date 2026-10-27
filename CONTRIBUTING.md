@@ -111,6 +111,9 @@ fails when the file is out of date.
 Format: `type(scope): description`. The scope is mandatory, in English and lower
 case.
 
+Scopes: `skills`, `tools`, `docs`, `ci`, `workflow`, `hooks`, `release`,
+`license`, `deps`. CI rejects any other scope.
+
 | Type | Use |
 |---|---|
 | `feat` | new skill or feature |

@@ -56,44 +56,21 @@ function repositoryBase(url: string): string {
   return url.split("/").slice(0, 5).join("/");
 }
 
-// Standard texts used when a package publishes no license file.
-const CANONICAL: Record<string, string> = {
-  MIT: [
-    "MIT License",
-    "",
-    "Copyright (c) the respective copyright holders",
-    "",
-    "Permission is hereby granted, free of charge, to any person obtaining a copy",
-    'of this software and associated documentation files (the "Software"), to deal',
-    "in the Software without restriction, including without limitation the rights",
-    "to use, copy, modify, merge, publish, distribute, sublicense, and/or sell",
-    "copies of the Software, and to permit persons to whom the Software is",
-    "furnished to do so, subject to the following conditions:",
-    "",
-    "The above copyright notice and this permission notice shall be included in all",
-    "copies or substantial portions of the Software.",
-    "",
-    'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR',
-    "IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,",
-    "FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE",
-    "AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER",
-    "LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,",
-    "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE",
-    "SOFTWARE.",
-  ].join("\n"),
-};
-
-function licenseFor(license: string): string {
-  if (license === "Apache-2.0") {
-    return readFileSync(join(ROOT, "LICENSE"), "utf8").trim();
-  }
-  const text = CANONICAL[license];
-  if (!text) {
-    throw new Error(
-      `no full license text for '${license}'; add it to tools/third-party-notices.ts`,
-    );
-  }
-  return text;
+// Standard texts are never invented: a package must ship a license file, or
+// reuse the text of a sibling from the same repository and license.
+function licenseFor(rows: Row[], row: Row): string {
+  const sibling = rows.find(
+    (other) =>
+      other.text &&
+      other.license === row.license &&
+      other.repository !== "unknown" &&
+      repositoryBase(other.repository) === repositoryBase(row.repository),
+  );
+  if (sibling?.text) return sibling.text;
+  throw new Error(
+    `cannot find the license text for ${row.name} (${row.license}); ` +
+      "add the license file to the package or an explicit override",
+  );
 }
 
 const manifest = JSON.parse(
@@ -126,23 +103,16 @@ const rows: Row[] = names.map((name) => {
 });
 
 // Reuse the text of a sibling package from the same repository when a package
-// ships no license file of its own.
+// ships no license file of its own. A package with no usable text fails below.
 for (const row of rows) {
   if (row.text) continue;
-  const sibling = rows.find(
-    (other) =>
-      other.text &&
-      other.license === row.license &&
-      other.repository !== "unknown" &&
-      repositoryBase(other.repository) === repositoryBase(row.repository),
-  );
-  row.text = sibling?.text ?? null;
+  row.text = licenseFor(rows, row);
 }
 
 // Group packages by identical license text.
 const groups = new Map<string, string[]>();
 for (const row of rows) {
-  const text = row.text ?? licenseFor(row.license);
+  const text = row.text as string;
   if (!groups.has(text)) groups.set(text, []);
   groups.get(text)?.push(row.name);
 }
@@ -194,6 +164,7 @@ const content = [
 ].join("\n");
 
 const check = process.argv.includes("--check");
+const summary = `${rows.length} packages, ${groups.size} license texts`;
 if (check) {
   const current = existsSync(OUTPUT) ? readFileSync(OUTPUT, "utf8") : "";
   if (current !== content) {
@@ -202,8 +173,8 @@ if (check) {
     );
     process.exit(1);
   }
-  console.log("PASS: ThirdPartyNotices.txt is up to date.");
+  console.log(`PASS: ThirdPartyNotices.txt is up to date (${summary}).`);
 } else {
   writeFileSync(OUTPUT, content);
-  console.log(`Wrote ${rows.length} packages to ThirdPartyNotices.txt`);
+  console.log(`Wrote ${summary} to ThirdPartyNotices.txt`);
 }
