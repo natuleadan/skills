@@ -1,0 +1,10 @@
+{
+  "version": "0.1.0",
+  "abstract": "Stub map of the platform: APIs, declarative services, infrastructure operations and SQL storage with vector search.",
+  "references": [
+    "platform.md",
+    "services.md",
+    "operations.md",
+    "data.md"
+  ]
+}

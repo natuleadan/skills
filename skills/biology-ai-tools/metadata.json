@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "abstract": "General-purpose AI tooling for biology workflows.",
+  "references": [
+    "biochemistry.md",
+    "genetics.md",
+    "microbiology.md",
+    "biotechnology.md",
+    "immunology.md",
+    "general.md"
+  ]
+}
