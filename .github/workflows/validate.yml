@@ -2,9 +2,9 @@ name: Validate Skills
 
 on:
   push:
-    branches: [main, dev]
+    branches: [main]
   pull_request:
-    branches: [main, dev]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -123,6 +123,3 @@ jobs:
           tag_name: v${{ steps.version.outputs.version }}
           generate_release_notes: true
           files: dist/*.zip
-
-      - name: Sync dev
-        run: git push origin HEAD:dev

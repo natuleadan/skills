@@ -117,6 +117,12 @@ the direct development dependencies and writes the table with their licenses and
 repositories. Run `pnpm notices` after changing dependencies; `pnpm validate`
 fails when the file is out of date.
 
+## Branches
+
+`main` is the only permanent branch. Create a short branch per work item, open
+a pull request and delete the branch after merge. A branch may contain one or
+many commits; there is no branch per commit.
+
 ## Commit conventions
 
 Format: `type(scope): description`. The scope is mandatory, in English and lower
