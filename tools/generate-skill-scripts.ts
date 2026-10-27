@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 // Generates skills/<name>/scripts/main.ts from tools/skill-script-template.txt.
+// The generated script is self-contained: it does not read metadata.json at
+// runtime because the skills installer does not copy that file.
 // Usage: pnpm scripts:generate
 //        pnpm scripts:generate --check
 import {
@@ -20,6 +22,12 @@ const TEMPLATE = readFileSync(
 );
 const CHECK = process.argv.includes("--check");
 
+type Metadata = {
+  version?: string;
+  abstract?: string;
+  references?: string[];
+};
+
 const skills = readdirSync(SKILLS, { withFileTypes: true })
   .filter((entry) => entry.isDirectory())
   .map((entry) => entry.name)
@@ -33,8 +41,22 @@ if (skills.length === 0) {
 
 let changed = 0;
 for (const name of skills) {
+  const metaPath = join(SKILLS, name, "metadata.json");
+  const metadata = JSON.parse(readFileSync(metaPath, "utf8")) as Metadata;
+  const commands = (metadata.references ?? []).map((reference) =>
+    reference.replace(/\.md$/, ""),
+  );
+
+  const content = TEMPLATE.replaceAll(
+    "__NAME_LITERAL__",
+    JSON.stringify(name),
+  )
+    .replaceAll("__VERSION_LITERAL__", JSON.stringify(metadata.version ?? ""))
+    .replaceAll("__ABSTRACT_LITERAL__", JSON.stringify(metadata.abstract ?? ""))
+    .replaceAll("__COMMANDS_LITERAL__", JSON.stringify(commands))
+    .replaceAll("__NAME__", name);
+
   const target = join(SKILLS, name, "scripts", "main.ts");
-  const content = TEMPLATE.replaceAll("__NAME__", name);
   const current = existsSync(target) ? readFileSync(target, "utf8") : "";
   if (current === content) continue;
   if (CHECK) {

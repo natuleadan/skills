@@ -76,10 +76,14 @@ Every skill ships `scripts/main.ts`, generated from
 `tools/skill-script-template.txt` by `tools/generate-skill-scripts.ts`. Never
 edit a script by hand: change the template and run `pnpm scripts:generate`.
 
+The generated script embeds the version, the abstract and the commands. It does
+not read `metadata.json` at runtime: the skills installer does not copy that
+file.
+
 The stub contract:
 
 - `pnpm skill <name> --help` lists the skill and its planned commands, derived
-  from `metadata.json.references`.
+  from `metadata.json.references` at generation time.
 - `pnpm skill <name> --version` prints the skill version.
 - `pnpm skill <name> <command>` returns a JSON stub with `status: stub`.
 - An unknown command exits 2.
