@@ -62,6 +62,13 @@ Husky hooks. Use `pnpm validate` as the single gate before pushing.
 The `pre-commit` hook runs `pnpm validate:skills`; the `pre-push` hook and CI run
 `pnpm validate`.
 
+## Branches
+
+`main` is the only permanent branch. Every work item goes on a short-lived
+branch (`feat/...`, `fix/...`, `docs/...`) and reaches `main` through a pull
+request. The branch is deleted after merge. A branch can hold one or many
+commits; there is no branch per commit.
+
 ## Commits
 
 Format: `type(scope): description`, scope in English and lower case.
