@@ -25,7 +25,6 @@ skills/
     SKILL.md
     metadata.json
     references/    # supporting .md notes (each with one mermaid sequence diagram)
-    code/          # optional code, separated by language
 ```
 
 ### Naming Rules
@@ -37,9 +36,12 @@ Skill names are descriptive and lowercase with hyphens:
 
 ### Content Rules
 
-- **No code inside `.md`.** Code lives under `code/<language>/`. The only fenced
-  block allowed in markdown is `mermaid`.
+- **No code inside `.md`.** The only fenced block allowed in markdown is
+  `mermaid`.
+- **No code in skills.** No `code/` directory and no executable files: a skill
+  is instructions, not a program.
 - **Every `references/*.md` must contain at least one `mermaid` `sequenceDiagram`.**
+- **Files stay under 300 lines.**
 - **`SKILL.md` never contains mermaid.**
 - Industry skills stay **provider-agnostic**: they describe AI tooling for an area
   and work with any compatible backend, with no vendor-specific detail.
@@ -140,6 +142,24 @@ Format: `type(scope): description`
 | `chore` | Config, tooling, CI |
 
 Rule: scope required, max 100 chars, lowercase.
+
+### Title and body
+
+- **Title:** 3 to 7 words, counting `type(scope):`.
+- **Body:** blank line after the title, then at least 3 bullets in the form
+  `- **Label**: body`, where the body has 3 to 7 words.
+- **Language:** English, like the rest of the repository.
+
+```
+docs(skills): new technology workflow, runtime and sandbox
+
+- **Workstation**: environment, path and reload
+- **Runtime**: install, auth and loop
+- **Sandbox**: isolation, limits and durability
+```
+
+Enforced in two places by `tools/check-commit.py`: the `commit-msg` hook
+locally and the `commit-lint` job in CI.
 
 ---
 

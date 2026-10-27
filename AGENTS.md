@@ -39,10 +39,10 @@ skills/<name>/
   SKILL.md          # frontmatter (name, description) + short instructions
   metadata.json     # version, abstract, references
   references/*.md   # prose notes; no embedded code
-  code/*            # optional code, separated by language
 ```
 
-- **No code inside `.md`** - code lives under `code/<language>/`.
+- **No code inside `.md`** - only `mermaid` blocks are allowed.
+- **No code in skills** - no `code/` directory and no executable files.
 - Industry skills stay neutral: no provider-specific detail.
 
 ## Validation
