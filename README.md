@@ -12,11 +12,10 @@
 
 ## 1. What is Natuleadan Skills?
 
-A collection of agent skills for AI coding agents. Each skill is a
-self-contained package of instructions and reference notes: install it once and
-the agent knows the conventions of that domain instead of inventing them.
-
-17 skills: one platform skill and sixteen industry AI tool skills.
+A collection of seventeen agent skills for AI coding agents: one platform skill
+and sixteen industry AI tool skills. Each skill is a self-contained package of
+instructions and reference notes: install it once and the agent knows the
+conventions of that domain instead of inventing them.
 
 ### What is inside
 
