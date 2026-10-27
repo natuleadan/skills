@@ -2,8 +2,9 @@
 <p align="center"><strong>Domain context for AI coding agents, packaged as installable skills</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Count-17-8B5CF6?style=for-the-badge" alt="17 skills" />
-  <img src="https://img.shields.io/badge/Domains-17-blue?style=for-the-badge" alt="17 domains" />
+  <img src="https://img.shields.io/badge/Skills-17-8B5CF6?style=for-the-badge" alt="17 skills" />
+  <img src="https://img.shields.io/badge/References-84-blue?style=for-the-badge" alt="84 references" />
+  <img src="https://img.shields.io/badge/Scripts-17-green?style=for-the-badge" alt="17 scripts" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge" alt="Apache 2.0 License" /></a>
   <br />
   <a href="https://skills.sh/natuleadan/skills"><img src="https://skills.sh/b/natuleadan/skills" alt="Skills" /></a>
@@ -16,6 +17,15 @@ self-contained package of instructions and reference notes: install it once and
 the agent knows the conventions of that domain instead of inventing them.
 
 17 skills: one platform skill and sixteen industry AI tool skills.
+
+### What is inside
+
+Each skill has `SKILL.md`, `metadata.json`, `references/` and
+`scripts/main.ts`. The scripts are stubs today: they list the commands planned
+from the references and return a JSON stub until implemented.
+
+The badges at the top count skills, references and scripts. They are generated
+from the repository, not typed by hand.
 
 ## 2. Why Natuleadan Skills?
 
@@ -32,7 +42,7 @@ miss constraints and repeat the same research in every session.
 
 ## 3. Highlights
 
-- **17 skills across 17 domains.**
+- **17 skills, each with references and a script stub.**
 - **Platform in one place:** APIs, declarative services, operations and data.
 - **Industry depth:** clinical, biology, agriculture, energy, manufacturing,
   logistics, environment, education, commerce, entertainment, technology,

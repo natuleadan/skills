@@ -113,6 +113,7 @@ Run `pnpm validate` before every commit. It checks:
 - License and version match across manifests.
 - `ThirdPartyNotices.txt` matches the installed dependencies.
 - Every skill has a generated `scripts/main.ts` and passes the smoke test.
+- README badges match the skill, reference and script counts.
 - Industry skills stay neutral and uniform.
 
 The `pre-commit` hook runs the same command; the `pre-push` hook runs it again.
@@ -179,8 +180,9 @@ Conventional Commits CI job.
 4. Register the path in `.claude-plugin/marketplace.json` and
    `.claude-plugin/plugin.json`.
 5. Run `pnpm scripts:generate`.
-6. Run `pnpm validate`.
-7. Commit and open a pull request.
+6. Run `pnpm badges`.
+7. Run `pnpm validate`.
+8. Commit and open a pull request.
 
 ## Releases
 
