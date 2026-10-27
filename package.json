@@ -13,10 +13,12 @@
     "node": ">=24"
   },
   "scripts": {
-    "validate": "node tools/validate-all.ts && node tools/audit-temp.ts && node tools/third-party-notices.ts --check",
-    "validate:skills": "node tools/validate-all.ts && node tools/audit-temp.ts",
+    "validate": "node tools/validate-all.ts && node tools/audit-temp.ts && node tools/third-party-notices.ts --check && node tools/generate-skill-scripts.ts --check && node tools/test-skill-scripts.ts",
+    "validate:skills": "node tools/validate-all.ts && node tools/audit-temp.ts && node tools/generate-skill-scripts.ts --check",
     "industry": "node tools/audit-temp.ts",
     "notices": "node tools/third-party-notices.ts",
+    "scripts:generate": "node tools/generate-skill-scripts.ts",
+    "scripts:check": "node tools/generate-skill-scripts.ts --check && node tools/test-skill-scripts.ts",
     "skill": "node tools/run-skill.ts",
     "prepare": "husky",
     "changeset": "changeset",

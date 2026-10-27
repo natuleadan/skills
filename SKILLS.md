@@ -1,7 +1,8 @@
 # Skills Index
 
 17 skills: one platform skill and sixteen industry AI tool skills. Each lives at
-`skills/<skill-name>/` with a `SKILL.md`.
+`skills/<skill-name>/` with a `SKILL.md`. Every skill also ships
+`scripts/main.ts`; run `pnpm skill <name> --help` to list its planned commands.
 
 ## Platform (1)
 
