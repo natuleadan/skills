@@ -40,12 +40,12 @@ jobs:
       - name: Open or update the version pull request
         uses: changesets/action@v1
         with:
-          version-script: pnpm run version
-          commit-message: "chore(release): version packages"
-          pr-title: "chore(release): version packages"
-          create-github-releases: false
-          push-git-tags: false
-          push-with-git-cli: true
+          version: pnpm run version
+          commit: "chore(release): version packages"
+          title: "chore(release): version packages"
+          createGithubReleases: false
+          setupGitUser: false
+          commitMode: git-cli
           github-token: ${{ secrets.RELEASE_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
