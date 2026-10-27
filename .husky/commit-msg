@@ -1,1 +1,6 @@
+#!/usr/bin/env sh
+subject=$(head -n 1 "$1")
+case "$subject" in
+  "chore(release):"*) echo "commit-msg: release commit skipped"; exit 0 ;;
+esac
 node_modules/.bin/commitlint --edit "$1"

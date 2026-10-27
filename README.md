@@ -60,7 +60,7 @@ Useful commands:
 - `pnpm notices` - regenerate `ThirdPartyNotices.txt` from dependencies.
 - `pnpm skill <name>` - run `skills/<name>/scripts/main.ts` with Node.
 - `pnpm changeset` - record a change for the next release.
-- `pnpm run version` - apply changesets and sync plugin versions.
+- `pnpm run version` - apply changesets locally; CI does this in the release PR.
 
 ## 6. Structure
 
@@ -105,9 +105,14 @@ by the Conventional Commits job in CI.
 
 ## 9. Releases
 
-Versions come from changesets. Add a change with `pnpm changeset`, merge it, and
-the release pull request applies `changeset version`, which updates
-`package.json`, the changelog and the plugin manifests.
+Versions come from changesets. Add a change with `pnpm changeset` and merge the
+pull request; the Version Packages workflow opens or updates a release pull
+request on every push to `main`.
+
+That release PR runs `changeset version` and `sync-plugin-version`, so the
+version in `package.json`, `.claude-plugin/plugin.json`,
+`.claude-plugin/marketplace.json` and the `CHANGELOG.md` entry are generated, not
+hand-edited. Merge the release PR to cut the version.
 
 A version of `0.0.0` means unreleased: the tag job skips it. Every other version
 on `main` produces a tag `v<version>` and a release with `skills_v<version>.zip`.

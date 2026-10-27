@@ -156,9 +156,12 @@ Conventional Commits CI job.
 
 ## Releases
 
-Versions come from changesets. Add a change with `pnpm changeset`, merge the
-pull request, and the release pull request applies `changeset version`. Never
-edit the version by hand.
+Versions come from changesets. Add a change with `pnpm changeset` and merge the
+pull request. The Version Packages workflow then opens or updates a release pull
+request and runs `changeset version` plus `sync-plugin-version`. That generates
+the version in `package.json`, the plugin manifests and the `CHANGELOG.md` entry.
+Never edit those by hand.
 
-The release job tags `main` with `v<version>` and publishes
-`skills_v<version>.zip`. Version `0.0.0` means unreleased and is skipped.
+Merge the release PR to cut the version. The release job tags `main` with
+`v<version>` and publishes `skills_v<version>.zip`. Version `0.0.0` means
+unreleased and is skipped.
