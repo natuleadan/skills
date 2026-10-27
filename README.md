@@ -2,10 +2,10 @@
 <p align="center"><strong>Domain context for AI coding agents, packaged as installable skills</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Skills-17-8B5CF6?style=for-the-badge" alt="17 skills" />
-  <img src="https://img.shields.io/badge/References-84-blue?style=for-the-badge" alt="84 references" />
-  <img src="https://img.shields.io/badge/Scripts-17-green?style=for-the-badge" alt="17 scripts" />
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge" alt="Apache 2.0 License" /></a>
+  <img src="https://img.shields.io/badge/Skills-17-8B5CF6?style=flat" alt="17 skills" />
+  <img src="https://img.shields.io/badge/References-84-blue?style=flat" alt="84 references" />
+  <img src="https://img.shields.io/badge/Scripts-17-green?style=flat" alt="17 scripts" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat" alt="Apache 2.0 License" /></a>
   <br />
   <a href="https://skills.sh/natuleadan/skills"><img src="https://skills.sh/b/natuleadan/skills" alt="Skills" /></a>
 </p>
@@ -20,12 +20,9 @@ the agent knows the conventions of that domain instead of inventing them.
 
 ### What is inside
 
-Each skill has `SKILL.md`, `metadata.json`, `references/` and
-`scripts/main.ts`. The scripts are stubs today: they list the commands planned
-from the references and return a JSON stub until implemented.
-
-The badges at the top count skills, references and scripts. They are generated
-from the repository, not typed by hand.
+Each skill is a short guide, a set of focused references and a script stub ready
+for future automation. The stubs name the commands planned for each area, so an
+agent knows what exists before it writes code.
 
 ## 2. Why Natuleadan Skills?
 

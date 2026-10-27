@@ -57,9 +57,9 @@ const counts = {
 };
 
 const badges = [
-  `  <img src="https://img.shields.io/badge/Skills-${counts.skills}-8B5CF6?style=for-the-badge" alt="${counts.skills} skills" />`,
-  `  <img src="https://img.shields.io/badge/References-${counts.references}-blue?style=for-the-badge" alt="${counts.references} references" />`,
-  `  <img src="https://img.shields.io/badge/Scripts-${counts.scripts}-green?style=for-the-badge" alt="${counts.scripts} scripts" />`,
+  `  <img src="https://img.shields.io/badge/Skills-${counts.skills}-8B5CF6?style=flat" alt="${counts.skills} skills" />`,
+  `  <img src="https://img.shields.io/badge/References-${counts.references}-blue?style=flat" alt="${counts.references} references" />`,
+  `  <img src="https://img.shields.io/badge/Scripts-${counts.scripts}-green?style=flat" alt="${counts.scripts} scripts" />`,
 ].join("\n");
 
 const source = readFileSync(README, "utf8");
