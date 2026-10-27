@@ -18,7 +18,7 @@ Every skill lives in a flat directory under `skills/`:
 | `SKILL.md` | yes | frontmatter plus instructions |
 | `metadata.json` | yes | version, abstract and reference list |
 | `references/*.md` | optional | supporting notes with mermaid diagrams |
-| `scripts/main.ts` | optional | explicit entry point, never automatic |
+| `scripts/main.ts` | yes | generated stub and explicit entry point |
 
 There is one platform skill, `natuleadan-skills`, and sixteen industry skills
 ending in `-ai-tools`.
@@ -70,17 +70,24 @@ Declared references must exist, and every existing reference must be declared.
 
 ## Scripts
 
-A skill may ship `scripts/main.ts`. Rules:
+Every skill ships `scripts/main.ts`, generated from
+`tools/skill-script-template.txt` by `tools/generate-skill-scripts.ts`. Never
+edit a script by hand: change the template and run `pnpm scripts:generate`.
 
-- The entry point is always `main.ts`.
-- Only `.ts` or `.mjs` files are allowed inside `scripts/`.
-- Scripts are executed explicitly with `pnpm skill <name>`, never by an agent
-  on its own.
-- The working directory is the skill directory.
-- Keep scripts deterministic and side-effect free unless their purpose is to
-  change something.
+The stub contract:
 
-Helpers can live next to `main.ts`; import them with a relative path.
+- `pnpm skill <name> --help` lists the skill and its planned commands, derived
+  from `metadata.json.references`.
+- `pnpm skill <name> --version` prints the skill version.
+- `pnpm skill <name> <command>` returns a JSON stub with `status: stub`.
+- An unknown command exits 2.
+
+`pnpm scripts:check` verifies that every generated file matches the template and
+runs the smoke tests. `pnpm validate` includes it.
+
+When a capability is implemented, add `scripts/<command>.ts` next to `main.ts`
+and route the command to it. The entry point stays `main.ts`. Only `.ts` and
+`.mjs` are allowed.
 
 ## Validation
 
@@ -95,6 +102,7 @@ Run `pnpm validate` before every commit. It checks:
   `.claude-plugin/plugin.json`.
 - License and version match across manifests.
 - `ThirdPartyNotices.txt` matches the installed dependencies.
+- Every skill has a generated `scripts/main.ts` and passes the smoke test.
 - Industry skills stay neutral and uniform.
 
 The `pre-commit` hook runs the same command; the `pre-push` hook runs it again.
@@ -151,11 +159,12 @@ Conventional Commits CI job.
 
 1. Choose a lowercase hyphenated name.
 2. Create `skills/<name>/` with `SKILL.md` and `metadata.json`.
-3. Add `references/` with one mermaid diagram per file, or `scripts/main.ts`.
+3. Add `references/` with one mermaid diagram per file.
 4. Register the path in `.claude-plugin/marketplace.json` and
    `.claude-plugin/plugin.json`.
-5. Run `pnpm validate`.
-6. Commit and open a pull request.
+5. Run `pnpm scripts:generate`.
+6. Run `pnpm validate`.
+7. Commit and open a pull request.
 
 ## Releases
 
