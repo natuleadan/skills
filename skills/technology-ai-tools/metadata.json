@@ -7,6 +7,9 @@
     "cloud.md",
     "support.md",
     "materials.md",
-    "hardware.md"
+    "hardware.md",
+    "workstation.md",
+    "agent-runtime.md",
+    "sandbox.md"
   ]
 }

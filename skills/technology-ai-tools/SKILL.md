@@ -30,3 +30,6 @@ General-purpose AI tooling for technology workflows.
 - `references/support.md` - user and incident support
 - `references/materials.md` - materials science
 - `references/hardware.md` - devices and electronics
+- `references/workstation.md` - development workstation for AI agents
+- `references/agent-runtime.md` - install, authenticate and test a coding agent
+- `references/sandbox.md` - isolation for autonomous agents
