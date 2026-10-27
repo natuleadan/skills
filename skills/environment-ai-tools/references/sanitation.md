@@ -1,6 +1,6 @@
 # Sanitation
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Public health and hygiene services.
 

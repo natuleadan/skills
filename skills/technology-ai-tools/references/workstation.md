@@ -8,11 +8,11 @@ suggestions; the reader decides.
 
 An agent workstation needs five layers, in this order:
 
-1. **Toolchains** - runtimes that compile and execute code.
-2. **Containers** - disposable, reproducible execution.
-3. **On-device models** - small classifiers that run locally, without a network.
-4. **Local LLM** - optional, for offline inference and privacy.
-5. **Agent runtime and sandbox** - the coding agent, and the limits around it.
+1. **Toolchains**: runtimes that compile and execute code.
+2. **Containers**: disposable, reproducible execution.
+3. **On-device models**: small classifiers that run locally, without a network.
+4. **Local LLM**: optional, for offline inference and privacy.
+5. **Agent runtime and sandbox**: the coding agent, and the limits around it.
 
 Install the lower layers first. Every higher layer depends on them.
 
@@ -55,19 +55,19 @@ brought it in. `node` must come from the pnpm runtime.
 
 Install every toolchain at user level: no `sudo`, no writes to `/usr/local`.
 
-- **pnpm** - official installer with the version pinned:
+- **pnpm**: official installer with the version pinned:
   `curl -fsSL https://get.pnpm.io/install.sh | env PNPM_VERSION=<v> sh -s`.
-- **Node** - through the pnpm runtime:
+- **Node**: through the pnpm runtime:
   `pnpm runtime set node <v> --global`. It ships `node` only, with no `npm`,
   `npx` or `corepack`; that is intended for this setup.
-- **uv** - official installer with the version pinned:
+- **uv**: official installer with the version pinned:
   `curl -LsSf https://astral.sh/uv/install.sh | env UV_VERSION=<v> sh -s`.
-- **Python** - `uv python install <v>`, resolved with `uv python find <v>`.
-- **Go** - download the tarball for the detected OS and architecture, verify
+- **Python**: `uv python install <v>`, resolved with `uv python find <v>`.
+- **Go**: download the tarball for the detected OS and architecture, verify
   its `sha256` against the matching filename in `https://go.dev/dl/?mode=json`,
   then extract under `~/.local/go`. Binaries from `go install` land in
   `~/go/bin`.
-- **Rust** - `rustup-init -y --profile minimal --no-modify-path`, then
+- **Rust**: `rustup-init -y --profile minimal --no-modify-path`, then
   `rustup toolchain install <v>` and `rustup default <v>`. The
   `--no-modify-path` flag matters: path management belongs to this recipe,
   not to rustup.

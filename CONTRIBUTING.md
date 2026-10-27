@@ -35,6 +35,8 @@ ending in `-ai-tools`.
 
 - All content is in English.
 - No fenced code blocks in any markdown file; the only exception is `mermaid`.
+- No spaced hyphen ` - ` in Markdown prose; the only exception is the
+  copyright line `2023 - Present.`.
 - No `code/` directory and no executable files.
 - No Python anywhere in `skills/` or `tools/`.
 - Every file under `references/` contains at least one mermaid
@@ -48,8 +50,8 @@ ending in `-ai-tools`.
 
 Frontmatter carries two required fields:
 
-- `name` - lowercase, hyphens only, matches the directory.
-- `description` - up to 1024 characters, with explicit trigger phrases. Quote it
+- `name`: lowercase, hyphens only, matches the directory.
+- `description`: up to 1024 characters, with explicit trigger phrases. Quote it
   with double quotes when it contains a colon followed by a space.
 
 The body holds short instructions and links to the references. Keep it under 300
@@ -62,9 +64,9 @@ skill when applying AI tools to healthcare". Do not describe unrelated topics.
 
 Four fields, no extras:
 
-- `version` - semver string for the skill.
-- `abstract` - one sentence, at most 200 characters.
-- `references` - array of file names inside `references/`, not URLs.
+- `version`: semver string for the skill.
+- `abstract`: one sentence, at most 200 characters.
+- `references`: array of file names inside `references/`, not URLs.
 
 Declared references must exist, and every existing reference must be declared.
 
@@ -96,6 +98,7 @@ Run `pnpm validate` before every commit. It checks:
 - Frontmatter and directory names match.
 - References exist and contain a mermaid sequence diagram.
 - No non-mermaid code blocks in any markdown file.
+- No spaced hyphen ` - ` in Markdown prose; exception: `2023 - Present.`.
 - No `code/`, no executables and no Python.
 - `scripts/` starts at `main.ts` and holds only TypeScript or ESM.
 - Every skill is registered in `.claude-plugin/marketplace.json` and

@@ -1,6 +1,6 @@
 # Livestock
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Herd monitoring and health signals.
 

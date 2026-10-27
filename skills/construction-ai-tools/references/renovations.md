@@ -1,6 +1,6 @@
 # Renovations
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Remodeling and fit-out.
 

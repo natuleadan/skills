@@ -1,6 +1,6 @@
 # Oncology
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Tumor data and treatment workflows.
 

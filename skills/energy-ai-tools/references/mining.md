@@ -1,6 +1,6 @@
 # Mining
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Extraction and grade control.
 

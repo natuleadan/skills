@@ -1,6 +1,6 @@
 # Dairy
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Milk products and cold chain.
 

@@ -1,6 +1,6 @@
 # Software
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Application development.
 

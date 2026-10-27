@@ -1,6 +1,6 @@
 # Electricity
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Grid and generation.
 

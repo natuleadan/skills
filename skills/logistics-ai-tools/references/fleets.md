@@ -1,6 +1,6 @@
 # Fleets
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Vehicle and route management.
 

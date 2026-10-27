@@ -1,6 +1,6 @@
 # Neurology
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Neurological assessment support.
 

@@ -1,6 +1,6 @@
 ---
 name: security-ai-tools
-description: "Use this skill when applying AI tools to security - Physical security, emergencies, and cybersecurity"
+description: "Use this skill when applying AI tools to security: Physical security, emergencies, and cybersecurity"
 ---
 
 # Security AI Tools
@@ -9,9 +9,9 @@ General-purpose AI tooling for security workflows.
 
 ## Areas
 
-- **Physical** - Guarding and access control.
-- **Emergencies** - Emergency response.
-- **Cybersecurity** - Threat detection and response.
+- **Physical**: Guarding and access control.
+- **Emergencies**: Emergency response.
+- **Cybersecurity**: Threat detection and response.
 
 ## Notes
 
@@ -21,6 +21,6 @@ General-purpose AI tooling for security workflows.
 
 ## References
 
-- `references/physical.md` - guarding and access control
-- `references/emergencies.md` - emergency response
-- `references/cybersecurity.md` - threat detection and response
+- `references/physical.md`: guarding and access control
+- `references/emergencies.md`: emergency response
+- `references/cybersecurity.md`: threat detection and response

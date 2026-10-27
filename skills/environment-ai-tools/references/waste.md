@@ -1,6 +1,6 @@
 # Waste
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Collection and treatment.
 

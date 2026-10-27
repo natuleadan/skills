@@ -1,6 +1,6 @@
 # Talent
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Hiring and people operations.
 

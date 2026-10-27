@@ -1,6 +1,6 @@
 # Immunology
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Immune assays and results.
 

@@ -1,6 +1,6 @@
 # Biotechnology
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Process and experiment support.
 

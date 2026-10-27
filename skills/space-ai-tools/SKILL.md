@@ -1,6 +1,6 @@
 ---
 name: space-ai-tools
-description: "Use this skill when applying AI tools to space - Orbital operations and satellite management"
+description: "Use this skill when applying AI tools to space: Orbital operations and satellite management"
 ---
 
 # Space AI Tools
@@ -9,8 +9,8 @@ General-purpose AI tooling for space workflows.
 
 ## Areas
 
-- **Orbital** - Mission and orbit work.
-- **Satellites** - Satellite management.
+- **Orbital**: Mission and orbit work.
+- **Satellites**: Satellite management.
 
 ## Notes
 
@@ -20,5 +20,5 @@ General-purpose AI tooling for space workflows.
 
 ## References
 
-- `references/orbital.md` - mission and orbit work
-- `references/satellites.md` - satellite management
+- `references/orbital.md`: mission and orbit work
+- `references/satellites.md`: satellite management

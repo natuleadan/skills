@@ -1,6 +1,6 @@
 # Soil
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Soil sampling and analysis.
 
