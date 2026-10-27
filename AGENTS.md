@@ -40,6 +40,12 @@ Rules:
 - `SKILL.md` has no mermaid; references have at least one.
 - Files stay under 300 lines.
 
+## Commits
+
+`type(scope): description` with a scope from `skills`, `tools`, `docs`, `ci`,
+`workflow`, `hooks`, `release`, `license`, `deps`. The title has 3 to 7 words,
+then a blank line and at least 3 bullets shaped `- **Label**: body`.
+
 ## Commands
 
 - `pnpm validate` - validate skills and audit industry neutrality.
@@ -48,4 +54,5 @@ Rules:
 - `pnpm skill <name>` - run a skill script with Node.
 - `pnpm changeset` - record a change for the next release.
 
-Husky runs validation on commit and on push. The repository is Apache-2.0.
+Husky runs skill validation on commit and full validation on push. The
+repository is Apache-2.0.

@@ -88,11 +88,15 @@ registered there and in `.claude-plugin/plugin.json`.
 - `ThirdPartyNotices.txt` matches the installed dependencies.
 - Industry skills stay neutral: no platform concepts, vendor names or pricing.
 
-Husky runs validation on every commit and before every push.
+Husky runs the skill checks on every commit and the full validation, including
+third-party notices, before every push.
 
 ## 8. Commit Conventions
 
 Format: `type(scope): description`, with the scope in English and lower case.
+
+Scopes: `skills`, `tools`, `docs`, `ci`, `workflow`, `hooks`, `release`,
+`license`, `deps`. CI rejects any other scope.
 
 - The title has 3 to 7 words, counting `type(scope):`.
 - A blank line follows, then at least 3 bullets shaped `- **Label**: body`.
