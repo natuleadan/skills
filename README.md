@@ -39,6 +39,8 @@ miss constraints and repeat the same research in every session.
   construction, security, space and government.
 - **Progressive disclosure:** a short `SKILL.md` and focused references, so the
   agent loads only what the task needs.
+- **Scripts included:** every skill ships a Node stub; run
+  `pnpm skill <name> --help` to see its commands.
 - **Apache-2.0.**
 
 ## 4. Quick start
@@ -115,8 +117,11 @@ scope.
 
 ## 12. License
 
-Apache License 2.0, copyright NATULEADAN SAS BIC 2023 - Present. See
-[LICENSE](LICENSE), [NOTICE](NOTICE) and
+This project is released under the Apache License 2.0. Copyright NATULEADAN
+SAS BIC, 2023 - Present.
+
+The full terms are in [LICENSE](LICENSE). Attribution is in
+[NOTICE](NOTICE), and the licenses of the development dependencies are in
 [ThirdPartyNotices.txt](ThirdPartyNotices.txt).
 
 ---

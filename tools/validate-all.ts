@@ -172,10 +172,11 @@ for (const name of skills) {
   }
 
   const scriptsDir = join(skill, "scripts");
+  const mainScript = join(scriptsDir, "main.ts");
+  if (!existsSync(mainScript)) {
+    errors.push(`${name}: missing scripts/main.ts`);
+  }
   if (existsSync(scriptsDir)) {
-    if (!existsSync(join(scriptsDir, "main.ts"))) {
-      errors.push(`${name}: scripts/ requires main.ts as the entry point`);
-    }
     for (const file of walk(scriptsDir)) {
       const rel = relative(skill, file);
       if (!/\.(ts|mjs)$/.test(file)) {
