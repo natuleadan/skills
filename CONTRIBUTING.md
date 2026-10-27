@@ -45,6 +45,9 @@ ending in `-ai-tools`.
 - Every markdown file stays under 300 lines.
 - Industry skills stay provider-agnostic: no platform concepts, vendor names or
   pricing.
+- References cover decisions, constraints, contracts and traps. They do not
+  repeat general knowledge an agent already has; write to refine or improve,
+  as the sandbox reference does.
 
 ## SKILL.md
 
