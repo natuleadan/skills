@@ -1,5 +1,5 @@
 <h1 align="center">Natuleadan Skills</h1>
-<p align="center"><strong>One platform skill and sixteen industry AI tool skills for AI coding agents</strong></p>
+<p align="center"><strong>Domain context for AI coding agents, packaged as installable skills</strong></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Count-17-8B5CF6?style=for-the-badge" alt="17 skills" />
@@ -12,140 +12,112 @@
 ## 1. What is Natuleadan Skills?
 
 A collection of agent skills for AI coding agents. Each skill is a
-self-contained package of instructions and reference documentation, installable
-with the Agent Skills format.
+self-contained package of instructions and reference notes: install it once and
+the agent knows the conventions of that domain instead of inventing them.
 
-There is one platform skill, `natuleadan-skills`, which groups the platform's
-open-source programs as references instead of one skill per program. Its
-references are stubs while each program is defined. The other sixteen skills
-are industry AI tool sets for a specific domain. The full list is in the
-[Skills Index](SKILLS.md).
+17 skills: one platform skill and sixteen industry AI tool skills.
 
-## 2. Catalog
+## 2. Why Natuleadan Skills?
 
-17 skills:
+Coding agents are strong at code and weak at context. They guess conventions,
+miss constraints and repeat the same research in every session.
 
-- **Platform**: `natuleadan-skills` - groups the open-source programs as stubs.
-- **Industry**: `healthcare-ai-tools`, `biology-ai-tools`, `agriculture-ai-tools`,
-  `food-and-beverage-ai-tools`, `energy-ai-tools`, `manufacturing-ai-tools`,
-  `logistics-ai-tools`, `environment-ai-tools`, `education-ai-tools`,
-  `commerce-ai-tools`, `entertainment-ai-tools`, `technology-ai-tools`,
-  `construction-ai-tools`, `security-ai-tools`, `space-ai-tools`,
-  `government-ai-tools`.
+- **One platform skill, not one per product.** The platform surface lives in four
+  references, so the catalog stays stable as products evolve.
+- **Sixteen industries, one format.** Healthcare, agriculture, security and the
+  rest share the same structure, so an agent learns the pattern once.
+- **Provider-agnostic.** Industry skills describe the work, not a vendor; they
+  run with any compatible backend.
+- **One command to install.** No build step, no runtime, no lock-in.
 
-Every industry skill is provider-agnostic: it describes AI tooling for an area
-and works with any compatible backend.
+## 3. Highlights
 
-## 3. Install
+- **17 skills across 17 domains.**
+- **Platform in one place:** APIs, declarative services, operations and data.
+- **Industry depth:** clinical, biology, agriculture, energy, manufacturing,
+  logistics, environment, education, commerce, entertainment, technology,
+  construction, security, space and government.
+- **Progressive disclosure:** a short `SKILL.md` and focused references, so the
+  agent loads only what the task needs.
+- **Apache-2.0.**
 
-Install the whole collection with `pnpx skills add natuleadan/skills`.
+## 4. Quick start
 
-Install one skill with `pnpx skills add natuleadan/skills --skill natuleadan-skills`.
+1. Install the collection: `pnpx skills add natuleadan/skills`.
+2. Install one skill: `pnpx skills add natuleadan/skills --skill natuleadan-skills`.
+3. Open your agent and ask a platform or industry question.
 
-## 4. Requirements
+The agent picks the skill from its description; you do not wire anything else.
 
-- Node.js 24 or newer, which runs TypeScript entry points directly.
-- pnpm 12 for development.
-- No Python is required: validation, hooks and CI run on Node.
+## 5. Use cases
 
-## 5. Development
+- **Platform work:** call agent, robot and toolset APIs, declare a service,
+  operate infrastructure or query relational and vector data.
+- **Industry work:** give an agent the vocabulary and constraints of a regulated
+  or specialized area before it writes code.
+- **Agent setup:** bootstrap a coding agent with a consistent skill library
+  instead of prompting the same context by hand.
 
-Clone the repository, run `pnpm install`, then `pnpm validate`. The `prepare`
-script installs the Husky hooks.
+## 6. How it works
 
-Useful commands:
+```mermaid
+sequenceDiagram
+    participant Developer
+    participant CLI as skills CLI
+    participant Agent
+    participant Skill as SKILL.md
+    Developer->>CLI: add natuleadan/skills
+    CLI->>Agent: install skill package
+    Agent->>Skill: load when the description matches
+    Skill->>Skill: read the focused reference
+    Agent-->>Developer: answer with domain context
+```
 
-- `pnpm validate` - validate skills and audit industry neutrality.
-- `pnpm industry` - audit only the sixteen industry skills.
-- `pnpm notices` - regenerate `ThirdPartyNotices.txt` from dependencies.
-- `pnpm skill <name>` - run `skills/<name>/scripts/main.ts` with Node.
-- `pnpm changeset` - record a change for the next release.
-- `pnpm run version` - apply changesets locally; CI does this in the release PR.
+Each skill has a `SKILL.md` with the trigger description and a `references/`
+folder with the detail. The agent loads the entry point first and opens a
+reference only when the task needs it.
 
-## 6. Structure
+## 7. Status and roadmap
 
-Each skill lives under `skills/<name>/` and contains:
+- 17 skills are available today.
+- The platform references are stubs while the platform definition settles.
+- Industry skills expand as each area gains real content.
+- Next: fill the platform references and deepen the industry notes.
 
-- `SKILL.md` - frontmatter with `name` and `description`, then the instructions.
-- `metadata.json` - `version`, `abstract` and the list of references.
-- `references/*.md` - prose notes, each with one or more mermaid diagrams.
-- `scripts/main.ts` - optional entry point, run explicitly and never automatic.
+## 8. Documentation
 
-The `.claude-plugin/marketplace.json` file is the catalog: every skill must be
-registered there and in `.claude-plugin/plugin.json`.
+- [Skills Index](SKILLS.md) - the full catalog with descriptions.
+- [Contributing](CONTRIBUTING.md) - format, validation and commit rules.
+- [Agent Guide](AGENTS.md) - commands, structure and release flow.
 
-## 7. Validation
+## 9. Ecosystem
 
-`pnpm validate` enforces:
+Natuleadan Skills follows the Agent Skills format and works with any compatible
+client. It is part of the [natuleadan](https://github.com/natuleadan)
+organization and complements the platform repositories: the skills teach an
+agent how to use the platform, the repositories implement it.
 
-- Frontmatter and directory names match.
-- Every reference declared in `metadata.json` exists and has a sequence diagram.
-- No fenced code blocks in any markdown file, except mermaid.
-- Files stay under 300 lines.
-- No `code/` directory, no executables and no Python.
-- `scripts/` only holds TypeScript or ESM and starts at `main.ts`.
-- License and version match across manifests.
-- `ThirdPartyNotices.txt` matches the installed dependencies.
-- Industry skills stay neutral: no platform concepts, vendor names or pricing.
-
-Husky runs the skill checks on every commit and the full validation, including
-third-party notices, before every push.
-
-## 8. Commit Conventions
-
-Format: `type(scope): description`, with the scope in English and lower case.
-
-Scopes: `skills`, `tools`, `docs`, `ci`, `workflow`, `hooks`, `release`,
-`license`, `deps`. CI rejects any other scope.
-
-- The title has 3 to 7 words, counting `type(scope):`.
-- A blank line follows, then at least 3 bullets shaped `- **Label**: body`.
-- Each bullet body has 3 to 7 words.
-- Maximum 100 characters per title.
-- Types: feat, fix, upgrade, docs, style, refactor, perf, test, chore, ci, revert.
-
-The rules live in `commitlint.config.js`, enforced by the `commit-msg` hook and
-by the Conventional Commits job in CI.
-
-## 9. Releases
-
-Versions come from changesets. Add a change with `pnpm changeset` and merge the
-pull request; the Version Packages workflow opens or updates a release pull
-request on every push to `main`.
-
-That release PR runs `changeset version` and `sync-plugin-version`, so the
-version in `package.json`, `.claude-plugin/plugin.json`,
-`.claude-plugin/marketplace.json` and the `CHANGELOG.md` entry are generated, not
-hand-edited. Merge the release PR to cut the version.
-
-A version of `0.0.0` means unreleased: the tag job skips it. Every other version
-on `main` produces a tag `v<version>` and a release with `skills_v<version>.zip`.
-
-## 10. Contributing
-
-Read [CONTRIBUTING.md](CONTRIBUTING.md) before editing a skill. It covers the
-directory layout, naming, frontmatter, references, scripts, validation and
-commit format. All contributions must pass `pnpm validate`.
-
-## 11. License
-
-Apache License 2.0, copyright NATULEADAN SAS BIC 2023 - Present. See
-[LICENSE](LICENSE), [NOTICE](NOTICE) and
-[ThirdPartyNotices.txt](ThirdPartyNotices.txt).
-
-## 12. Ownership
-
-Maintained by Leonardo Jara ([@leojara95](https://github.com/leojara95)) under
-the natuleadan organization ([@natuleadan](https://github.com/natuleadan)).
-
----
-
-## Community
+## 10. Community
 
 <p align="left">
   <a href="https://github.com/natuleadan"><img src="https://avatars.githubusercontent.com/u/210283438?v=4&s=48" width="48" height="48" alt="natuleadan" title="natuleadan"/></a>
   <a href="https://github.com/leojara95"><img src="https://avatars.githubusercontent.com/u/268038834?v=4&s=48" width="48" height="48" alt="leojara95" title="leojara95"/></a>
 </p>
+
+Questions, ideas and bugs: open an issue in this repository.
+
+## 11. Contributing
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) for the skill format and
+[AGENTS.md](AGENTS.md) for the commands. Every change goes through a pull
+request, passes `pnpm validate` and uses a conventional commit with an allowed
+scope.
+
+## 12. License
+
+Apache License 2.0, copyright NATULEADAN SAS BIC 2023 - Present. See
+[LICENSE](LICENSE), [NOTICE](NOTICE) and
+[ThirdPartyNotices.txt](ThirdPartyNotices.txt).
 
 ---
 
