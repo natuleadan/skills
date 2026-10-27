@@ -1,19 +1,47 @@
 # natuleadan-skills
 
+## 0.0.4
+
+### Fixes
+
+- use commit based releases
+
+### Documentation
+
+- document changesets and references
+- add generated counts badges
+- simplify readme badges
+- tighten readme intro
+
 ## 0.0.3
 
-### Patch Changes
+### Fixes
 
-- 5f4f523: Make skill scripts self-contained for installed copies.
+- make scripts standalone
 
 ## 0.0.2
 
-### Patch Changes
+### Features
 
-- 87f8094: Add Node script stubs to every skill.
+- add node script stubs
+
+### Fixes
+
+- correct changesets inputs
+- align author identity
+- use default changelog
+
+### Documentation
+
+- add security policy
+
+### Maintenance
+
+- remove spaced hyphens
+- drop dev branch
 
 ## 0.0.1
 
-### Patch Changes
+### Features
 
-- First public release with one platform skill and sixteen industry skills.
+- first public release with one platform skill and sixteen industry skills

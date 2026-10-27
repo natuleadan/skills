@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Copies package.json's version into .claude-plugin/plugin.json and marketplace.json.
-// Runs as part of `pnpm run version`, immediately after `changeset version`.
+// Runs as part of `pnpm release:prepare`, after the version is written.
 // With --check it changes nothing and exits 1 if the two versions differ.
 
 import { readFileSync, writeFileSync } from "node:fs";
