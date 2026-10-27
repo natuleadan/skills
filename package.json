@@ -13,8 +13,9 @@
     "node": ">=24"
   },
   "scripts": {
-    "validate": "node tools/validate-all.ts && node tools/audit-temp.ts",
+    "validate": "node tools/validate-all.ts && node tools/audit-temp.ts && node tools/third-party-notices.ts --check",
     "industry": "node tools/audit-temp.ts",
+    "notices": "node tools/third-party-notices.ts",
     "skill": "node tools/run-skill.ts",
     "prepare": "husky",
     "changeset": "changeset",

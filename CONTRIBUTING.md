@@ -94,9 +94,17 @@ Run `pnpm validate` before every commit. It checks:
 - Every skill is registered in `.claude-plugin/marketplace.json` and
   `.claude-plugin/plugin.json`.
 - License and version match across manifests.
+- `ThirdPartyNotices.txt` matches the installed dependencies.
 - Industry skills stay neutral and uniform.
 
 The `pre-commit` hook runs the same command; the `pre-push` hook runs it again.
+
+## Third-party notices
+
+`ThirdPartyNotices.txt` is generated, never edited by hand. The generator reads
+the direct development dependencies and writes the table with their licenses and
+repositories. Run `pnpm notices` after changing dependencies; `pnpm validate`
+fails when the file is out of date.
 
 ## Commit conventions
 

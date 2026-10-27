@@ -38,9 +38,9 @@ and works with any compatible backend.
 
 ## 3. Install
 
-Install the whole collection with `npx skills add natuleadan/skills`.
+Install the whole collection with `pnpx skills add natuleadan/skills`.
 
-Install one skill with `npx skills add natuleadan/skills --skill natuleadan-skills`.
+Install one skill with `pnpx skills add natuleadan/skills --skill natuleadan-skills`.
 
 ## 4. Requirements
 
@@ -57,6 +57,7 @@ Useful commands:
 
 - `pnpm validate` - validate skills and audit industry neutrality.
 - `pnpm industry` - audit only the sixteen industry skills.
+- `pnpm notices` - regenerate `ThirdPartyNotices.txt` from dependencies.
 - `pnpm skill <name>` - run `skills/<name>/scripts/main.ts` with Node.
 - `pnpm changeset` - record a change for the next release.
 - `pnpm run version` - apply changesets and sync plugin versions.
@@ -84,6 +85,7 @@ registered there and in `.claude-plugin/plugin.json`.
 - No `code/` directory, no executables and no Python.
 - `scripts/` only holds TypeScript or ESM and starts at `main.ts`.
 - License and version match across manifests.
+- `ThirdPartyNotices.txt` matches the installed dependencies.
 - Industry skills stay neutral: no platform concepts, vendor names or pricing.
 
 Husky runs validation on every commit and before every push.
@@ -120,12 +122,21 @@ commit format. All contributions must pass `pnpm validate`.
 
 Apache License 2.0, copyright NATULEADAN SAS BIC 2023 - Present. See
 [LICENSE](LICENSE), [NOTICE](NOTICE) and
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+[ThirdPartyNotices.txt](ThirdPartyNotices.txt).
 
 ## 12. Ownership
 
 Maintained by Leonardo Jara ([@leojara95](https://github.com/leojara95)) under
 the natuleadan organization ([@natuleadan](https://github.com/natuleadan)).
+
+---
+
+## Community
+
+<p align="left">
+  <a href="https://github.com/natuleadan"><img src="https://avatars.githubusercontent.com/u/210283438?v=4&s=48" width="48" height="48" alt="natuleadan" title="natuleadan"/></a>
+  <a href="https://github.com/leojara95"><img src="https://avatars.githubusercontent.com/u/268038834?v=4&s=48" width="48" height="48" alt="leojara95" title="leojara95"/></a>
+</p>
 
 ---
 
