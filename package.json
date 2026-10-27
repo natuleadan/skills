@@ -1,6 +1,6 @@
 {
   "name": "natuleadan-skills",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "description": "Agent skills for AI coding agents: one platform skill and sixteen industry AI tool skills.",
   "repository": {
@@ -13,8 +13,8 @@
     "node": ">=24"
   },
   "scripts": {
-    "validate": "node tools/validate-all.ts && node tools/audit-temp.ts && node tools/third-party-notices.ts --check && node tools/generate-skill-scripts.ts --check && node tools/test-skill-scripts.ts && node tools/check-md-hyphens.ts && node tools/counts.ts --check",
-    "validate:skills": "node tools/validate-all.ts && node tools/audit-temp.ts && node tools/generate-skill-scripts.ts --check && node tools/check-md-hyphens.ts && node tools/counts.ts --check",
+    "validate": "node tools/validate-all.ts && node tools/audit-temp.ts && node tools/third-party-notices.ts --check && node tools/generate-skill-scripts.ts --check && node tools/test-skill-scripts.ts && node tools/check-md-hyphens.ts && node tools/counts.ts --check && node tools/check-changelog.ts",
+    "validate:skills": "node tools/validate-all.ts && node tools/audit-temp.ts && node tools/generate-skill-scripts.ts --check && node tools/check-md-hyphens.ts && node tools/counts.ts --check && node tools/check-changelog.ts",
     "industry": "node tools/audit-temp.ts",
     "notices": "node tools/third-party-notices.ts",
     "scripts:generate": "node tools/generate-skill-scripts.ts",
@@ -24,12 +24,13 @@
     "badges:check": "node tools/counts.ts --check",
     "skill": "node tools/run-skill.ts",
     "prepare": "husky",
-    "changeset": "changeset",
-    "version": "changeset version && node scripts/sync-plugin-version.mjs",
-    "check-plugin-version": "node scripts/sync-plugin-version.mjs --check"
+    "release:plan": "node tools/release-plan.ts",
+    "release:prepare": "node tools/release-plan.ts --apply",
+    "release:check": "node tools/release-plan.ts --check",
+    "check-plugin-version": "node scripts/sync-plugin-version.mjs --check",
+    "changelog:check": "node tools/check-changelog.ts"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.30.0",
     "@commitlint/cli": "^20.5.3",
     "@commitlint/config-conventional": "^20.5.3",
     "husky": "^9.1.7"

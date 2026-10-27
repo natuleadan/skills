@@ -114,6 +114,7 @@ Run `pnpm validate` before every commit. It checks:
 - `ThirdPartyNotices.txt` matches the installed dependencies.
 - Every skill has a generated `scripts/main.ts` and passes the smoke test.
 - README badges match the skill, reference and script counts.
+- Changelog versions, sections and past tags are consistent.
 - Industry skills stay neutral and uniform.
 
 The `pre-commit` hook runs the same command; the `pre-push` hook runs it again.
@@ -165,7 +166,7 @@ Example:
 
 > docs(skills): explain releases and versions
 >
-> - **Versions**: come from changesets
+> - **Versions**: come from commits
 > - **Releases**: tag and zip
 > - **Baseline**: zero point zero is unreleased
 
@@ -183,15 +184,24 @@ Conventional Commits CI job.
 6. Run `pnpm badges`.
 7. Run `pnpm validate`.
 8. Commit and open a pull request.
+9. For `feat`, `fix` or `perf`, run `pnpm release:prepare` and amend the commit.
 
 ## Releases
 
-Versions come from changesets. Add a change with `pnpm changeset` and merge the
-pull request. The Version Packages workflow then opens or updates a release pull
-request and runs `changeset version` plus `sync-plugin-version`. That generates
-the version in `package.json`, the plugin manifests and the `CHANGELOG.md` entry.
-Never edit those by hand.
+Versions come from conventional commits since the last tag:
 
-Merge the release PR to cut the version. The release job tags `main` with
-`v<version>` and publishes `skills_v<version>.zip`. Version `0.0.0` means
-unreleased and is skipped.
+- `fix` and `perf` bump patch.
+- `feat` bumps minor.
+- `upgrade` or a breaking change bumps major.
+- `docs`, `ci`, `chore`, `test`, `style` and `refactor` do not release.
+
+A functional PR includes its own version bump and changelog entry:
+
+1. Commit the change with `feat`, `fix` or `perf`.
+2. Run `pnpm release:prepare`.
+3. Amend the commit with the generated files.
+4. Run `pnpm release:check`.
+
+The PR is the only approval. After merge, the tag job creates `v<version>` and
+publishes `skills_v<version>.zip`. Version `0.0.0` means unreleased and is
+skipped.
