@@ -1,6 +1,6 @@
 # Operations
 
-> Stub - expanded once the operating model settles.
+> Stub: expanded once the operating model settles.
 
 How hosts, clusters, datastores, backups and firewall rules are declared and
 applied.

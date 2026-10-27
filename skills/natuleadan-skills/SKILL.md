@@ -5,7 +5,7 @@ description: "Natuleadan platform: calling agent, robot and toolset APIs, declar
 
 # Natuleadan Skills
 
-> Stub - the platform definition is still being written. These references hold
+> Stub: the platform definition is still being written. These references hold
 > the shape of each area, not final behavior.
 
 One skill that groups the open-source programs of the platform. Each program
@@ -30,7 +30,7 @@ stable as programs appear.
 
 ## References
 
-- `references/platform.md` - agents, robots, toolsets and calls
-- `references/services.md` - declarative services and their contracts
-- `references/operations.md` - hosts, clusters, datastores and recovery
-- `references/data.md` - SQL storage with native vector search
+- `references/platform.md`: agents, robots, toolsets and calls
+- `references/services.md`: declarative services and their contracts
+- `references/operations.md`: hosts, clusters, datastores and recovery
+- `references/data.md`: SQL storage with native vector search

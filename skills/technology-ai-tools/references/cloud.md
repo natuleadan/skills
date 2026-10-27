@@ -1,6 +1,6 @@
 # Cloud
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Cloud infrastructure.
 

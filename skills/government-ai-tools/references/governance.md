@@ -1,6 +1,6 @@
 # Governance
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Policy and administration.
 

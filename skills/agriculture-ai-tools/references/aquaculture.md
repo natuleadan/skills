@@ -1,6 +1,6 @@
 # Aquaculture
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Fish farming and water conditions.
 

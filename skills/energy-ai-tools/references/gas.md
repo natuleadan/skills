@@ -1,6 +1,6 @@
 # Gas
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Processing and distribution.
 

@@ -1,6 +1,6 @@
 # Cardiology
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Cardiac monitoring and risk signals.
 

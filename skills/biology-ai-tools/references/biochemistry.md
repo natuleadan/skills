@@ -1,6 +1,6 @@
 # Biochemistry
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Molecules, assays and lab data.
 

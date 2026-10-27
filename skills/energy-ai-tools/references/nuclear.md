@@ -1,6 +1,6 @@
 # Nuclear
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Plant operations and safety.
 

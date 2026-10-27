@@ -1,6 +1,6 @@
 # Air
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Air quality monitoring.
 

@@ -1,6 +1,6 @@
 # Standardization
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Standards and norms.
 

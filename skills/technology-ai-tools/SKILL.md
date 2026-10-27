@@ -1,6 +1,6 @@
 ---
 name: technology-ai-tools
-description: "Use this skill when applying AI tools to technology - Software, networks, cloud, support, materials, and hardware"
+description: "Use this skill when applying AI tools to technology: Software, networks, cloud, support, materials, and hardware"
 ---
 
 # Technology AI Tools
@@ -9,12 +9,12 @@ General-purpose AI tooling for technology workflows.
 
 ## Areas
 
-- **Software** - Application development.
-- **Networks** - Network design and operations.
-- **Cloud** - Cloud infrastructure.
-- **Support** - User and incident support.
-- **Materials** - Materials science.
-- **Hardware** - Devices and electronics.
+- **Software**: Application development.
+- **Networks**: Network design and operations.
+- **Cloud**: Cloud infrastructure.
+- **Support**: User and incident support.
+- **Materials**: Materials science.
+- **Hardware**: Devices and electronics.
 
 ## Notes
 
@@ -24,12 +24,12 @@ General-purpose AI tooling for technology workflows.
 
 ## References
 
-- `references/software.md` - application development
-- `references/networks.md` - network design and operations
-- `references/cloud.md` - cloud infrastructure
-- `references/support.md` - user and incident support
-- `references/materials.md` - materials science
-- `references/hardware.md` - devices and electronics
-- `references/workstation.md` - development workstation for AI agents
-- `references/agent-runtime.md` - install, authenticate and test a coding agent
-- `references/sandbox.md` - isolation for autonomous agents
+- `references/software.md`: application development
+- `references/networks.md`: network design and operations
+- `references/cloud.md`: cloud infrastructure
+- `references/support.md`: user and incident support
+- `references/materials.md`: materials science
+- `references/hardware.md`: devices and electronics
+- `references/workstation.md`: development workstation for AI agents
+- `references/agent-runtime.md`: install, authenticate and test a coding agent
+- `references/sandbox.md`: isolation for autonomous agents

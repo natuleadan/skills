@@ -1,6 +1,6 @@
 # Crops
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Crop planning, monitoring and yield signals.
 

@@ -1,6 +1,6 @@
 # General
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Vitals, triage, and records.
 

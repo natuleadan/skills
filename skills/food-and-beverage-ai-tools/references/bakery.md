@@ -1,6 +1,6 @@
 # Bakery
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Baking processes and batches.
 

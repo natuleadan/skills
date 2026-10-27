@@ -1,6 +1,6 @@
 # Municipal
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Local government services.
 

@@ -1,6 +1,6 @@
 # Platform
 
-> Stub - expanded once the platform definition settles.
+> Stub: expanded once the platform definition settles.
 
 How capabilities are exposed and called: agents, robots, toolsets, jobs,
 scheduling and human confirmation.

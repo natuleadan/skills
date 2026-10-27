@@ -1,6 +1,6 @@
 # Research
 
-> Stub - expanded as the area evolves.
+> Stub: expanded as the area evolves.
 
 Research support and organization.
 
