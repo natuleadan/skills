@@ -1,0 +1,8 @@
+# Workspace Clippy configuration.
+# Flag functions taking bool parameters; prefer typed enums or distinct methods.
+max-fn-params-bools = 0
+
+# Allow panic and print helpers inside unit and integration tests.
+allow-unwrap-in-tests = true
+allow-expect-in-tests = true
+allow-print-in-tests = true

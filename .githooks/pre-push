@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+set -eu
+[ "${HOOK_SKIP:-0}" = "1" ] && exit 0
+branch="$(git rev-parse --abbrev-ref HEAD)"
+if [ "$branch" = "main" ]; then
+  echo "pre-push: refusing direct push to main; open a PR from dev"
+  exit 1
+fi
+exec cargo xtask validate
