@@ -4,8 +4,8 @@ version = 4
 
 [[package]]
 name = "skills-core"
-version = "0.0.0"
+version = "0.1.0"
 
 [[package]]
 name = "xtask"
-version = "0.0.0"
+version = "0.1.0"

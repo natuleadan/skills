@@ -14,17 +14,19 @@
 
 ## 1. What is Natuleadan Skills?
 
-Natuleadan Skills is a sovereign catalog of installable AI agent skills (`SKILL.md`), focused domain references, and **native Rust executable scripts** organized around the **seven Natuleadan constellations** (`Orion`, `Andromeda`, `Aurora`, `Pleaides`, `Pulsar`, `Caelum`, and `Lyra`) in a pure-Cargo workspace. Each skill gives coding agents explicit constellation conventions paired with fast, type-safe Rust CLI utilities, eliminating Node.js and Python runtime dependencies.
+Natuleadan Skills is being built as a sovereign catalog of installable AI agent skills (`SKILL.md`), focused domain references, and **native Rust executable scripts** organized around the **seven Natuleadan constellations** (`Orion`, `Andromeda`, `Aurora`, `Pleaides`, `Pulsar`, `Caelum`, and `Lyra`) in a pure-Cargo workspace. Each planned skill will give coding agents explicit constellation conventions paired with fast, type-safe Rust CLI utilities, eliminating Node.js and Python runtime dependencies.
 
 ### What is inside
 
-The repository pairs progressive-disclosure skill documentation with `skills-core`, a layered modular six-file modular Rust workspace (`entity`, `dto`, `repository`, `service`, `controller`, `mod`) and `crates/xtask` automation governed by eight native validation gates.
+The repository pairs progressive-disclosure skill documentation with `skills-core`, a layered six-file modular Rust workspace (`entity`, `dto`, `repository`, `service`, `controller`, `mod`) and `crates/xtask` automation governed by eight native validation gates.
+
+> **Current scope:** This release ships the native validation harness and the six-file modular reference domain (`modules/math`). The skill registry, `SKILL.md` catalog and native helper commands are planned milestones, not shipped capabilities.
 
 ## 2. Why Natuleadan Skills?
 
 AI coding agents excel at syntax but struggle with domain constraints and frequently rely on fragile, unpinned Node.js or Python helper scripts that fail across environments.
 
-- **Skills + native Rust scripts**: Every skill pairs concise `SKILL.md` guidance with compiled, memory-safe Rust utilities instead of brittle interpreted scripts.
+- **Skills + native Rust scripts**: Each planned skill will pair concise `SKILL.md` guidance with compiled, memory-safe Rust utilities instead of brittle interpreted scripts.
 - **Progressive context disclosure**: Agents load only the targeted reference or subcommand needed for the task, keeping context windows lean.
 - **Strict modular contracts**: Domain models, DTO validation, and execution controllers are isolated and verified by architecture tripwires.
 - **Zero formatter drift**: Formatters are excluded from hooks and CI so diffs remain focused on logic and capability definitions.
@@ -32,7 +34,7 @@ AI coding agents excel at syntax but struggle with domain constraints and freque
 ## 3. Highlights
 
 - **100% Pure native Rust**: Zero `package.json`, zero `pnpm`, and zero Python runtime requirements.
-- **layered modular architecture**: Clean domain separation (`entity`, `dto`, `repository`, `service`, `controller`, `mod`).
+- **Layered modular architecture**: Clean domain separation (`entity`, `dto`, `repository`, `service`, `controller`, `mod`).
 - **Eight standardized validation gates**: Static linting, typechecking, unit tests, architecture tripwires, 3-day cooldown, hygiene, notices, and SemVer checks.
 - **Supply-chain hardening**: Enforced 3-day dependency publish cooldown (`resolver.min-publish-age="3 days"`), CodeQL, and SBOM artifacts.
 - **Apache-2.0 licensed**: Clear commercial terms with automated `ThirdPartyNotices.txt` verification.
@@ -87,11 +89,11 @@ sequenceDiagram
     Ctrl-->>Agent: structuredResult
 ```
 
-An agent matches a task to a `SKILL.md` guide, reads focused references on demand, and invokes compiled Rust utilities through `controller` and `service` layers with strict `dto` validation.
+Once available, an agent will match a task to a `SKILL.md` guide, read focused references on demand, and invoke compiled Rust utilities through `controller` and `service` layers with strict `dto` validation.
 
 ## 7. Status and Roadmap
 
-- **Status**: Stable pure-Rust foundation featuring `skills-core`, reference modular domain, and eight native validation gates.
+- **Status**: Initial foundation — validation harness and modular reference skeleton in place; skill catalog and native scripts in progress.
 - **Milestone 1**: Core skill registry schema, `SKILL.md` loader, and initial native Rust helper commands.
 - **Milestone 2**: Platform and industry domain skill packs with compiled CLI utilities.
 - **Milestone 3**: Decoupled CLI and wire-protocol capability discovery for Pulsar and sibling constellations.
